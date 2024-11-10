@@ -1,0 +1,31 @@
+@import '../../app//index.scss';
+
+.card-img {
+    background: $color-card;
+    padding: 24px 37px;
+    width: 270px;
+}
+
+.card-wrapper {
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    width: 285px;
+    height: 420px;
+}
+
+.card-title {
+    font-size: 20px;
+    padding: 15px 0 7px 0;
+}
+
+.card-description {
+    max-width: 270px;
+    font-size: 14px;
+    color: #959494;
+}
+
+.price-button {
+    @include flex-center;
+    gap: 80px;
+}

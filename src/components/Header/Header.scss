@@ -1,0 +1,72 @@
+@import '../../app/index.scss';
+
+.header-wrapper {
+    padding: 35px 0 35px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.light-part {
+    @include flex-center;
+    gap: 15px;
+}
+
+.header-input {
+   @include flex-center;
+    background-color: #F9F9F9;
+    padding: 0 20px 0 20px;
+    border-radius: 15px;
+    gap: 12px;
+}
+
+.header-input__inner {
+    width: 280px;
+    height: 50px;
+    font-size: 18px;
+    background-color: #F9F9F9;
+    outline: none;
+    border: none;
+}
+
+.header-input__inner::placeholder {
+    font-size: 17px;
+    color: #C0C0C0;
+}
+
+.header-right__welcome {
+    @include flex-center;
+    padding: 10px;
+    border: 1px solid $main-color;
+    border-radius: 10px;
+    gap: 7px;
+    cursor: pointer;
+}
+
+.header-welcome {
+    padding: 13px 17px 10px 15px;
+    border: 1px solid $main-color;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.header-welcome__btn {
+    color: $main-color;
+}
+
+.header-right {
+    display: flex;
+    gap: 10px;
+}
+
+.light-img {
+    width: 60px;
+}
+
+.header-input__img {
+    width: 20px;
+}
+
+.header-welcome__img {
+    width: 20px;
+}
