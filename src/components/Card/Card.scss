@@ -2,28 +2,33 @@
 
 .card-img {
     background: $color-card;
-    padding: 24px 37px;
     width: 270px;
     height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
 }
 
 .card {
     width: 285px;
-    height: 400px;
     display: flex;
     flex-direction: column;
 }
 
 .card-img__inner {
-    width: 50px;
+    width: 210px;
 }
 
 .card-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 400px);
+    grid-template-columns: 285px 1fr 1fr;
+    column-gap: 35px;
     justify-content: center;
     text-align: center;
     width: 100%;
+    padding-top: 66px;
 }
 
 .card-title {

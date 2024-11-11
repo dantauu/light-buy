@@ -1,5 +1,4 @@
 //Root
-
 @mixin flex-center {
     display: flex;
     align-items: center;
@@ -8,12 +7,34 @@
 
 //colors-light-theme
 $main-color: #FE5F00;
-$color-card: #FFF7EE;
+$color-card: #f8ca96ad;
 $color-link: #000;
 $back-body: #fff;
 
 // //colors-dark-theme
 // $back-body_dark: #000;
+
+//FONTS
+@font-face {
+    font-family: 'Nunito-black';
+    src: url('../assets/fonts/Nunito-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'Montserrat-B';
+    src: url('../assets/fonts/Montserrat-Bold.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-M';
+    src: url('../assets/fonts/Montserrat-Medium.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
 
 *,
 *::before,

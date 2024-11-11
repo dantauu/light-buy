@@ -7,6 +7,11 @@
     align-items: center;
 }
 
+.light-text__inner {
+    font-family: "Nunito-black";
+    font-size: 24px;
+}
+
 .light-part {
     @include flex-center;
     gap: 15px;
@@ -52,6 +57,8 @@
 
 .header-welcome__btn {
     color: $main-color;
+    font-size: 15px;
+    font-family: "Montserrat-M";
 }
 
 .header-right {

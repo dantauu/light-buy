@@ -6,6 +6,8 @@
 }
 
 .assort-title {
+    font-family: 'Montserrat-B';
+    font-size: 30px;
     padding-bottom: 20px;
 }
 
@@ -24,6 +26,7 @@
 
 .assort-button {
     @include flex-center;
+    font-family: 'Montserrat-M';
     gap: 8px;
     background: none;
     border: none;

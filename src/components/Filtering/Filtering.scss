@@ -2,6 +2,13 @@
 
 .filter-main__wrapper {
     padding-top: 36px;
+    width: 355px;
+    padding-left: 85px;
+}
+
+.filter-discount__inner {
+    font-family: 'Montserrat-M';
+    font-size: 15px;
 }
 
 .after-filter {
@@ -13,4 +20,61 @@
 
 .filter-title {
     padding-bottom: 30px;
+    font-family: 'Montserrat-B';
+}
+
+.price-input__from {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    width: 125px;
+    padding-left: 7px;
+}
+
+.input-from__inner {
+    border: none;
+    outline: none;
+    width: 90px;
+    height: 40px;
+    font-size: 18px;
+}
+
+.price-wrapper {
+    padding-top: 30px;
+}
+
+.price-wrapper__text {
+    border-top: 1px solid #e0dfdf;
+    padding: 31px 0 30px 0;
+    font-family: 'Montserrat-B';
+}
+
+.input-from__inner::placeholder {
+    font-size: 15px;
+}
+
+input[type="number"]::-webkit-inner-spin-button, 
+    input[type="number"]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+}
+
+.price-ruble {
+    width: 12px;
+}
+
+.price-input__wrapper {
+    display: flex;
+    gap: 15px;
+    padding-bottom: 30px;
+}
+
+.before-filter__title {
+    font-family: 'Montserrat-B';
+    padding-bottom: 14px;
+}
+
+.before-filter {
+    border-top: 1px solid #e0dfdf;
+    padding-top: 31px;
 }
