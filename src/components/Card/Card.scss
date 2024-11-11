@@ -4,14 +4,26 @@
     background: $color-card;
     padding: 24px 37px;
     width: 270px;
+    height: 300px;
+}
+
+.card {
+    width: 285px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img__inner {
+    width: 50px;
 }
 
 .card-wrapper {
-    @include flex-center;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 400px);
+    justify-content: center;
     text-align: center;
-    width: 285px;
-    height: 420px;
+    width: 100%;
 }
 
 .card-title {

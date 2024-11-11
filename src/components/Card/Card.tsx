@@ -1,36 +1,33 @@
-import { FC } from "react"
+import { CARDS } from "../../data/data"
 import './Card.scss'
 
 
-type CardProps = {
-		title?: string,
-		description?: string,
-		price?: number,
-		img: string,
-}
-
-const Card: FC<CardProps> = ({ title, description, price, img }) => {
+const Card = () => {
 	return (
 		<div className='card-wrapper'>
-			<div className='card-img'>
-				<img src={img} alt='' />
+			{CARDS.map((item, index) => (
+			<div className='card' key={index}>
+				<div className='card-img'>
+				<img className='card-img__inner' src={item.img} alt='' />
 			</div>
 			<div className='card-title'>
-				<h3>{title}</h3>
+				<h3>{item.title}</h3>
 			</div>
 			<div className='card-description'>
-				<p>{description}</p>
+				<p>{item.description}</p>
 			</div>
 			<div className='price-button'>
 				<div className='card-price'>
-					<p>от{price}</p>
+					<p>от{item.price}</p>
 				</div>
 				<div className='card-button'>
 					<button className="card-button__inner">Добавить</button>
 				</div>
 			</div>
+			</div>
+			))}
 		</div>
 	)
 }
-
+			
 export default Card

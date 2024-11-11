@@ -15,10 +15,9 @@
 
 .assort-list {
     @include flex-center;
-    background: #f9f9f9;
+    background: #ededed;
     border-radius: 20px;
-    max-width: 700px;
-    padding: 6px 30px 6px 30px;
+    max-width: 720px;
     height: 50px;
     gap: 20px;
 }
@@ -30,6 +29,15 @@
     border: none;
     cursor: pointer;
     color: $color-link;
+}
+
+.assort-butto-active {
+    @include flex-center;
+    border-radius: 10px;
+    color: $main-color;
+    background-color: #fff;
+    height: 37px;
+    width: 84px;
 }
 
 .arrow {
