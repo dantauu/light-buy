@@ -8,7 +8,7 @@
   display: block;
   position: relative;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 /* Кастомный чек бокс */
@@ -32,7 +32,7 @@
   position: absolute;
   border: 0.1em solid rgba(0, 0, 0, 0);
   left: 0;
-  top: 0;
+  top: 10px;
   width: 1.3em;
   height: 1.3em;
   border-radius: 0.25em;
@@ -40,7 +40,7 @@
 
 .check input:checked ~ .checkmark:after {
   left: 0.45em;
-  top: 0.25em;
+  top: 0.20em;
   width: 0.40em;
   height: 0.7em;
   border-color: #fff0 white white #fff0;

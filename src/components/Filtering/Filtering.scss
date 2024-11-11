@@ -1,0 +1,16 @@
+@import '../../app/index.scss';
+
+.filter-main__wrapper {
+    padding-top: 36px;
+}
+
+.after-filter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+}
+
+.filter-title {
+    padding-bottom: 30px;
+}
