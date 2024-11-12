@@ -24,6 +24,27 @@
     gap: 20px;
 }
 
+.assort-list__item.select {
+    padding-left: 12px;
+    background: #fff;
+    width: 100px;
+    height: 40px;
+    color: #fff;
+    transition: all 0.5s;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #0000003a;
+
+        .assort-button {
+            color: #FE5F00;
+        }
+            .arrow {
+                transform: rotate(90deg);
+                transition: all 0.3s ease-out
+            }
+}
+
 .assort-button {
     @include flex-center;
     font-family: 'Montserrat-M';
@@ -34,16 +55,29 @@
     color: $color-link;
 }
 
-.assort-butto-active {
-    @include flex-center;
-    border-radius: 10px;
-    color: $main-color;
-    background-color: #fff;
-    height: 37px;
-    width: 84px;
-}
-
 .arrow {
     width: 8px;
-    transform: rotate(90deg);
+    transform: rotate(-90deg);
+}
+
+.drop-down {
+    position: relative;
+}
+
+.drop-list {
+    display: no;
+    position: absolute;
+    line-height: 30px;
+    left: 41%;
+    background: #fff;
+    box-shadow: 0 0 10px #0000005c;
+    padding: 20px;
+}
+
+.drop-list-0 {
+    display: none;
+}
+
+.drop-active {
+    display: block;
 }

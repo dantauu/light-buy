@@ -78,3 +78,37 @@ input[type="number"]::-webkit-inner-spin-button,
     border-top: 1px solid #e0dfdf;
     padding-top: 31px;
 }
+
+.open-full_wrapper {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    cursor: pointer;
+    width: 130px;
+}
+
+.open-full__inner {
+    font-family: 'Montserrat-M';
+    font-size: 15px;
+    color: $main-color;
+}
+
+.open-full-img__inner {
+    width: 25px;
+}
+
+.apply {
+    padding-top: 70px;
+}
+
+.apply-button {
+    width: 244px;
+    height: 50px;
+    background: $main-color;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    font-family: 'Montserrat-M';
+    font-size: 16px;
+    cursor: pointer;
+}

@@ -1,5 +1,6 @@
 import { FC } from "react"
 import { Checkbox } from "../shared/Checkbox"
+import plus from '../../assets/img/plus.svg'
 import rubleIcon from '../../assets/img/ruble.png'
 import './Filtering.scss'
 
@@ -71,6 +72,19 @@ export const Filtering = () => {
 							<FilterItem text='Детской' />
 							<FilterItem text='Спальной' />
 						</div>
+					</div>
+					<label htmlFor='plus'>
+						<div className='open-full_wrapper'>
+							<div className='open-full__img'>
+								<img className='open-full-img__inner' src={plus} alt='' />
+							</div>
+							<div className='open-full__text' id="plus">
+								<p className='open-full__inner'>Показать всё</p>
+							</div>
+						</div>
+					</label>
+					<div className='apply'>
+						<button className='apply-button'>Применить</button>
 					</div>
 				</div>
 			</div>
