@@ -35,7 +35,7 @@ export const Header = () => {
 					</label>
 
 					<div className='header-right'>
-                        {/* ЗДЕСЬ КНОПКА ТЕМНОЙ ТЕМЫ */}
+						{/* ЗДЕСЬ КНОПКА ТЕМНОЙ ТЕМЫ */}
 						<div className='header-right__welcome'>
 							<div className='header-welcome__img'>
 								<img
@@ -44,7 +44,11 @@ export const Header = () => {
 									alt=''
 								/>
 							</div>
-							<div className='header-welcome__btn'>Войти</div>
+							<div className='header-welcome__btn'>
+								<p className="header-welcome-btn__inner">
+									Войти	
+								</p> 
+							</div>
 						</div>
 						<div className='header-welcome'>
 							<img className='header-welcome__img' src={basketIcon} alt='' />

@@ -1,0 +1,59 @@
+@import '../../app/index.scss';
+
+.pagination {
+    @include flex-center;
+    gap: 12px;
+    padding-bottom: 40px;
+}
+
+.pagination-btn {
+    font-family: 'Montserrat-M';
+    border: none;
+    border: 1px solid #c5c4c4;
+    background: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 15px;
+    color: #888;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.4s ease-in-out;
+
+        &:focus {
+            background: $main-color;
+            color: #fff;
+            border: none;
+            transition: all 0.4s ease-in-out;
+        }
+}
+
+.select {
+    background: $main-color;
+}
+
+.arrow-pagitanion {
+    @include flex-center;
+    border: 1px solid #c5c4c4;
+    width: 45px;
+    height: 45px;
+    border-radius: 15px;
+    cursor: pointer;
+    background: none;
+    transition: all 0.5s ease-in-out;
+
+    &:focus {
+            background: $main-color;
+            color: #fff;
+            border: none;
+            transition: all 0.5s ease-in-out;
+        }
+}
+
+
+.pagination-left {
+    width: 10px;
+}
+
+.pagination-right {
+    width: 10px;
+}

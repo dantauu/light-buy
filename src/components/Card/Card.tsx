@@ -1,15 +1,23 @@
 import { useState } from "react"
 import { CARDS } from "../../data/data"
+import loadingIcon from '../../assets/img/loading.png'
 import './Card.scss'
 
+type loading = {
+	loading: symbol,
+}
 
-const Card = () => {
+const Card = ({loading}: loading) => {
 
-const [items, setItems] = useState(CARDS)
-
+const [items, _] = useState(CARDS)
+	if (loading) {
+		return (
+			<img src={loadingIcon} alt="" />
+		)
+	} else
 	return (
 		<div className='card-wrapper'>
-			{items.map((item, index) => index < 6 ? (
+			{items.map((item, index) => ( //index < 6 ? ()
 			<div className='card' key={index}>
 				<div className='card-img'>
 				<img className={`card-img__inner ${index === 2 ? 'modify' : ''}`} src={item.img} alt='' />
@@ -29,7 +37,7 @@ const [items, setItems] = useState(CARDS)
 				</div>
 			</div>
 			</div>
-			) : null)}
+			))} {':null'}
 		</div>
 	)
 }

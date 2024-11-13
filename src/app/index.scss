@@ -5,6 +5,12 @@
     justify-content: center;
 }
 
+@mixin button-reset {
+    background: none;
+    border: none;
+    font-family: 'Montserrat-M';
+}
+
 //colors-light-theme
 $main-color: #FE5F00;
 $color-card: #f8ca96ad;
