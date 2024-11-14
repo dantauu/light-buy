@@ -3,12 +3,11 @@
 .pagination {
     @include flex-center;
     gap: 12px;
-    padding-bottom: 40px;
+    padding: 40px 0 40px 0;
 }
 
 .pagination-btn {
     font-family: 'Montserrat-M';
-    border: none;
     border: 1px solid #c5c4c4;
     background: none;
     width: 45px;
@@ -18,13 +17,6 @@
     cursor: pointer;
     font-size: 15px;
     transition: all 0.4s ease-in-out;
-
-        &:focus {
-            background: $main-color;
-            color: #fff;
-            border: none;
-            transition: all 0.4s ease-in-out;
-        }
 }
 
 .select {
@@ -39,16 +31,29 @@
     border-radius: 15px;
     cursor: pointer;
     background: none;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
-    &:focus {
+        &:focus {
             background: $main-color;
-            color: #fff;
-            border: none;
-            transition: all 0.5s ease-in-out;
         }
 }
 
+.color {
+    @include flex-center;
+    color: #fff;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 15px;
+    cursor: pointer;
+    background: $main-color;
+    transition: all 0.3s ease-in-out;
+
+        .pagination-btn {
+            border: none;
+            color: #fff;
+        }
+}
 
 .pagination-left {
     width: 10px;
