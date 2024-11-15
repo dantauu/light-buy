@@ -1,15 +1,15 @@
-import { Header } from "../components/Header/Header.tsx"
-import { Assortement } from "../components/Assortement/Assortement.tsx"
-import { Home } from "../pages/Home/Home.tsx"
+import { Route, Routes } from "react-router-dom"
+import Home from "../pages/Home/Home.tsx"
+import { Layout } from "../components/Layout/Layout.tsx"
 
 function App() {
-
   return (
-		<>
-			<Header />
-			<Assortement />
-			<Home />
-		</>
+		<Routes>
+			<Route path="/" element={<Layout />}>
+				{/* <Route path='' element={<Home />} index /> */}
+				<Route path="/home" element={<Home />} />
+			</Route>
+		</Routes>
 	)
 }
 

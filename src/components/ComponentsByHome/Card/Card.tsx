@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { CARDS } from "../../data/data"
-import plusIcon from '../../assets/img/plus.svg'
+import { CARDS } from "../../../data/data"
+import plusIcon from '../../../assets/img/plus.svg'
 import './Card.scss'
 
 

@@ -1,25 +1,13 @@
-import { Filtering } from "../../components/Filtering/Filtering";
-import Card, { CardSecond } from "../../components/Card/Card";
-import { Pagination } from "../../components/Pagination/Pagination";
-import './Home.scss'
-import { useState } from "react";
+import { Assortement } from '../../components/ComponentsByHome/Assortement/Assortement'
+import { FilterAndCardPagination } from '../../components/ComponentsByHome/FilterAndCardPagination/FilterAndCardPagination'
 
-export const Home = () => {
-    const [ tab, setTab ] = useState('card')
-    return (
-			<>
-				<div className='home-wrapper'>
-					<div className='home-left'>
-						<Filtering />
-					</div>
-					{tab === 'card' && <div className='home-right'>
-							<Card />
-						</div>}
-					{tab === 'second-card' && (
-                        <CardSecond />
-					)}
-				</div>
-				<Pagination active={tab} onChange={(current) => setTab(current)} />
-			</>
-		)
+const Home = () => { 
+	return (
+		<>
+			<Assortement />
+			<FilterAndCardPagination />
+		</>
+	)
 }
+
+export default Home

@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
-import { useClickOutside } from '../../hooks/useClickOutside'
-import arrow from '../../assets/img/arrow.svg'
+import { useClickOutside } from '../../../hooks/useClickOutside'
+import arrow from '../../../assets/img/arrow.svg'
 import './Assortement.scss'
 
 const AssortementNav = [
