@@ -73,8 +73,7 @@ export const Assortement = () => {
 				<div className='drop-wrapper'>
 					<div
 						ref={dropDownRef}
-						className={`drop-down ${isActive ? 'active' : ''}`}
-					>
+						className={`drop-down ${isActive ? 'active' : ''}`}>
 						<ul className='drop-list'>
 							<li className='drop-list__item'>
 								<button className='drop-list__btn'>

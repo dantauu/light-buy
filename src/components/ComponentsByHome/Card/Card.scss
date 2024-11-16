@@ -12,11 +12,18 @@
 }
 
 .card {
-    width: 285px;
-    min-height: 440px;
     display: flex;
+    justify-content: center;
+    padding-left: 7px;
+    width: 285px;
+    min-height: 460px;
     text-align: left;
     flex-direction: column;
+}
+
+.card:hover {
+        background: #c6c6c657;
+        border-radius: 20px;
 }
 
 .card-img__inner {
@@ -52,7 +59,7 @@
     width: 125px;
     height: 42px;
     border-radius: 10px;
-    background: rgba(248, 202, 150, 0.6784313725);
+    background: rgba(255, 140, 9, 0.19);;
     cursor: pointer !important;
 }
 
@@ -85,6 +92,10 @@
 .modify-fix {
     padding-left: 70px;
     width: 350px;
+}
+
+.modify-pad {
+    margin-top: 23px;
 }
 
 .modify-next-fix {

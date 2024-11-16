@@ -1,7 +1,7 @@
 import mainLogo from '../../../assets/img/main-logo.svg'
 import profileIcon from '../../../assets/img/profile.svg'
 import basketIcon from '../../../assets/img/basket.svg'
-// import moonIcon from '../../assets/img/moon.png'
+import moonIcon from '../../../assets/img/moon.png'
 import glass from '../../../assets/img/glass.png'
 import './Header.scss'
 import { Link } from 'react-router-dom'
@@ -37,8 +37,10 @@ export const Header = () => {
 					</label>
 
 					<div className='header-right'>
-						{/* ЗДЕСЬ КНОПКА ТЕМНОЙ ТЕМЫ */}
-						<Link to='/home' className='header-right__welcome'>
+							<div className="header-right__img">
+								<img src={moonIcon} alt="" />
+							</div>
+						<Link to='/' className='header-right__welcome'>
 							<div className='header-welcome__img'>
 								<img
 									className='header-welcome__img__inner'

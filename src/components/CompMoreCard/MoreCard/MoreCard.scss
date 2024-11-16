@@ -1,0 +1,75 @@
+@import '../../../app/index.scss';
+
+.more-card-img__inner {
+    width: 350px;
+}
+
+.more-card__img {
+    background: $color-card;
+    @include flex-center;
+    width: 630px;
+    height: 450px;
+    border-radius: 30px;
+}
+
+.more-card__info {
+    @include flex-center;
+    gap: 100px;
+}
+
+.more-card__title {
+    font-family: 'Montserrat-B';
+    font-size: 23px;
+}
+
+.more-card__right {
+    @include flex-center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.more-card__description {
+    font-family: 'Montserrat-M';
+    line-height: 2;
+    max-width: 540px;
+}
+
+.more-card__btn {
+    @include button-reset;
+    width: 290px;
+    height: 55px;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    color: $color-white;
+    background: $main-color;
+}
+
+.more-card__logout {
+    @include flex-center;
+    width: 150px;
+    border-radius: 20px;
+    gap: 15px;
+    background: $color-card;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+.logout-text {
+    font-family: 'Montserrat-M';
+    font-size: 15px;
+    color: $main-color;
+}
+
+.logout-card__img {
+    padding-top: 5px;
+    width: 40px;
+}
+
+.modify-card {
+    width: 500px;
+}
+
+.modify-padding {
+    padding-top: 51px;
+}

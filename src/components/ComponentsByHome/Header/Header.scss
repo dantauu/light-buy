@@ -67,12 +67,17 @@
 }
 
 .header-right {
-    display: flex;
+    @include flex-center;
     gap: 10px;
 }
 
 .light-img {
     width: 60px;
+}
+
+.header-right__img {
+    width: 30px;
+    cursor: pointer;
 }
 
 .header-input__img {
