@@ -104,7 +104,7 @@ export const CARDS: CardsFromServer = [
 		title: 'Весы Smart Scale 2',
 		description:
 			'Умные весы от Xiaomi имеющие возможность синхронизации с телефоном на ОС Android, IOS.',
-		price: 18000,
+		price: 2000,
 		img: scaleIcon,
 	},
 
@@ -114,7 +114,7 @@ export const CARDS: CardsFromServer = [
 		title: 'Умный унитаз Meishida',
 		description:
 			'Умный многофункциональный робот унитаз / туалет. Новинка и бестселлер 2024 года.',
-		price: 18000,
+		price: 52000,
 		img: unitazIcon,
 	},
 
@@ -134,7 +134,7 @@ export const CARDS: CardsFromServer = [
 		title: 'Датчик движения Uniel',
 		description:
 			'Датчик движения инфракрасный предназначен для автоматического включения и выключения нагрузки.',
-		price: 18000,
+		price: 29000,
 		img: deviceMoove,
 	},
 ]
@@ -154,7 +154,7 @@ export const MORECARD = [
 		title: 'Яндекс Станция 2',
 		description:
 			'Стильный центр умного дома. Отлично звучит, отвечает на вопросы, управляет другими устройствами, и всё это с безупречным дизайном.',
-		price: 6500,
+		price: 16800,
 		img: columnThree,
 	},
 
@@ -163,7 +163,7 @@ export const MORECARD = [
 		title: 'Колонка Яндекс Макс',
 		description:
 			'Мощный звук, яркий экран и расширенные возможности Алисы. Идеальное сочетание качества звука и интеллекта.',
-		price: 6500,
+		price: 30000,
 		img: columnFour,
 	},
 
@@ -172,7 +172,7 @@ export const MORECARD = [
 		title: 'Термостат Honeywell',
 		description:
 			' Оптимальный температурный режим без лишних усилий. Установите температуру с телефона и наслаждайтесь комфортом, экономя при этом энергию.',
-		price: 6500,
+		price: 9000,
 		img: termoOne,
 	},
 
@@ -181,7 +181,7 @@ export const MORECARD = [
 		title: 'Термостат Mijia',
 		description:
 			' Оптимальный температурный режим без лишних усилий. Установите температуру с телефона и наслаждайтесь комфортом, экономя при этом энергию.',
-		price: 6500,
+		price: 700,
 		img: termoTwo,
 	},
 
@@ -190,7 +190,7 @@ export const MORECARD = [
 		title: 'Навесная сушилка Mijia',
 		description:
 			'Стильно и практично. Сушите бельё быстро и удобно, экономя место. Идеальное решение для небольших квартир.',
-		price: 6500,
+		price: 24000,
 		img: dryerOne,
 	},
 
@@ -199,7 +199,7 @@ export const MORECARD = [
 		title: 'Видеолглазок Doorbell',
 		description:
 			'Забудьте о нежданных гостях! Смотрите, кто у вашей двери, даже если вас нет дома. Получайте уведомления на телефон и общайтесь с гостями удаленно.',
-		price: 6500,
+		price: 8400,
 		img: videoEaseOne,
 	},
 
@@ -208,7 +208,7 @@ export const MORECARD = [
 		title: 'Камера Xiaomi Mijia',
 		description:
 			'Надёжная защита вашего дома. Высокое качество изображения, ночное видение и удобное управление через приложение.',
-		price: 6500,
+		price: 18000,
 		img: cameraOne,
 	},
 
@@ -217,7 +217,7 @@ export const MORECARD = [
 		title: 'Весы Smart Scale 2',
 		description:
 			'Следите за своим здоровьем! Точные измерения веса, анализа состава тела, и синхронизация данных с приложением.',
-		price: 6500,
+		price: 2000,
 		img: scaleIcon,
 	},
 
@@ -226,7 +226,7 @@ export const MORECARD = [
 		title: 'Умный унитаз Meishida',
 		description:
 			'Комфорт нового уровня! Функции биде, подогрев сиденья и многое другое сделают посещение туалета настоящим удовольствием.',
-		price: 6500,
+		price: 52490,
 		img: unitazIcon,
 	},
 
@@ -235,7 +235,7 @@ export const MORECARD = [
 		title: 'Пылесос Midea VCR S8+',
 		description:
 			'Чистота без усилий! Мощная уборка, автоматическая очистка пылесборника и удобное управление.',
-		price: 6500,
+		price: 18000,
 		img: vacuumIcon,
 	},
 
@@ -244,7 +244,7 @@ export const MORECARD = [
 		title: 'Датчик движения Uniel',
 		description:
 			'Умный свет и безопасность. Включайте свет автоматически при движении и отключайте его, когда никого нет.',
-		price: 6500,
+		price: 29000,
 		img: deviceMoove,
 	},
 ]
