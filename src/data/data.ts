@@ -1,15 +1,19 @@
 import columnOne from '../assets/img/yandex_kolonka.png'
+import columnTwo from '../assets/img/yandex-kolonka.png'
 import columnThree from '../assets/img/yandex-krestina.png'
 import columnFour from '../assets/img/yandex-krestina-2.png'
 import dryerOne from '../assets/img/xiaomi-sushilka-1.png'
+import dryerTwo from '../assets/img/xiaomi-sushilka-2.png'
 import termoOne from '../assets/img/termo-honeywell.png'
 import termoTwo from '../assets/img/xiaomi-termo-1.png'
 import videoEaseOne from '../assets/img/video-ease-1.png'
+import videoEaseTwo from '../assets/img/video-ease-2.png'
 import cameraOne from '../assets/img/xiaomi-camera.png'
 import scaleIcon from '../assets/img/Smart-Scale.png'
 import unitazIcon from '../assets/img/unitaz.png'
 import vacuumIcon from '../assets/img/vacuum-cleaner.png'
 import deviceMoove from '../assets/img/device-moov.png'
+
 
 
 export type CardsServer = {
@@ -147,6 +151,7 @@ export const MORECARD = [
 			'Ваш личный помощник с невероятными возможностями! Задавайте вопросы, генерируйте тексты, управляйте умным домом – всё в одном устройстве. Больше, чем просто голосовой помощник – это ваш интеллектуальный компаньон.',
 		price: 6500,
 		img: columnOne,
+		imgTwo: columnTwo,
 	},
 
 	{
@@ -192,6 +197,7 @@ export const MORECARD = [
 			'Стильно и практично. Сушите бельё быстро и удобно, экономя место. Идеальное решение для небольших квартир.',
 		price: 24000,
 		img: dryerOne,
+		imgTwo: dryerTwo,
 	},
 
 	{
@@ -201,6 +207,7 @@ export const MORECARD = [
 			'Забудьте о нежданных гостях! Смотрите, кто у вашей двери, даже если вас нет дома. Получайте уведомления на телефон и общайтесь с гостями удаленно.',
 		price: 8400,
 		img: videoEaseOne,
+		imgTwo: videoEaseTwo,
 	},
 
 	{
