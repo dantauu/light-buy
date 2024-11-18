@@ -1,11 +1,10 @@
 import { MORECARD } from "../../../data/data"
 import { Link, useParams } from "react-router-dom"
 import logoutIcon from '../../../assets/img/logout.svg'
-import { Pagination } from 'swiper/modules'
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react'
 import './MoreCard.scss'
-import 'swiper/css'
-import 'swiper/css/pagination' 
+import { Pagination } from 'swiper/modules'
+
 
 
 export const MoreCard = () => {
