@@ -53,8 +53,6 @@ export const Filtering = () => {
 			<div className='filter-main__wrapper'>
 				<div className='container'>
 					<h2 className='filter-title'>Фильтрация</h2>
-					<FilterItem text='Со скидкой' />
-					<FilterItem text='Новинки' />
 					<div className='price-wrapper'>
 						<h2 className='price-wrapper__text'>Цена от и до</h2>
 						<div className='price-input__wrapper'>

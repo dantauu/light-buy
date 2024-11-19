@@ -16,35 +16,40 @@
 
 .more-card__info {
     display: flex;
-    // gap: 35px;
+    gap: 25px;
+}
+
+.more-card__price {
+    font-family: 'Montserrat-B';
+    font-size: 20px;
 }
 
 .more-card__title {
     font-family: 'Montserrat-B';
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .more-card__right {
     display: flex;
-    height: 200px;
+    height: 220px;
     flex-direction: column;
-    gap: 50px;
+    gap: 15px;
     background: #fff;
     box-shadow: 0 0 10px #00000047;
     border-radius: 10px;
-    padding: 40px 50px 40px 50px;
+    padding: 40px;
+    width: 450px;
 }
 
 .more-card__description {
     font-family: 'Montserrat-M';
     line-height: 2;
     max-width: 540px;
-    text-align: center;
 }
 
 .more-card-btn__inner {
     @include button-reset;
-    width: 290px;
+    width: 230px;
     height: 55px;
     border-radius: 20px;
     font-size: 15px;
@@ -56,7 +61,6 @@
 .more-card__midle {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 30px;
 }
 
@@ -81,9 +85,31 @@
     width: 40px;
 }
 
+.more-card__country {
+    display: flex;
+    justify-content: space-between;
+
+    :nth-child(2) {
+        flex: 1 0;
+        height: 0.3px;
+        margin-top: 13px;
+    }
+}
+
+.more-card-country__text {
+    font-family: 'Montserrat-M';
+    color: rgb(203, 203, 203);
+}
+
+.more-card-country__inner {
+    font-family: 'Montserrat-M';
+    font-size: 13px;
+}
+
 .modify-card {
     width: 550px !important;
 }
+
 
 // .modify-padding {
 //     padding-top: 51px;
@@ -116,7 +142,6 @@
 .swiper-pagination-bullet {
   width: 32px !important;
   height: 32px !important;
-  text-align: center;
   line-height: 32px;
   font-size: 18px;
   color: #fff !important;

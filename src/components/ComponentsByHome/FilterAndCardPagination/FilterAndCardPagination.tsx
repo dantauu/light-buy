@@ -1,10 +1,14 @@
 import { Filtering } from '../../ComponentsByHome/Filtering/Filtering'
-import Card, { CardSecond } from '../../ComponentsByHome/Card/Card'
+import Card, { CardSecond } from '../Card/Card'
 import { Pagination } from '../../ComponentsByHome/Pagination/Pagination'
 import './FilteringAndCardPagination.scss'
-import { useState } from 'react'
+import { FC, useState } from 'react'
 
-export const FilterAndCardPagination = () => {
+type FilterAndCardProps = {
+	searchValue: string
+}
+
+export const FilterAndCardPagination:FC<FilterAndCardProps> = ({ searchValue }) => {
 	const [tab, setTab] = useState('card')
 	return (
 		<>
@@ -14,7 +18,7 @@ export const FilterAndCardPagination = () => {
 				</div>
 				{tab === 'card' && (
 					<div className='home-right'>
-						<Card />
+						<Card searchValue={searchValue} />
 					</div>
 				)}
 				{tab === 'second-card' && <CardSecond />}

@@ -1,4 +1,4 @@
-@import '../../../app/index.scss';
+@import '../../../../app/index.scss';
 
 .card-img {
     background: $color-card;
@@ -31,13 +31,19 @@
 }
 
 .card-wrapper {
-    display: grid;
-    grid-template-columns: 285px 1fr 1fr;
+    // display: grid;
+    display: flex;
+    // grid-template-columns: 285px 1fr 1fr;
+    flex-wrap: wrap;
     column-gap: 35px;
     row-gap: 30px;
-    justify-content: center;
     text-align: center;
     padding-top: 66px;
+}
+
+.load {
+    width: 285px;
+    opacity: 1;
 }
 
 .card-title {
@@ -86,7 +92,7 @@
 }
 
 .modify {
-    width: 350px;
+    width: 380px;
 }
 
 .modify-fix {

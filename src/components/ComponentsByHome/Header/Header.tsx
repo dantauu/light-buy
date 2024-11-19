@@ -2,14 +2,20 @@ import mainLogo from '../../../assets/img/main-logo.svg'
 import profileIcon from '../../../assets/img/profile.svg'
 import basketIcon from '../../../assets/img/basket.svg'
 import moonIcon from '../../../assets/img/moon.png'
-import glass from '../../../assets/img/glass.png'
 import './Header.scss'
 import { Link } from 'react-router-dom'
+import { Search } from '../Search/Search'
+import { FC } from 'react'
 
-export const Header = () => {
-    return (
+type HeaderProps = {
+	searchValue: string
+	setSearchValue: React.Dispatch<React.SetStateAction<string>>
+}
+
+export const Header:FC<HeaderProps> = ({ searchValue, setSearchValue }) => {
+	return (
 		<>
-			 <div className='container'>
+			<div className='container'>
 				<div className='header-wrapper'>
 					<div className='light-part'>
 						<div className='light-img'>
@@ -20,26 +26,14 @@ export const Header = () => {
 						</div>
 					</div>
 
-					<label htmlFor='hI'>
-						<div className='header-input'>
-							<div className='header-input__img'>
-								<img src={glass} alt='glass' />
-							</div>
-							<div className='header-target__input'>
-								<input
-									placeholder='Поиск товара...'
-									id='hI'
-									type='text'
-									className='header-input__inner'
-								/>
-							</div>
-						</div>
-					</label>
+					<Search 
+					searchValue={searchValue} 
+					setSearchValue={setSearchValue} />
 
 					<div className='header-right'>
-							<div className="header-right__img">
-								<img src={moonIcon} alt="" />
-							</div>
+						<div className='header-right__img'>
+							<img src={moonIcon} alt='' />
+						</div>
 						<Link to='/' className='header-right__welcome'>
 							<div className='header-welcome__img'>
 								<img
@@ -49,9 +43,7 @@ export const Header = () => {
 								/>
 							</div>
 							<div className='header-welcome__btn'>
-								<p className="header-welcome-btn__inner">
-									Войти	
-								</p> 
+								<p className='header-welcome-btn__inner'>Войти</p>
 							</div>
 						</Link>
 						<div className='header-welcome'>
@@ -61,6 +53,5 @@ export const Header = () => {
 				</div>
 			</div>
 		</>
-		
-	)  
+	)
 }

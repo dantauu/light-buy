@@ -5,7 +5,24 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import './MoreCard.scss'
 import { Pagination } from 'swiper/modules'
 
+type InformationProps = {
+	name: string,
+	text: string | undefined,
+}
 
+export const MoreInformationCard = ({ name, text }:InformationProps) => {
+	return (
+		<div className='more-card__country'>
+			<div className='more-card-country__text'>
+				<p>{name}</p>
+			</div>
+			<div style={{ borderBottom: '1px dotted rgb(203, 203, 203) ' }}></div>
+			<div className='more-card-country__inner'>
+				<h3>{text}</h3>
+			</div>
+		</div>
+	)
+}
 
 export const MoreCard = () => {
     const { id } = useParams()
@@ -49,14 +66,20 @@ export const MoreCard = () => {
 							</Swiper>
 						</div>
 						<div className='more-card__midle'>
-							<div className='more-card__title'>
-								<h2>{card?.title}</h2>
-							</div>
+							<MoreInformationCard name={'Страна производства'} 
+							text={card?.country} />
+							<MoreInformationCard name={'Цвет'} 
+							text={card?.color} />
+							<MoreInformationCard name={'Год выпуска'} 
+							text={card?.date.toString()} />
 							<div className='more-card__description'>
 								<p>{card?.description}</p>
 							</div>
 						</div>
 						<div className='more-card__right'>
+							<div className='more-card__title'>
+								<h2>{card?.title}</h2>
+							</div>
 							<div className='more-card__price'>
 								<h3 className='more-card-price__inner'>
 									{card?.price}р
@@ -64,7 +87,7 @@ export const MoreCard = () => {
 							</div>
 							<div className='more-card__btn'>
 								<button className='more-card-btn__inner'>
-									Добавить в корзину за
+									Добавить в корзину
 								</button>
 							</div>
 						</div>
