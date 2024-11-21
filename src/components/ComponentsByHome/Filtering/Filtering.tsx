@@ -7,7 +7,7 @@ import { CARDS, CardsServer } from "../../../data/data"
 
 type FilterItemProps = {
 	text: string
-	onClick?: (text: string) => void
+	onClick: (text: string) => void
 }
 
 type FilterInputItem = {
@@ -73,8 +73,8 @@ export const Filtering: FC<FilteringProps> = ({ setCardsData }) => {
 				<div className='price-wrapper'>
 					<h2 className='price-wrapper__text'>Цена от и до</h2>
 					<div className='price-input__wrapper'>
-						<FilterInputItem text='От' />
-						<FilterInputItem text='До' />
+						<FilterInputItem text='От' onClick={() => {}} />
+						<FilterInputItem onClick={() => {}} text='До' />
 					</div>
 				</div>
 				<div className='before-filter'>
@@ -101,7 +101,9 @@ export const Filtering: FC<FilteringProps> = ({ setCardsData }) => {
 						</div>
 					</div>
 				</label>
-				
+				<div className='apply'>
+					<button className='apply-button'>Применить</button>
+				</div>
 			</div>
 		</div>
 	)
