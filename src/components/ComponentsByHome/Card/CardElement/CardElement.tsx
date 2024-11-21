@@ -20,8 +20,8 @@ export const CardElement: FC<ItemCardProps> =
 			<div onClick={() => navigate(`/more-card/${id}`)} className='card-img'>
 				<img
 					className={`card-img__inner 
-					${id === 3 && 'modify'}
-					${id === 2 && 'modify-pad'}`}
+					${id === 7 && 'modify'}
+					${id === 5 && 'modify-pad'}`}
 					src={img}
 					alt=''
 				/>

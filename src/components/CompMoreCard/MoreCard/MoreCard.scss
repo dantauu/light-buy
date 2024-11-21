@@ -9,8 +9,8 @@
 .more-card__img {
     background: $color-card;
     @include flex-center; 
-    width: 630px;
-    height: 450px;
+    min-width: 440px;
+    height: 440px;
     border-radius: 30px;
 }
 
@@ -42,9 +42,11 @@
 }
 
 .more-card__description {
+    padding: 40px 0 50px 0;
     font-family: 'Montserrat-M';
     line-height: 2;
-    max-width: 540px;
+    max-width: 600px;
+    font-size: 15px;
 }
 
 .more-card-btn__inner {

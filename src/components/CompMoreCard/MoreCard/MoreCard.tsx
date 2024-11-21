@@ -16,7 +16,7 @@ export const MoreInformationCard = ({ name, text }:InformationProps) => {
 			<div className='more-card-country__text'>
 				<p>{name}</p>
 			</div>
-			<div style={{ borderBottom: '1px dotted rgb(203, 203, 203) ' }}></div>
+			<div style={{ borderBottom: '1px dotted rgb(203, 203, 203)', width: '230px' }}></div>
 			<div className='more-card-country__inner'>
 				<h3>{text}</h3>
 			</div>
@@ -54,7 +54,7 @@ export const MoreCard = () => {
 								<SwiperSlide>
 									<img
 										className={`more-card-img__inner 
-										${id === '3' && 'modify-card'}
+										${id === '7' && 'modify-card'}
 										${id === '2' && 'modify-padding'}`}
 										src={card?.img}
 										alt=''
@@ -66,24 +66,40 @@ export const MoreCard = () => {
 							</Swiper>
 						</div>
 						<div className='more-card__midle'>
-							<MoreInformationCard name={'Страна производства'} 
-							text={card?.country} />
-							<MoreInformationCard name={'Цвет'} 
-							text={card?.color} />
-							<MoreInformationCard name={'Год выпуска'} 
-							text={card?.date.toString()} />
-							<div className='more-card__description'>
-								<p>{card?.description}</p>
-							</div>
+							<MoreInformationCard
+								name={'Страна производства'}
+								text={card?.country}
+							/>
+							<MoreInformationCard name={'Цвет'} text={card?.color} />
+							<MoreInformationCard
+								name={'Год выпуска'}
+								text={card?.date.toString()}
+							/>
+							<MoreInformationCard name='Поддержка AI' text={card?.supportAI} />
+							<MoreInformationCard
+								name='Управление с телефона'
+								text={card?.management}
+							/>
+							<MoreInformationCard name='Гарантия' text={card?.warranty} />
+							<MoreInformationCard
+								name='Срок гарантии'
+								text={card?.warrantyTerm.toString()}
+							/>
+							<MoreInformationCard
+								name='Ширина'
+								text={card?.width.toString()}
+							/>
+							<MoreInformationCard
+								name='Высота'
+								text={card?.height.toString()}
+							/>
 						</div>
 						<div className='more-card__right'>
 							<div className='more-card__title'>
 								<h2>{card?.title}</h2>
 							</div>
 							<div className='more-card__price'>
-								<h3 className='more-card-price__inner'>
-									{card?.price}р
-								</h3>
+								<h3 className='more-card-price__inner'>{card?.price}р</h3>
 							</div>
 							<div className='more-card__btn'>
 								<button className='more-card-btn__inner'>
@@ -91,6 +107,9 @@ export const MoreCard = () => {
 								</button>
 							</div>
 						</div>
+					</div>
+					<div className='more-card__description'>
+						<p>{card?.description}</p>
 					</div>
 				</div>
 			</div>

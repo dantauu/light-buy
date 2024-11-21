@@ -1,7 +1,8 @@
-import { useRef, useState } from 'react'
+import { FC, useRef, useState } from 'react'
 import { useClickOutside } from '../../../hooks/useClickOutside'
 import arrow from '../../../assets/img/arrow.svg'
 import './Assortement.scss'
+import { CARDS, CardsServer } from '../../../data/data'
 
 const AssortementNav = [
 	{ id: 1, name: 'Все' },
@@ -14,15 +15,29 @@ const More = [
 	{ name: 'Ещё' }
 ]
 
-export const Assortement = () => {
-	
-	const [select, setSelect] = useState<string>("Все");
+interface CategoryProps {
+	setCardsData: (data: CardsServer[]) => void
+}
+
+export const Assortement: FC<CategoryProps> = ({ setCardsData }) => {
+	const [select, setSelect] = useState<string>('')
+
 	const handleSelect = (name: string) => {
-		setSelect(name);
+		setSelect(name)
 	}
+
+	const changeCategory = (name: string) => {
+		if (name === 'Все') {
+			setCardsData(CARDS)
+		} else {
+			const filtered = CARDS.filter(card => card.category === name)
+			setCardsData(filtered)
+		}
+	}
+
 	//--Popup menu
 	const [isActive, setIsActive] = useState<boolean>(false)
-	
+
 	const dropDownRef = useRef(null)
 
 	const handleClickOutside = () => {
@@ -30,11 +45,11 @@ export const Assortement = () => {
 	}
 
 	const onClick = () => {
-		setIsActive(!isActive);
+		setIsActive(!isActive)
 	}
-	
+
 	useClickOutside(dropDownRef, handleClickOutside)
-//-- 
+	//--
 
 	return (
 		<div className='assort-wrapper'>
@@ -49,15 +64,15 @@ export const Assortement = () => {
 								key={index}
 								onClick={() => {
 									handleSelect(item.name)
-								}}>
-								<button className='assort-button'>
-									{item.name}
-								</button>
+									changeCategory(item.name)
+								}}
+							>
+								<button className='assort-button'>{item.name}</button>
 							</li>
 						))}
 						{More.map((item, id) => (
 							<button
-							key={id}
+								key={id}
 								onClick={() => {
 									handleSelect(item.name), onClick()
 								}}
@@ -73,15 +88,22 @@ export const Assortement = () => {
 				<div className='drop-wrapper'>
 					<div
 						ref={dropDownRef}
-						className={`drop-down ${isActive ? 'active' : ''}`}>
+						className={`drop-down ${isActive ? 'active' : ''}`}
+					>
 						<ul className='drop-list'>
 							<li className='drop-list__item'>
-								<button className='drop-list__btn'>
+								<button
+									onClick={() => changeCategory('Видеоглазок')}
+									className='drop-list__btn'
+								>
 									Видеоглазок
 								</button>
 							</li>
 							<li className='drop-list__item'>
-								<button className='drop-list__btn'>
+								<button
+									onClick={() => changeCategory('Камера')}
+									className='drop-list__btn'
+								>
 									Камера
 								</button>
 							</li>
