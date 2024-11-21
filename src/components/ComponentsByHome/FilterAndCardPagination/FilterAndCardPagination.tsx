@@ -8,18 +8,20 @@ import { CardsServer } from '../../../data/data'
 type FilterAndCardProps = {
 	searchValue: string
 	cardsData: CardsServer[]
+	setCardsData: (data: CardsServer[]) => void
 }
 
 export const FilterAndCardPagination: FC<FilterAndCardProps> = ({
 	searchValue,
 	cardsData,
+	setCardsData
 }) => {
 	const [tab, setTab] = useState('card')
 	return (
 		<>
 			<div className='home-wrapper'>
 				<div className='home-left'>
-					<Filtering cardsData={cardsData} />
+					<Filtering setCardsData={setCardsData} cardsData={cardsData} />
 				</div>
 				{tab === 'card' && (
 					<div className='home-right'>

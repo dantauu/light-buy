@@ -23,6 +23,7 @@ export type CardsServer = {
 	price: number
 	img: string
 	category: string,
+	filter: string,
 }
 
 export type CardsFromServer = CardsServer[]
@@ -37,6 +38,7 @@ export const CARDS: CardsFromServer = [
 		price: 6500,
 		img: columnOne,
 		category: 'Колонки',
+		filter: 'Детской',
 	},
 
 	//Отопление
@@ -48,6 +50,7 @@ export const CARDS: CardsFromServer = [
 		price: 9000,
 		img: termoOne,
 		category: 'Отопление',
+		filter: 'Коридора',
 	},
 
 	//Сушилки
@@ -57,8 +60,9 @@ export const CARDS: CardsFromServer = [
 		description:
 			'У Xiaomi Mi Mijia имеется 6 методов управления для сушки и контроля при температуре 45 градусов Цельсия',
 		price: 24000,
-		category: 'Сушилки',
 		img: dryerOne,
+		category: 'Сушилки',
+		filter: 'Уборной',
 	},
 
 	//Видеоглазок
@@ -68,8 +72,9 @@ export const CARDS: CardsFromServer = [
 		description:
 			'Обеспечит огромный прирост к уровню безопасности. Огромным плюсом являтся обзор видомости 80 градусов.',
 		price: 8400,
-		category: 'Видеоглазок',
 		img: videoEaseOne,
+		category: 'Видеоглазок',
+		filter: 'Коридора',
 	},
 
 	{
@@ -80,6 +85,7 @@ export const CARDS: CardsFromServer = [
 		price: 16800,
 		img: columnThree,
 		category: 'Колонки',
+		filter: 'Гостинной',
 	},
 
 	//Камера
@@ -88,9 +94,10 @@ export const CARDS: CardsFromServer = [
 		title: 'Камера Xiaomi Mijia',
 		description:
 			'Эргономичный дизайн и монолитный круглый корпус белого цвета, угол обзора - 360 градусов.',
-		category: 'Камера',
 		price: 18000,
 		img: cameraOne,
+		category: 'Камера',
+		filter: 'Коридора',
 	},
 
 	{
@@ -101,6 +108,7 @@ export const CARDS: CardsFromServer = [
 		price: 30000,
 		img: columnFour,
 		category: 'Колонки',
+		filter: 'Кухни',
 	},
 
 	{
@@ -108,9 +116,10 @@ export const CARDS: CardsFromServer = [
 		title: 'Термостат Mijia',
 		description:
 			'Bluetooth датчик температуры и влажности, цифровой гигрометр с ЖК дисплеем',
-		category: 'Отопление',
 		price: 700,
 		img: termoTwo,
+		category: 'Отопление',
+		filter: 'Гостинной',
 	},
 
 	//Умные весы
@@ -122,6 +131,7 @@ export const CARDS: CardsFromServer = [
 		price: 2000,
 		img: scaleIcon,
 		category: 'Отопление',
+		filter: 'Гостинной',
 	},
 
 	//Унитаз
@@ -133,6 +143,7 @@ export const CARDS: CardsFromServer = [
 		price: 52000,
 		img: unitazIcon,
 		category: 'Отопление',
+		filter: 'Уборной',
 	},
 
 	//Пылесос
@@ -144,6 +155,7 @@ export const CARDS: CardsFromServer = [
 		price: 18000,
 		img: vacuumIcon,
 		category: 'Отопление',
+		filter: 'Гостинной',
 	},
 
 	//Датчик движения
@@ -155,6 +167,7 @@ export const CARDS: CardsFromServer = [
 		price: 29000,
 		img: deviceMoove,
 		category: 'Отопление',
+		filter: 'Детской',
 	},
 ]
 

@@ -3,10 +3,11 @@ import { Checkbox } from "../../shared/Checkbox"
 import plus from '../../../assets/img/plus.svg'
 import rubleIcon from '../../../assets/img/ruble.png'
 import './Filtering.scss'
-import { CardsServer } from "../../../data/data"
+import { CARDS, CardsServer } from "../../../data/data"
 
 type FilterItemProps = {
 	text: string
+	onClick?: (text: string) => void
 }
 
 type FilterInputItem = {
@@ -15,22 +16,22 @@ type FilterInputItem = {
 
 type FilteringProps = {
 	cardsData: CardsServer[]
+	setCardsData: (data: CardsServer[]) => void
 }
 
-const FilterItem: FC<FilterItemProps> = ({ text }) => {
+const FilterItem: FC<FilterItemProps> = ({ text, onClick }) => {
 	return (
 		<>
 			<label htmlFor='con'>
 				<div className='after-filter'>
-					<div className='after-filter__discount'>
+					<div className='after-filter__discount' 
+					onClick={() => onClick(text)}>
 						<Checkbox />
 					</div>
 					<div className='after-filter__text'>
-						<p className='filter-discount__inner' id='con'>
-							{text}
-						</p>
-					</div>
-				</div>
+						<p className='filter-discount__inner' id='con'> {text} </p> 
+					</div> 
+				</div> 
 			</label>
 		</>
 	)
@@ -41,7 +42,7 @@ const FilterInputItem: FC<FilterItemProps> = ({ text }) => {
 		<label htmlFor='connect'>
 			<div className='price-input__from'>
 				<div className='price-wrapper__from'>
-					<input className='input-from__inner' placeholder={text} type='number' id='connect' />
+					<input className='input-from__inner' placeholder={text} type='number' />
 				</div>
 				<div className='price-ruble'>
 					<img src={rubleIcon} alt='' />
@@ -52,17 +53,19 @@ const FilterInputItem: FC<FilterItemProps> = ({ text }) => {
 }
 
 	const FilterItems = [
-		'Кухни',
-		'Уборной',
-		'Гостинной', 
-		'Коридора', 
-		'Детской', 
-		'Спальной', 
-
-		
+		{ id: 1, name: 'Кухни' },
+		{ id: 2, name: 'Уборной' },
+		{ id: 3, name: 'Гостинной' },
+		{ id: 4, name: 'Коридора' },
+		{ id: 5, name: 'Детской' },
+		{ id: 6, name: 'Спальной' },
 	]
 
-export const Filtering:FC<FilteringProps> = () => {
+export const Filtering: FC<FilteringProps> = ({ setCardsData }) => {
+	const changeCategorys = (name: string) => {
+		const filtered = CARDS.filter(card => card.filter === name)
+		setCardsData(filtered)
+	}
 	return (
 		<div className='filter-main__wrapper'>
 			<div className='container'>
@@ -78,7 +81,13 @@ export const Filtering:FC<FilteringProps> = () => {
 					<h2 className='before-filter__title'>Для</h2>
 					<div className='before-filter__wrapper'>
 						{FilterItems.map((item, index) => (
-							<FilterItem key={index} text={item} />
+							<FilterItem
+								key={index}
+								text={item.name}
+								onClick={() => {
+									changeCategorys(item.name)
+								}}
+							/>
 						))}
 					</div>
 				</div>
@@ -92,9 +101,7 @@ export const Filtering:FC<FilteringProps> = () => {
 						</div>
 					</div>
 				</label>
-				<div className='apply'>
-					<button className='apply-button'>Применить</button>
-				</div>
+				
 			</div>
 		</div>
 	)

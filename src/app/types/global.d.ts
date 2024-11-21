@@ -5,4 +5,5 @@ export interface CardData {
 	price: number
 	img: string
 	category: string | undefined
+	filter: string
 }

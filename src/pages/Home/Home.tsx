@@ -11,10 +11,9 @@ const Home:FC<HomeProps> = ({ searchValue }) => {
 	const [cardsData, setCardsData] = useState<CardsServer[]>(CARDS)
 	return (
 		<>
-			<Assortement
-				setCardsData={(data: CardsServer[]) => setCardsData(data)}
-			/>
+			<Assortement setCardsData={(data: CardsServer[]) => setCardsData(data)} />
 			<FilterAndCardPagination
+				setCardsData={(data: CardsServer[]) => setCardsData(data)}
 				cardsData={cardsData}
 				searchValue={searchValue}
 			/>
