@@ -31,11 +31,11 @@
 }
 
 .card-wrapper {
-    // display: grid;
-    display: flex;
-    // grid-template-columns: 285px 1fr 1fr;
-    flex-wrap: wrap;
-    column-gap: 35px;
+    display: grid;
+    // display: flex;
+    grid-template-columns: 285px 1fr 1fr;
+    // flex-wrap: wrap;
+    column-gap: 30px;
     row-gap: 30px;
     text-align: center;
     padding-top: 66px;
