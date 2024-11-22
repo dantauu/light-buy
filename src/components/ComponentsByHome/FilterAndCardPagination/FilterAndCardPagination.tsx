@@ -19,6 +19,7 @@ export const FilterAndCardPagination: FC<FilterAndCardProps> = ({
 	const [tab, setTab] = useState('card')
 	return (
 		<>
+		<div className="container">
 			<div className='home-wrapper'>
 				<div className='home-left'>
 					<Filtering setCardsData={setCardsData} cardsData={cardsData} />
@@ -31,6 +32,7 @@ export const FilterAndCardPagination: FC<FilterAndCardProps> = ({
 				{tab === 'second-card' && <CardSecond cardsData={cardsData} />}
 			</div>
 			<Pagination active={tab} onChange={current => setTab(current)} />
+				</div>
 		</>
 	)
 }
