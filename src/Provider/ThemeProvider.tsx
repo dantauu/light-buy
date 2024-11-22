@@ -6,7 +6,7 @@ interface ThemeContextValue {
 	setTheme: (newTheme: 'light' | 'dark') => void
 }
 
-export const ThemeContext = createContext<ThemeContextValue | any[]>([])
+export const ThemeContext = createContext<ThemeContextValue | any>([])
 
 export const ThemeProvider:FC <{children: ReactNode }> = ({ children }) => {
     const [theme, setTheme]: any = useLocalStorage('theme', 'light')
