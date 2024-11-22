@@ -1,11 +1,11 @@
 import mainLogo from '../../../assets/img/main-logo.svg'
 import profileIcon from '../../../assets/img/profile.svg'
 import basketIcon from '../../../assets/img/basket.svg'
-import moonIcon from '../../../assets/img/moon.png'
-import './Header.scss'
 import { Link } from 'react-router-dom'
 import { Search } from '../Search/Search'
 import { FC } from 'react'
+import { Theme } from '../../../Theme/Theme'
+import './Header.scss'
 
 type HeaderProps = {
 	searchValue: string
@@ -32,7 +32,7 @@ export const Header:FC<HeaderProps> = ({ searchValue, setSearchValue }) => {
 
 					<div className='header-right'>
 						<div className='header-right__img'>
-							<img src={moonIcon} alt='' />
+							<Theme />
 						</div>
 						<Link to='/' className='header-right__welcome'>
 							<div className='header-welcome__img'>

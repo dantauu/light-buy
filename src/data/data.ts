@@ -155,7 +155,7 @@ export const CARDS: CardsFromServer = [
 		price: 18000,
 		img: vacuumIcon,
 		category: 'Отопление',
-		filter: 'Гостинной',
+		filter: 'Спальной',
 	},
 
 	//Датчик движения

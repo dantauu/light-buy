@@ -9,6 +9,7 @@
 
 .light-text__inner {
     font-family: "Nunito-black";
+    color: $color-dark;
     font-size: 24px;
 }
 
@@ -76,8 +77,7 @@
 }
 
 .header-right__img {
-    width: 30px;
-    cursor: pointer;
+    padding-right: 18px;
 }
 
 .header-input__img {

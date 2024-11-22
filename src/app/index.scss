@@ -15,11 +15,13 @@
 $main-color: #FE5F00;
 $color-card: rgb(255 140 9 / 19%);
 $color-link: #000;
+$color-dark: #000;
+$color-card_dark: #ff74211a;
 $color-white: #fff;
 $back-body: #fff;
 
-// //colors-dark-theme
-// $back-body_dark: #000;
+//colors-dark-theme
+$back-body_dark: rgb(15,23,42);
 
 //FONTS
 @font-face {
@@ -41,6 +43,10 @@ $back-body: #fff;
     src: url('../assets/fonts/Montserrat-Medium.woff') format('woff');
     font-weight: 700;
     font-style: normal;
+}
+
+html,body {
+    transition: all 0.4s ease-in-out;
 }
 
 *,
@@ -74,11 +80,55 @@ img {
     padding: 0 30px 0 30px;
 }
 
-// body.dark {
-//    background: $back-body_dark;
-//    .header-input__inner {
-//         background: $dark-input;
-//    }
-// }
+body.dark {
+   background: $back-body_dark;
+    .light-text__inner {
+        color: $color-white;
+    }
+        .assort-title {
+            color: $color-white;
+        }
+            .filter-title {
+                color: $color-white;
+            }
+                .price-wrapper__text {
+                    color: $color-white;
+                }
+                    .before-filter__title {
+                        color: $color-white;
+                    }
+                        .filter-discount__inner {
+                            color: $color-white;
+                        }
+                            .card-img {
+                                background: $color-card_dark;
+                            }
+                                .card-title {
+                                    color: #dcdcdc;
+                                }
+                                    .card-price {
+                                        color: $color-white;
+                                    }
+                                        .more-card-country__inner {
+                                            color: $color-white;
+                                        }
+                                            .more-card__img {
+                                                background: $color-card_dark;
+                                            }
+                                                .more-card__description{
+                                                    color: $color-white;
+                                                }
+                                            .more-card__logout {
+                                                background: $color-card_dark;
+                                            }
+                                        .assort-list{
+                                            background: $color-card_dark;
+                                        }
+                                    .assort-button {
+                                        color: $color-white;
+                                    }
+                
+   }
+
 
 
