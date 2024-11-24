@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import glass from '../../../assets/img/glass.png'
+import glass from '../../assets/img/glass.png'
 
 type HeaderProps = {
 	searchValue: string

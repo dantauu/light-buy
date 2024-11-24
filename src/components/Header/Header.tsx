@@ -1,10 +1,10 @@
-import mainLogo from '../../../assets/img/main-logo.svg'
-import profileIcon from '../../../assets/img/profile.svg'
-import basketIcon from '../../../assets/img/basket.svg'
+import mainLogo from '../../assets/img/main-logo.svg'
+import profileIcon from '../../assets/img/profile.svg'
+import basketIcon from '../../assets/img/basket.svg'
 import { Link } from 'react-router-dom'
 import { Search } from '../Search/Search'
 import { FC } from 'react'
-import { Theme } from '../../../Theme/Theme'
+import { Theme } from '../../Theme/Theme'
 import './Header.scss'
 
 type HeaderProps = {

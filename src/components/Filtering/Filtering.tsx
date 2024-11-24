@@ -1,9 +1,9 @@
 import { FC } from "react"
-import { Checkbox } from "../../shared/Checkbox"
-import plus from '../../../assets/img/plus.svg'
-import rubleIcon from '../../../assets/img/ruble.png'
+import { Checkbox } from "../shared/Checkbox"
+import plus from '../../assets/img/plus.svg'
+import rubleIcon from '../../assets/img/ruble.png'
 import './Filtering.scss'
-import { CARDS, CardsServer } from "../../../data/data"
+import { CARDS, CardsServer } from "../../data/data"
 
 type FilterItemProps = {
 	text: string

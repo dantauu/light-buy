@@ -1,9 +1,9 @@
-import { MORECARD } from "../../../data/data"
+import { MORECARD } from "../../data/data"
 import { Link, useParams } from "react-router-dom"
-import logoutIcon from '../../../assets/img/logout.svg'
+import logoutIcon from '../../assets/img/logout.svg'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import './MoreCard.scss'
 import { Pagination } from 'swiper/modules'
+import './MoreCard.scss'
 
 type InformationProps = {
 	name: string,

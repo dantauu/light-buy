@@ -1,7 +1,7 @@
 import { FC, useState } from 'react'
-import { Assortement } from '../../components/ComponentsByHome/Assortement/Assortement'
-import { FilterAndCardPagination } from '../../components/ComponentsByHome/FilterAndCardPagination/FilterAndCardPagination'
-import { CARDS, CardsServer } from '../../data/data'
+import { Assortement } from '../components/Assortement/Assortement'
+import { FilterAndCardPagination } from '../components/FilterAndCardPagination/FilterAndCardPagination'
+import { CARDS, CardsServer } from '../data/data'
 
 type HomeProps = {
 	searchValue: string,

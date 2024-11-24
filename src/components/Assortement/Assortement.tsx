@@ -1,8 +1,8 @@
 import { FC, useRef, useState } from 'react'
-import { useClickOutside } from '../../../hooks/useClickOutside'
-import arrow from '../../../assets/img/arrow.svg'
+import { useClickOutside } from '../../hooks/useClickOutside'
+import arrow from '../../assets/img/arrow.svg'
 import './Assortement.scss'
-import { CARDS, CardsServer } from '../../../data/data'
+import { CARDS, CardsServer } from '../../data/data'
 
 const AssortementNav = [
 	{ id: 1, name: 'Все' },

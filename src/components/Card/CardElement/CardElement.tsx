@@ -1,4 +1,4 @@
-import plusIcon from '../../../../assets/img/plus.svg'
+import plusIcon from '../../../assets/img/plus.svg'
 import { useNavigate } from 'react-router-dom'
 import { FC } from 'react'
 import './CardElement.scss'

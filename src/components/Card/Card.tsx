@@ -1,4 +1,4 @@
-import { CardsServer } from "../../../data/data"
+import { CardsServer } from "../../data/data"
 import { FC } from "react"
 import { CardElement } from './CardElement/CardElement'
 

@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom"
-import { Header } from "../components/ComponentsByHome/Header/Header.tsx"
-import Home from "../pages/Home/Home.tsx"
+import { Header } from "../components/Header/Header.tsx"
+import Home from "../pages/Home.tsx"
 // import { Layout } from "../components/Layout/Layout.tsx"
-import { MoreCard } from "../components/CompMoreCard/MoreCard/MoreCard.tsx"
+import { MoreCard } from "../components/MoreCard/MoreCard.tsx"
 import { useState } from "react"
 import { ThemeProvider } from "../Provider/ThemeProvider.tsx"
 

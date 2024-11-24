@@ -1,9 +1,9 @@
-import { Filtering } from '../../ComponentsByHome/Filtering/Filtering'
+import { Filtering } from '../Filtering/Filtering'
 import Card, { CardSecond } from '../Card/Card'
-import { Pagination } from '../../ComponentsByHome/Pagination/Pagination'
+import { Pagination } from '../Pagination/Pagination'
 import './FilteringAndCardPagination.scss'
 import { FC, useState } from 'react'
-import { CardsServer } from '../../../data/data'
+import { CardsServer } from '../../data/data'
 
 type FilterAndCardProps = {
 	searchValue: string
