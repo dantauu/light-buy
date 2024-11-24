@@ -25,7 +25,8 @@ const FilterItem: FC<FilterItemProps> = ({ text, onClick, id }) => {
 		<>
 			<label htmlFor={id}>
 				<div className='after-filter'>
-					<div className='after-filter__discount' onClick={() => onClick(text)}>
+				 <div className='after-filter__discount' 
+				 onClick={() => onClick(text)}>
 						<Checkbox id={id} />
 					</div>
 					<div className='after-filter__text'>
@@ -55,7 +56,7 @@ const FilterInputItem: FC<FilterItemProps> = ({ text, id }) => {
 }
 
 	const FilterItems = [
-		{  name: 'Кухни' },
+		{ name: 'Кухни' },
 		{ id: 2, name: 'Уборной' },
 		{ id: 3, name: 'Гостинной' },
 		{ id: 4, name: 'Коридора' },

@@ -108,4 +108,5 @@
 .drop-list__btn {
     @include button-reset;
     cursor: pointer;
+    color: $color-dark;
 }

@@ -2,11 +2,12 @@
 
 .sun-btn {
     cursor: pointer;
+    transition: all 0.2s ease-in;
     @include button-reset;
 
     &:hover {
-        transition: all 0.4s ease-in;
-        transform: rotate(-0.25turn);
+        transition: all 0.2s ease-in;
+        transform: rotate(0.10turn);
     }
 }
 
@@ -17,8 +18,15 @@
 .moon-btn {
     cursor: pointer;
     @include button-reset;
+    transition: all 0.2s ease-in;
+
+     &:hover {
+        transition: all 0.2s ease-in;
+        transform: rotate(0.10turn);
+    }
 }
 
 .moon-btn__img {
     width: 37px;
+    opacity: 0.8;
 }
