@@ -20,7 +20,7 @@ interface CategoryProps {
 }
 
 export const Assortement: FC<CategoryProps> = ({ setCardsData }) => {
-	const [select, setSelect] = useState<string>('')
+	const [select, setSelect] = useState<string>('Все')
 
 	const handleSelect = (name: string) => {
 		setSelect(name)

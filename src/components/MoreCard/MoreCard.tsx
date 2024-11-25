@@ -1,7 +1,7 @@
 import { MORECARD } from "../../data/data"
-import { Link, useParams } from "react-router-dom"
-import logoutIcon from '../../assets/img/logout.svg'
+import { useParams } from "react-router-dom"
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { BackBtn } from "../shared/BackBtn/BackBtn"
 import { Pagination } from 'swiper/modules'
 import './MoreCard.scss'
 
@@ -38,12 +38,7 @@ export const MoreCard = () => {
     return (
 			<div className='more-wrapper'>
 				<div className='container'>
-					<Link to='/' className='more-card__logout'>
-						<div className='logout-wrapper'>
-							<img className='logout-card__img' src={logoutIcon} alt='' />
-						</div>
-						<p className='logout-text'>Назад</p>
-					</Link>
+					<BackBtn />
 					<div className='more-card__info'>
 						<div className='more-card__img'>
 							<Swiper

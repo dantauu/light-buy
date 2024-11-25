@@ -46,9 +46,9 @@ export const Header:FC<HeaderProps> = ({ searchValue, setSearchValue }) => {
 								<p className='header-welcome-btn__inner'>Войти</p>
 							</div>
 						</Link>
-						<div className='header-welcome'>
+						<Link to='/basket' className='header-welcome' >
 							<img className='header-welcome__img' src={basketIcon} alt='' />
-						</div>
+						</Link>
 					</div>
 				</div>
 			</div>

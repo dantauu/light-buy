@@ -1,0 +1,113 @@
+@import '../../app/index.scss';
+
+.container-basket {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.basket-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 90px;
+}
+
+.basket-card__wrapper {
+    margin-top: 90px;
+}
+
+.basket-top__img {
+    width: 40px;
+}
+
+.basket-clear__img {
+    width: 27px;
+}
+
+.basket-clear__text {
+    font-family: 'Montserrat-M';
+    font-size: 15px;
+    opacity: 0.4;
+    color: $color-dark;
+}
+
+.basket-left__text {
+    font-family: 'Montserrat-B';
+    font-size: 27px;
+    color: $color-dark;
+}
+
+.basket-top {
+    display: flex;
+    justify-content: center;
+    gap: 500px;
+}
+
+.basket-top__left {
+    @include flex-center;
+    gap: 18px;
+}
+
+.basket-clear {
+    @include flex-center;
+    gap: 3px;
+    cursor: pointer;
+}
+
+.basket-card {
+    @include flex-center;
+    height: 195px;
+    border-top: 1px solid #d3d3d3dd;
+    border-bottom: 1px solid #d3d3d3dd;
+    gap: 170px
+}
+
+.basket-img__title {
+    @include flex-center;
+}
+
+.bascet-card__count {
+    @include flex-center;
+}
+
+.basket-card__title {
+    color: $color-dark;
+    font-family: 'Montserrat-M';
+    font-size: 23px;
+}
+
+.basket-card-count__inner {
+    color: $color-dark;
+    padding-bottom: 3px;
+    font-size: 19px;
+}
+
+.basket-card__img {
+    width: 200px;
+}
+
+.basket-card-count-img__minus {
+    width: 27px;
+    cursor: pointer;
+}
+
+.basket-card-count-img__plus {
+    width: 27px;
+    cursor: pointer;
+}
+
+.basket-card__price {
+    font-family: 'Montserrat-B';
+    font-size: 19px;
+}
+
+.basket-card__krest {
+    border: 1px solid $main-color;
+    border-radius: 50%;
+    padding: 4px 5px 1px 5px;
+    cursor: pointer;
+}
+
+.basket-krest__img {
+    width: 20px;
+}
