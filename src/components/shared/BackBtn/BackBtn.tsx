@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logoutIcon from '../../../assets/img/logout.svg'
+import './BackBtn.scss'
 
 
 export const BackBtn = () => {

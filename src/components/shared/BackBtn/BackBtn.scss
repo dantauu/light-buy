@@ -1,0 +1,22 @@
+@import '../../../app/index.scss';
+
+.more-card__logout {//
+    @include flex-center;
+    width: 150px;
+    border-radius: 20px;
+    gap: 15px;
+    background: $color-card;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+.logout-text {//
+    font-family: 'Montserrat-M';
+    font-size: 15px;
+    color: $main-color;
+}
+
+.logout-card__img {//
+    padding-top: 5px;
+    width: 40px;
+}

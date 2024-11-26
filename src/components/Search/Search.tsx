@@ -1,12 +1,10 @@
-import { FC } from 'react'
+import { useContext } from 'react'
 import glass from '../../assets/img/glass.png'
+import { SearchContext } from '../../app/App'
 
-type HeaderProps = {
-	searchValue: string
-	setSearchValue: React.Dispatch<React.SetStateAction<string>>
-}
 
-export const Search:FC<HeaderProps> = ({ searchValue, setSearchValue }) => {
+export const Search = () => {
+	const { searchValue, setSearchValue }: any = useContext(SearchContext)	
 	return (
 		<label htmlFor='hI'>
 			<div className='header-input'>

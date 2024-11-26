@@ -55,10 +55,25 @@
 }
 
 .header-welcome {
+    position: relative;
     padding: 13px 17px 10px 15px;
     border: 1px solid $main-color;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.header-welcome__count {
+    @include flex-center;
+    position: absolute;
+    font-size: 20px;
+    color: $color-white;
+    font-family: 'Montserrat-B';
+    left: 70%;
+    bottom: 30px;
+    background: $main-color;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
 }
 
 .header-welcome__btn {

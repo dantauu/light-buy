@@ -3,16 +3,17 @@ import profileIcon from '../../assets/img/profile.svg'
 import basketIcon from '../../assets/img/basket.svg'
 import { Link } from 'react-router-dom'
 import { Search } from '../Search/Search'
-import { FC } from 'react'
 import { Theme } from '../../Theme/Theme'
+import { useSelector } from 'react-redux'
 import './Header.scss'
 
-type HeaderProps = {
-	searchValue: string
-	setSearchValue: React.Dispatch<React.SetStateAction<string>>
-}
+// type HeaderProps = {
+// 	searchValue: string
+// 	setSearchValue: React.Dispatch<React.SetStateAction<string>>
+// }
 
-export const Header:FC<HeaderProps> = ({ searchValue, setSearchValue }) => {
+export const Header = () => {
+	const { items } = useSelector((state: any) => state.card)
 	return (
 		<>
 			<div className='container'>
@@ -25,16 +26,12 @@ export const Header:FC<HeaderProps> = ({ searchValue, setSearchValue }) => {
 							<h2 className='light-text__inner'>Light Buy</h2>
 						</div>
 					</div>
-
-					<Search 
-					searchValue={searchValue} 
-					setSearchValue={setSearchValue} />
-
+					<Search />
 					<div className='header-right'>
 						<div className='header-right__img'>
 							<Theme />
 						</div>
-						<Link to='/' className='header-right__welcome'>
+						<div className='header-right__welcome'>
 							<div className='header-welcome__img'>
 								<img
 									className='header-welcome__img__inner'
@@ -45,9 +42,14 @@ export const Header:FC<HeaderProps> = ({ searchValue, setSearchValue }) => {
 							<div className='header-welcome__btn'>
 								<p className='header-welcome-btn__inner'>Войти</p>
 							</div>
-						</Link>
-						<Link to='/basket' className='header-welcome' >
-							<img className='header-welcome__img' src={basketIcon} alt='' />
+						</div>
+						<Link to='/basket' className='header-welcome'>
+							<div className=''>
+								<img className='header-welcome__img' src={basketIcon} alt='' />
+							</div>
+							<div className="header-welcome__count">
+								<p>{items.length}</p>
+							</div>
 						</Link>
 					</div>
 				</div>
