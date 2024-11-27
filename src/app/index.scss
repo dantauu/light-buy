@@ -17,6 +17,7 @@ $color-card: rgb(255 140 9 / 19%);
 $color-link: #000;
 $color-dark: #000;
 $color-card_dark: #ff74211a;
+$color-btn_back: rgba(255, 114, 33, 0.312);
 $color-white: #fff;
 $back-body: #fff;
 
@@ -119,7 +120,7 @@ body.dark {
                                                     color: $color-white;
                                                 }
                                             .more-card__logout {
-                                                background: $color-card_dark;
+                                                background: $color-btn_back;
                                             }
                                         .assort-list{
                                             background: $color-card_dark;
@@ -130,7 +131,27 @@ body.dark {
                                 .selected {
                                     color: $main-color;
                                 }
-                
+                            .basket-left__text {
+                                color: $color-white;
+                            }
+                        .basket-clear__text {
+                            color: $color-white;
+                        }
+                    .basket-card__title {
+                        color: $color-white;
+                    }
+                .basket-card-count__inner {
+                    color: $color-white;
+                }
+            .basket-card__price {
+                color: $color-white;
+            }
+        .full-count__text{
+            color: $color-white;
+        }
+    .full-price__text {
+        color: $color-white;
+    }
    }
 
 

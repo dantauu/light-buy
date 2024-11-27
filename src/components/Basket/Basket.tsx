@@ -58,13 +58,13 @@ export const Basket = () => {
 						)}
 						<div className='full-data'>
 							<div className='total-count'>
-								<p>
+								<p className='full-count__text'>
 								  Количество товаров:
 								  <span className='span-full-data'> {totalCount} шт.</span>
 								</p>
 							</div>
 							<div className='total-price'>
-								<p>
+								<p className='full-price__text'>
 								  Общая сумма:
 								  <span className='span-full-data'> {totalPrice}р</span>
 								</p>

@@ -27,7 +27,7 @@
 .basket-clear__text {
     font-family: 'Montserrat-M';
     font-size: 15px;
-    opacity: 0.4;
+    opacity: 0.6;
     color: $color-dark;
 }
 
@@ -55,45 +55,57 @@
 }
 
 .basket-card {
-    @include flex-center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     height: 195px;
     border-top: 1px solid #d3d3d3dd;
     border-bottom: 1px solid #d3d3d3dd;
-    gap: 170px
+    gap: 95px;
 }
 
 .basket-img__title {
     @include flex-center;
+    gap: 5px;
 }
 
 .bascet-card__count {
     @include flex-center;
+    gap: 9px;
 }
 
 .basket-card__title {
     color: $color-dark;
     font-family: 'Montserrat-M';
     font-size: 23px;
+    max-width: 170px;
 }
 
 .basket-card-count__inner {
+    font-family: 'Montserrat-M';
     color: $color-dark;
-    padding-bottom: 3px;
+    padding-bottom: 4px;
     font-size: 19px;
 }
 
 .basket-card__img {
-    width: 200px;
+    width: 140px;
 }
 
 .basket-card-count-img__minus {
+    @include flex-center;
+    border: 1px solid #FE5F00;
+    border-radius: 50%;
     width: 27px;
     cursor: pointer;
 }
 
 .basket-card-count-img__plus {
+   border: 1px solid #FE5F00;
+    border-radius: 50%;
     width: 27px;
     cursor: pointer;
+    display: flex;
 }
 
 .basket-card__price {
