@@ -4,9 +4,9 @@ import { Route, Routes } from "react-router-dom"
 import { Header } from "../components/Header/Header.tsx"
 import Home from "../pages/Home.tsx"
 import { Basket } from "../components/Basket/Basket.tsx"
-import { MoreCard } from "../components/MoreCard/MoreCard.tsx"
 import { createContext, useState } from "react"
 import { ThemeProvider } from "../Provider/ThemeProvider.tsx"
+import { MoreCard } from "../pages/MoreCard.tsx"
 
 export const SearchContext = createContext({ })
 
@@ -23,7 +23,12 @@ function App() {
 							element={<Home searchValue={searchValue} />}
 							index
 						/>
-						<Route path='/more-card/:id' element={<MoreCard />} />
+						<Route
+							path='/more-card/:id'
+							element={
+								<MoreCard />
+							}
+						/>
 						<Route path='/basket' element={<Basket />} />
 					</Routes>
 				</SearchContext.Provider>

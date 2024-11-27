@@ -35,7 +35,7 @@ const cardSlice = createSlice({
 
 		minusItem(state, action) {
 			const existingItem = state.items.find(item => item.id === action.payload)
-			if (existingItem && existingItem.count > 0) {
+			if (existingItem && existingItem.count > 1) {
 				existingItem.count--
 			}
 		},

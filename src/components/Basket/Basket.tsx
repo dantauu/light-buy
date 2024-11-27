@@ -45,16 +45,14 @@ export const Basket = () => {
 								</div>
 							</div>
 						</div>
-						{items.map(
-							(
+								{items.map((
 								item: JSX.IntrinsicAttributes & {
 									img: string
 									title: string
 									price: number
 									count: number
 									id: number
-								}
-							) => (
+								}) => (
 								<BasketElement key={item.id} {...item} />
 							)
 						)}

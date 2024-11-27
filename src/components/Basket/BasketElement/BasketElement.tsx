@@ -47,7 +47,7 @@ export const BasketElement: FC<BasketElementProps> =
 						<img src={minusIcon} />
 					</div>
 					<div className='basket-card-count__inner'>
-						<p>{itemCalculate.count ? itemCalculate.count : 1}</p>
+						<p>{itemCalculate.count}</p>
 					</div>
 					<div onClick={onClickPlusItem} className='basket-card-count-img__plus'>
 						<img src={plusIcon} />
