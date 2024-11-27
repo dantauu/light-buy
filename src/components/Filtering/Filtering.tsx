@@ -1,5 +1,4 @@
-import { FC } from "react"
-import { Checkbox } from "../shared/Checkbox/Checkbox"
+import { FC, useState } from "react"
 import plus from '../../assets/img/plus.svg'
 import rubleIcon from '../../assets/img/ruble.png'
 import './Filtering.scss'
@@ -18,26 +17,8 @@ type FilterInputItem = {
 type FilteringProps = {
 	cardsData: CardsServer[]
 	setCardsData: (data: CardsServer[]) => void
-}
-
-const FilterItem: FC<FilterItemProps> = ({ text, onClick, id }) => {
-	return (
-		<>
-			<label htmlFor={id}>
-				<div className='after-filter'>
-				 <div className='after-filter__discount' 
-				 onClick={() => onClick(text)}>
-						<Checkbox id={id} />
-					</div>
-					<div className='after-filter__text'>
-						<p className='filter-discount__inner' id={id}>
-							{text}
-						</p>
-					</div>
-				</div>
-			</label>
-		</>
-	)
+	onClick: () => void
+	name: string
 }
 
 const FilterInputItem: FC<FilterItemProps> = ({ text, id }) => {
@@ -56,7 +37,7 @@ const FilterInputItem: FC<FilterItemProps> = ({ text, id }) => {
 }
 
 	const FilterItems = [
-		{ name: 'Кухни' },
+		{ id: 1, name: 'Кухни' },
 		{ id: 2, name: 'Уборной' },
 		{ id: 3, name: 'Гостинной' },
 		{ id: 4, name: 'Коридора' },
@@ -64,10 +45,13 @@ const FilterInputItem: FC<FilterItemProps> = ({ text, id }) => {
 		{ id: 6, name: 'Спальной' },
 	]
 
-export const Filtering: FC<FilteringProps> = ({ setCardsData }) => {
-	const changeCategorys = (name: string) => {
+export const Filtering: FC<FilteringProps> = ({  setCardsData }) => {
+	const [select, setSelect] = useState('')
+	 	const handleSelect = (name: string) => {
+	 		setSelect(name)
+		}
 
-		console.log(name)
+	const changeCategorys = (name: string) => {
 		const filtered = CARDS.filter(card => card.filter === name)
 		setCardsData(filtered)
 	}
@@ -86,14 +70,19 @@ export const Filtering: FC<FilteringProps> = ({ setCardsData }) => {
 					<h2 className='before-filter__title'>Для</h2>
 					<div className='before-filter__wrapper'>
 						{FilterItems.map((item, index) => (
-							<FilterItem
-								key={index}
+							<div
 								id={item.name}
-								text={item.name}
-								onClick={() => {
-									changeCategorys(item.name)
-								}}
-							/>
+								key={index}
+								onClick={() => { 
+									changeCategorys(item.name),
+									handleSelect(item.name)}}
+								className={`after-filter ${select === item.name 
+									&& 'selected'}`}
+							>
+								<div className='after-filter__text'>
+								  <p className='filter-discount__inner'>{item.name}</p>
+								</div>
+							</div>
 						))}
 					</div>
 				</div>

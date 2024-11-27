@@ -9,13 +9,14 @@
     font-family: 'Montserrat-M';
     font-size: 15px;
     cursor: pointer;
-}
+    transition: all 0.3s ease-in-out;
 
-.after-filter {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding-bottom: 12px;
+    &:hover {
+        background: $main-color;
+        color: $color-white;
+        text-align: center;
+        border-radius: 20px;
+    }
 }
 
 .filter-title {
@@ -71,7 +72,8 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .before-filter__title {
     font-family: 'Montserrat-B';
-    padding-bottom: 14px;
+    font-size: 28px;
+    padding-bottom: 30px;
 }
 
 .before-filter {
@@ -111,4 +113,20 @@ input[type="number"]::-webkit-inner-spin-button,
     font-family: 'Montserrat-M';
     font-size: 16px;
     cursor: pointer;
+}
+
+.selected {
+    @include flex-center;
+    background: $main-color;
+    border-radius: 20px;
+    color: $color-white;
+    width: 150px;
+    height: 40px;
+}
+
+.before-filter__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100px;
 }
