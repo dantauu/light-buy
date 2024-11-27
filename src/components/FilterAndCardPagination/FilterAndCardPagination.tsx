@@ -29,7 +29,7 @@ export const FilterAndCardPagination: FC<FilterAndCardProps> = ({
 			<div className='container'>
 				<div className='home-wrapper'>
 					<div className='home-left'>
-						<Filtering setCardsData={setCardsData} cardsData={cardsData} />
+						<Filtering setCardsData={setCardsData} cardsData={cardsData} onClick={function (): void {} } name={''} />
 					</div>
 					<div className='home-right'>
 						{currentPage === 1 && (
