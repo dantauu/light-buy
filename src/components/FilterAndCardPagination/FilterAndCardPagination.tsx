@@ -14,25 +14,36 @@ type FilterAndCardProps = {
 export const FilterAndCardPagination: FC<FilterAndCardProps> = ({
 	searchValue,
 	cardsData,
-	setCardsData
+	setCardsData,
 }) => {
-	const [tab, setTab] = useState('card')
+	const [currentPage, setCurrentPage] = useState(1)
+	const totalPages = 3 
+
+	const handlePageChange = (pageNumber: number) => {
+		setCurrentPage(pageNumber)
+		console.log('Current page:', pageNumber)
+	}
+
 	return (
 		<>
-		<div className="container">
-			<div className='home-wrapper'>
-				<div className='home-left'>
-					<Filtering setCardsData={setCardsData} cardsData={cardsData} />
-				</div>
-				{tab === 'card' && (
-					<div className='home-right'>
-						<Card cardsData={cardsData} searchValue={searchValue} />
+			<div className='container'>
+				<div className='home-wrapper'>
+					<div className='home-left'>
+						<Filtering setCardsData={setCardsData} cardsData={cardsData} />
 					</div>
-				)}
-				{tab === 'second-card' && <CardSecond cardsData={cardsData} />}
-			</div>
-			<Pagination active={tab} onChange={current => setTab(current)} />
+					<div className='home-right'>
+						{currentPage === 1 && (
+							<Card cardsData={cardsData} searchValue={searchValue} />
+						)}
+						{currentPage === 2 && <CardSecond cardsData={cardsData} />}
+					</div>
 				</div>
+				<Pagination
+					totalPages={totalPages}
+					currentPage={currentPage}
+					onChange={handlePageChange}
+				/>
+			</div>
 		</>
 	)
 }
