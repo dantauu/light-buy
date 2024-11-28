@@ -129,7 +129,7 @@ body.dark {
                                         color: $color-white;
                                     }
                                 .selected {
-                                    color: $main-color;
+                                    color: $main-color !important;
                                 }
                             .basket-left__text {
                                 color: $color-white;

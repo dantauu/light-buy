@@ -32,13 +32,15 @@
 
 .card-wrapper {
     display: grid;
-    // display: flex;
-    grid-template-columns: 285px 1fr 1fr;
-    // flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fill, 266px);
     column-gap: 18px;
     row-gap: 30px;
     text-align: center;
     padding-top: 66px;
+}
+
+.home-right {
+    width: 100%;
 }
 
 .load {

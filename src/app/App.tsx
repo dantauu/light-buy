@@ -1,9 +1,7 @@
 import { Route, Routes } from "react-router-dom"
-// import { useDispatch, useSelector } from "react-redux"
-// import { increment, decrement } from "../redux/slices/FilterSlice.ts"
+import { BasketPage } from "../pages/BasketPage.tsx"
 import { Header } from "../components/Header/Header.tsx"
 import Home from "../pages/Home.tsx"
-import { Basket } from "../components/Basket/Basket.tsx"
 import { createContext, useState } from "react"
 import { ThemeProvider } from "../Provider/ThemeProvider.tsx"
 import { MoreCard } from "../pages/MoreCard.tsx"
@@ -29,7 +27,7 @@ function App() {
 								<MoreCard />
 							}
 						/>
-						<Route path='/basket' element={<Basket />} />
+						<Route path='/basket' element={<BasketPage />} />
 					</Routes>
 				</SearchContext.Provider>
 			</ThemeProvider>

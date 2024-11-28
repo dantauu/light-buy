@@ -85,7 +85,7 @@ export const Filtering: FC<FilteringProps> = ({  setCardsData }) => {
 								onClick={() => {
 									changeCategorys(item.name), handleSelect(item.name)
 								}}
-								className={`after-filter ${select === item.name && 'selected'}`}
+								className={`after-filter ${select === item.name && 'selectedId'}`}
 							>
 								<div className='after-filter__text'>
 								  <p className='filter-discount__inner'>{item.name}</p>
@@ -101,18 +101,18 @@ export const Filtering: FC<FilteringProps> = ({  setCardsData }) => {
 							 handleSelect('Детской')
 						}}
 						className={`filter-drop__item 
-							${select === 'Детской' ? 'selected' : ''}`}
+							${select === 'Детской' ? 'selectedId' : ''}`}
 					>
-						<button className={`drop-item__inner ${select === 'Детской' ? 'selected' : ''}`}>Детской</button>
+						<button className={`drop-item__inner ${select === 'Детской' ? 'selectedId' : ''}`}>Детской</button>
 					</li>
 					<li
 						onClick={() => {
 							changeCategorys('Спальной'),
 							handleSelect('Спальной')
 						}}
-						className={`filter-drop__item ${select === 'Спальной' ? 'selected' : ''}`}
+						className={`filter-drop__item ${select === 'Спальной' ? 'selectedId' : ''}`}
 					>
-						<button className={`drop-item__inner ${select === 'Спальной' ? 'selected' : ''}`}>Спальной</button>
+						<button className={`drop-item__inner ${select === 'Спальной' ? 'selectedId' : ''}`}>Спальной</button>
 					</li>
 				</ul>
 				<div style={{position: 'relative'}} className="">
