@@ -1,8 +1,9 @@
-import { FC, useRef, useState } from 'react'
+import { FC, useContext, useRef, useState } from 'react'
 import { useClickOutside } from '../../hooks/useClickOutside'
 import arrow from '../../assets/img/arrow.svg'
 import './Assortement.scss'
-import { CARDS, CardsServer } from '../../data/data'
+import { CARDS } from '../../data/data'
+import { CardContext } from '../../pages/Home'
 
 const AssortementNav = [
 	{ id: 1, name: 'Все' },
@@ -16,10 +17,12 @@ const More = [
 ]
 
 interface CategoryProps {
-	setCardsData: (data: CardsServer[]) => void
+	// setCardsData: (data: CardsServer[]) => void
 }
 
-export const Assortement: FC<CategoryProps> = ({ setCardsData }) => {
+export const Assortement: FC<CategoryProps> = () => {
+	const { setCardsData }: any = useContext(CardContext)
+	
 	const [select, setSelect] = useState<string>('Все')
 
 	const handleSelect = (name: string) => {

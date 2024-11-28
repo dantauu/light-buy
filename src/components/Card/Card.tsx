@@ -1,14 +1,16 @@
 import { CardsServer } from "../../data/data"
-import { FC } from "react"
+import { FC, useContext } from "react"
 import { CardElement } from './CardElement/CardElement'
+import { SearchContext } from "../../app/App"
 
 
 type CardProps = {
-	searchValue: string
 	cardsData: CardsServer[]
 }
 
-export const Card: FC<CardProps> = ({ searchValue, cardsData }) => {
+export const Card: FC<CardProps> = ({ cardsData }) => {
+	const { searchValue }: any = useContext(SearchContext)
+
 	const cardses = cardsData.filter(obj => {
 		if (obj.title.toLowerCase().includes(searchValue.toLowerCase())) {
 			return true

@@ -6,7 +6,9 @@ import { createContext, useState } from "react"
 import { ThemeProvider } from "../Provider/ThemeProvider.tsx"
 import { MoreCard } from "../pages/MoreCard.tsx"
 
-export const SearchContext = createContext({ })
+export const SearchContext = createContext(({}))
+
+console.log(SearchContext)
 
 function App() {
 	const [searchValue, setSearchValue] = useState('')
@@ -18,7 +20,7 @@ function App() {
 					<Routes>
 						<Route
 							path='/'
-							element={<Home searchValue={searchValue} />}
+							element={<Home />}
 							index
 						/>
 						<Route

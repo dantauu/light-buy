@@ -10,10 +10,6 @@ type FilterItemProps = {
 	onClick: (text: string) => void
 	onChange: (value: string) => void
 	id: string
-}
-
-type FilterInputItem = {
-	text: string,
 } 
 
 type FilteringProps = {
@@ -79,8 +75,8 @@ export const Filtering: FC<FilteringProps> = ({  setCardsData }) => {
 
 	const applyFilters = () => {
 		let filteredPrice = CARDS
-		const minPriceNum = parseInt(minPrice, 10) || 0
-		const maxPriceNum = parseInt(maxPrice, 10) || Infinity
+		const minPriceNum = parseInt(minPrice) || 0
+		const maxPriceNum = parseInt(maxPrice) || Infinity
 
 		filteredPrice = filteredPrice.filter(card => {
 			const price = card.price
@@ -137,10 +133,7 @@ export const Filtering: FC<FilteringProps> = ({  setCardsData }) => {
 					>
 						<button
 							className={`drop-item__inner ${
-								select === 'Детской' ? 'selectedId' : ''
-							}`}
-						>
-							Детской
+								select === 'Детской' ? 'selectedId' : ''}`}>Детской
 						</button>
 					</li>
 					<li
@@ -148,15 +141,10 @@ export const Filtering: FC<FilteringProps> = ({  setCardsData }) => {
 							changeCategorys('Спальной'), handleSelect('Спальной')
 						}}
 						className={`filter-drop__item ${
-							select === 'Спальной' ? 'selectedId' : ''
-						}`}
-					>
+							select === 'Спальной' ? 'selectedId' : ''}`}>
 						<button
 							className={`drop-item__inner ${
-								select === 'Спальной' ? 'selectedId' : ''
-							}`}
-						>
-							Спальной
+								select === 'Спальной' ? 'selectedId' : ''}`}>Спальной
 						</button>
 					</li>
 				</ul>
