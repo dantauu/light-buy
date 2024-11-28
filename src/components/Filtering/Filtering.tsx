@@ -116,14 +116,12 @@ export const Filtering: FC<FilteringProps> = ({  setCardsData }) => {
 								id={item.name}
 								key={index}
 								onClick={() => {
-									changeCategorys(item.name), handleSelect(item.name)
+								  changeCategorys(item.name), handleSelect(item.name)
 								}}
 								className={`after-filter ${
-									select === item.name && 'selectedId'
-								}`}
-							>
+									select === item.name && 'selectedId'}`}>
 								<div className='after-filter__text'>
-									<p className='filter-discount__inner'>{item.name}</p>
+								  <p className='filter-discount__inner'>{item.name}</p>
 								</div>
 							</div>
 						))}
@@ -168,8 +166,8 @@ export const Filtering: FC<FilteringProps> = ({  setCardsData }) => {
 							onClick={() => {
 								onClickMenu(), onClickOpenFull()
 							}}
-							className={`open-full_wrapper 
-						${activity ? 'activity' : ''}`}
+							className={`open-full_wrapper ${activity ? 
+								'activity' : ''}`}
 						>
 							<div className='open-full__img'>
 								<img
