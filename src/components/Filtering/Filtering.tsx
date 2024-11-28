@@ -1,5 +1,6 @@
 import { FC, useState } from "react"
 import plus from '../../assets/img/plus.svg'
+import minus from '../../assets/img/minus.svg'
 import rubleIcon from '../../assets/img/ruble.png'
 import './Filtering.scss'
 import { CARDS, CardsServer } from "../../data/data"
@@ -41,8 +42,6 @@ const FilterInputItem: FC<FilterItemProps> = ({ text, id }) => {
 		{ id: 2, name: 'Уборной' },
 		{ id: 3, name: 'Гостинной' },
 		{ id: 4, name: 'Коридора' },
-		{ id: 5, name: 'Детской' },
-		{ id: 6, name: 'Спальной' },
 	]
 
 export const Filtering: FC<FilteringProps> = ({  setCardsData }) => {
@@ -54,6 +53,16 @@ export const Filtering: FC<FilteringProps> = ({  setCardsData }) => {
 	const changeCategorys = (name: string) => {
 		const filtered = CARDS.filter(card => card.filter === name)
 		setCardsData(filtered)
+		}
+
+	//MENU
+	const [isActive, setIsActive] = useState<boolean>(false)
+	const onClickMenu = () => {
+		setIsActive(!isActive)
+	} 
+	const [activity, setActivity] = useState<boolean>(false)
+	const onClickOpenFull = () => {
+		setActivity(!activity)
 	}
 	return (
 		<div className='filter-main__wrapper'>
@@ -73,11 +82,10 @@ export const Filtering: FC<FilteringProps> = ({  setCardsData }) => {
 							<div
 								id={item.name}
 								key={index}
-								onClick={() => { 
-									changeCategorys(item.name),
-									handleSelect(item.name)}}
-								className={`after-filter ${select === item.name 
-									&& 'selected'}`}
+								onClick={() => {
+									changeCategorys(item.name), handleSelect(item.name)
+								}}
+								className={`after-filter ${select === item.name && 'selected'}`}
 							>
 								<div className='after-filter__text'>
 								  <p className='filter-discount__inner'>{item.name}</p>
@@ -86,18 +94,39 @@ export const Filtering: FC<FilteringProps> = ({  setCardsData }) => {
 						))}
 					</div>
 				</div>
+				<ul className={`filter-drop ${isActive ? 'active' : ''}`}>
+					<li
+						onClick={() => {
+							changeCategorys('Детской'),
+							 handleSelect('Детской')
+						}}
+						className={`filter-drop__item 
+							${select === 'Детской' ? 'selected' : ''}`}
+					>
+						<button className={`drop-item__inner ${select === 'Детской' ? 'selected' : ''}`}>Детской</button>
+					</li>
+					<li
+						onClick={() => {
+							changeCategorys('Спальной'),
+							handleSelect('Спальной')
+						}}
+						className={`filter-drop__item ${select === 'Спальной' ? 'selected' : ''}`}
+					>
+						<button className={`drop-item__inner ${select === 'Спальной' ? 'selected' : ''}`}>Спальной</button>
+					</li>
+				</ul>
+				<div style={{position: 'relative'}} className="">
 				<label htmlFor='plus'>
-					<div className='open-full_wrapper'>
+					<div onClick={() => {onClickMenu(), onClickOpenFull()}} className={`open-full_wrapper 
+						${activity ? 'activity' : ''}`}>
 						<div className='open-full__img'>
-							<img className='open-full-img__inner' src={plus} alt='' />
+							<img className='open-full-img__inner' src={!activity ? plus : minus} alt='' />
 						</div>
 						<div className='open-full__text' id='plus'>
-							<p className='open-full__inner'>Показать всё</p>
+							<p className='open-full__inner'>{activity ? 'Скрыть' : 'Показать все'}</p>
 						</div>
 					</div>
 				</label>
-				<div className='apply'>
-					<button className='apply-button'>Применить</button>
 				</div>
 			</div>
 		</div>

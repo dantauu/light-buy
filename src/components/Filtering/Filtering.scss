@@ -84,9 +84,14 @@ input[type="number"]::-webkit-inner-spin-button,
 .open-full_wrapper {
     display: flex;
     align-items: center;
-    padding-top: 20px;
+    bottom: 2px;
+    position: absolute;
     cursor: pointer;
     width: 130px;
+}
+
+.open-full_wrapper.activity {
+    top: 20px;
 }
 
 .open-full__inner {
@@ -99,27 +104,11 @@ input[type="number"]::-webkit-inner-spin-button,
     width: 25px;
 }
 
-.apply {
-    padding-top: 70px;
-}
-
-.apply-button {
-    width: 244px;
-    height: 50px;
-    background: $main-color;
-    color: #fff;
-    border: none;
-    border-radius: 18px;
-    font-family: 'Montserrat-M';
-    font-size: 16px;
-    cursor: pointer;
-}
-
 .selected {
     @include flex-center;
     background: $main-color;
     border-radius: 20px;
-    color: $color-white;
+    color: $color-white !important;
     width: 150px;
     height: 40px;
 }
@@ -129,4 +118,34 @@ input[type="number"]::-webkit-inner-spin-button,
     flex-direction: column;
     gap: 18px;
     width: 100px;
+}
+
+.filter-drop {
+    padding-top: 10px;
+    opacity: 0;
+    line-height: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+
+.filter-drop.active {
+    opacity: 1;
+    line-height: 30px;
+}
+
+.drop-item__inner {
+    @include button-reset;
+    font-family: "Montserrat-M";
+    font-size: 15px;
+    cursor: pointer;
+    color: $color-dark;
+
+
+    &:hover {
+        background: $main-color;
+        width: 100px;
+        height: 18px;
+        text-align: center;
+        border-radius: 20px;
+        color: $color-white;
+    }
 }
