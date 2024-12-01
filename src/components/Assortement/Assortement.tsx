@@ -1,9 +1,9 @@
 import { FC, useContext, useRef, useState } from 'react'
-import { useClickOutside } from '../../hooks/useClickOutside'
 import arrow from '../../assets/img/arrow.svg'
 import './Assortement.scss'
 import { CARDS } from '../../data/data'
 import { CardContext } from '../../pages/Home'
+import { useClickOutside } from '../../hooks/useClickOutside'
 
 const AssortementNav = [
 	{ id: 1, name: 'Все' },
@@ -26,7 +26,7 @@ export const Assortement: FC<CategoryProps> = () => {
 	const [select, setSelect] = useState<string>('Все')
 
 	const handleSelect = (name: string) => {
-		setSelect(name)
+		setSelect(name) 
 	}
 
 	const changeCategory = (name: string) => {
@@ -40,19 +40,23 @@ export const Assortement: FC<CategoryProps> = () => {
 
 	//--Popup menu
 	const [isActive, setIsActive] = useState<boolean>(false)
+	const [arrowRotated, setArrowRotated] = useState<boolean>(false)
 
 	const dropDownRef = useRef(null)
 
-	const handleClickOutside = () => {
-		setIsActive(false)
-	}
-
-	const onClick = () => {
+	const toggleMenu = () => {
 		setIsActive(!isActive)
-	}
+		setArrowRotated(!arrowRotated)
+	} 
 
-	useClickOutside(dropDownRef, handleClickOutside)
-	//--
+	// const handleClickOutside = () => {
+	// 	setIsActive(false)
+	// }
+
+	useClickOutside(dropDownRef, () => {
+		if (isActive) setTimeout(() => {setArrowRotated(false), setIsActive(false)}, 50)
+	})
+
 
 	return (
 		<div className='assort-wrapper'>
@@ -77,17 +81,19 @@ export const Assortement: FC<CategoryProps> = () => {
 							<button
 								key={id}
 								onClick={() => {
-									handleSelect(item.name), onClick()
+									handleSelect(item.name);
+									toggleMenu()
 								}}
 								className={`assort-button 
 								${select === item.name ? 'selected' : ''}`}
 							>
 								Ещё
-								<img className='arrow' src={arrow} alt='' />
+								<img className={`arrow ${arrowRotated ? 'rotated' : ''}`} src={arrow} alt='' />
 							</button>
 						))}
 					</ul>
 				</nav>
+
 				<div className='drop-wrapper'>
 					<div
 						ref={dropDownRef}
@@ -96,7 +102,10 @@ export const Assortement: FC<CategoryProps> = () => {
 						<ul className='drop-list'>
 							<li className='drop-list__item'>
 								<button
-									onClick={() => changeCategory('Видеоглазок')}
+									onClick={() => {
+										changeCategory('Видеоглазок');
+										toggleMenu();
+									}}
 									className='drop-list__btn'
 								>
 									Видеоглазок
@@ -104,7 +113,10 @@ export const Assortement: FC<CategoryProps> = () => {
 							</li>
 							<li className='drop-list__item'>
 								<button
-									onClick={() => changeCategory('Камера')}
+									onClick={() => {
+										changeCategory('Камера');
+										toggleMenu();
+									}}
 									className='drop-list__btn'
 								>
 									Камера

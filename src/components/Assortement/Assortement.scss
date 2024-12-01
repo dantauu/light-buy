@@ -62,17 +62,16 @@
     justify-content: center;
     border-radius: 15px;
     box-shadow: 0 0 10px #0000003a;
-
-            .arrow {
-                transform: rotate(90deg);
-                transition: all 0.3s ease-out
-            }
 }
 
 .arrow {
     width: 8px;
-    transform: rotate(-90deg);
+    transform: rotate(90deg);
     transition: all 0.3s ease-out
+}
+
+.arrow.rotated {
+  transform: rotate(-90deg);
 }
 
 .drop-wrapper {
