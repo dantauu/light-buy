@@ -2,7 +2,6 @@
 
 .assort-wrapper {
     width: 100%;
-    border-top: 1px solid #ededed;
 }
 
 .assort-title {
@@ -108,4 +107,14 @@
     @include button-reset;
     cursor: pointer;
     color: $color-dark;
+}
+
+//Adaptive
+
+@media screen and (max-width: 615px) {
+    .assort-list {
+        max-width: 125px;
+        height: 213px;
+        flex-direction: column;
+    }
 }
