@@ -15,7 +15,7 @@ export const Search = () => {
 					<input
                         value={searchValue}
                         onChange={event => setSearchValue(event.target.value)}
-						placeholder='Поиск товара...'
+						placeholder='Найти на LightBuy...'
 						id='hI'
 						type='text'
 						className='header-input__inner'
