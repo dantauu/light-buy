@@ -167,6 +167,25 @@ input[type="number"]::-webkit-inner-spin-button,
     color: $color-white;
 }
 
+.filter-main__wrapper.active-filter {
+    display: flex;
+    background: #504e4e;
+    position: absolute;
+    left: 0;
+    height: 245%;
+    top: 0;
+}
+
+.cross {
+    position: absolute;
+    right: 10px;
+}
+
+.cross-icon {
+    width: 40px;
+}
+
+
 @media screen and (max-width: 615px) {
     .filter-main__wrapper {
         display: none;

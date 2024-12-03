@@ -4,6 +4,7 @@ import minus from '../../assets/img/minus.svg'
 import rubleIcon from '../../assets/img/ruble.png'
 import { CARDS, CardsServer } from "../../data/data"
 import filterIcon from '../../assets/img/filter.svg'
+import crossIcon from '../../assets/img/cross.svg'
 import './Filtering.scss'
 
 type FilterItemProps = {
@@ -51,6 +52,10 @@ export const Filtering: FC<FilteringProps> = ({  setCardsData }) => {
 	 	const handleSelect = (name: string) => {
 	 		setSelect(name)
 		}
+	const [showFilter, setShowFilter] = useState<boolean>(false)
+		const handleShowFilter = () => {
+			setShowFilter(!showFilter)
+		}
 
 	const changeCategorys = (name: string) => {
 		const filtered = CARDS.filter(card => card.filter === name)
@@ -91,12 +96,16 @@ export const Filtering: FC<FilteringProps> = ({  setCardsData }) => {
 				<div className='filter-svg__text'>
 					<h2 className='filter-svg-text__inner'>Фильтрация</h2>
 				</div>
-				<div className='filter-svg__img'>
+				<div onClick={() => handleShowFilter()} className='filter-svg__img'>
 					<img className='filter-svg-img__inner' src={filterIcon} alt='' />
 				</div>
 			</div>
-			<div className='filter-main__wrapper'>
+			<div
+				className={`filter-main__wrapper ${showFilter ? 'active-filter':''}`}>
 				<div className='container'>
+					<div onClick={() => setShowFilter(false)} className="cross">
+						<img className="cross-icon" src={crossIcon} alt="" />
+					</div>
 					<h2 className='filter-title'>Фильтрация</h2>
 					<div className='price-wrapper'>
 						<h2 className='price-wrapper__text'>Цена от и до</h2>
