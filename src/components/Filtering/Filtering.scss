@@ -177,8 +177,7 @@ input[type="number"]::-webkit-inner-spin-button,
 }
 
 .cross {
-    position: absolute;
-    right: 10px;
+    display: none;
 }
 
 .cross-icon {
@@ -191,12 +190,16 @@ input[type="number"]::-webkit-inner-spin-button,
         display: none;
     }
         .filter-svg {   
-            // padding-left: 20px;
             width: 540px;
             display: flex;
             flex-direction: column;
             gap: 20px;
             align-items: center;
         }
+            .cross {
+                display: block;
+                position: absolute;
+                right: 10px;
+            }
 }
 

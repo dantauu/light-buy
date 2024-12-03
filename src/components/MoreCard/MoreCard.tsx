@@ -1,5 +1,4 @@
 import { MORECARD } from "../../data/data"
-import { useParams } from "react-router-dom"
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { BackBtn } from "../shared/BackBtn/BackBtn"
 import { Pagination } from 'swiper/modules'
@@ -35,7 +34,6 @@ export const MoreInformationCard = ({ name, text }:InformationProps) => {
 }
 
 export const MoreCardInformation:FC<MoreCardProps> = ({ title, img, price, id }) => {
-	useParams()
 	const dispatch = useDispatch()
 
 	console.log(title, img, price)
@@ -49,8 +47,6 @@ export const MoreCardInformation:FC<MoreCardProps> = ({ title, img, price, id })
 		}
 		dispatch(addItem(item))
 	}
-
-
 
 	const cardItem = useSelector((state: any) =>
 		state.card.items.find((obj: { id: number }) => obj.id === Number(id))
@@ -97,10 +93,7 @@ export const MoreCardInformation:FC<MoreCardProps> = ({ title, img, price, id })
 								text={card?.country}
 							/>
 							<MoreInformationCard name={'Цвет'} text={card?.color} />
-							<MoreInformationCard
-								name={'Год выпуска'}
-								text={card?.date}
-							/>
+							<MoreInformationCard name={'Год выпуска'} text={card?.date} />
 							<MoreInformationCard name='Поддержка AI' text={card?.supportAI} />
 							<MoreInformationCard
 								name='Управление с телефона'
@@ -111,28 +104,27 @@ export const MoreCardInformation:FC<MoreCardProps> = ({ title, img, price, id })
 								name='Срок гарантии'
 								text={card?.warrantyTerm}
 							/>
-							<MoreInformationCard
-								name='Ширина'
-								text={card?.width}
-							/>
-							<MoreInformationCard
-								name='Высота'
-								text={card?.height}
-							/>
+							<MoreInformationCard name='Ширина' text={card?.width} />
+							<MoreInformationCard name='Высота' text={card?.height} />
 						</div>
 						<div className='more-card__right'>
 							<div className='more-card__title'>
 								<h2>{card?.title}</h2>
 							</div>
-							<div className='more-card__price'>
-								<h3 className='more-card-price__inner'>{card?.price}р</h3>
-							</div>
-							<div onClick={onClickAddBasket} className='more-card__btn'>
-								<button className='more-card-btn__inner'>
-									{cardItem? 'Добавлено' : 'Добавить в корзину'}
-								</button>
+							<div className="gap-wrapper">
+								<div className='more-card__price'>
+									<h3 className='more-card-price__inner'>{card?.price}р</h3>
+								</div>
+								<div onClick={onClickAddBasket} className='more-card__btn'>
+									<button className='more-card-btn__inner'>
+										{cardItem ? 'Добавлено' : 'Добавить в корзину'}
+									</button>
+								</div>
 							</div>
 						</div>
+					</div>
+					<div className='description-title'>
+						<h2 className='description-title__inner'>Описание</h2>
 					</div>
 					<div className='more-card__description'>
 						<p>{card?.description}</p>

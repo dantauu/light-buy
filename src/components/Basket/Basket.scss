@@ -39,8 +39,7 @@
 
 .basket-top {
     display: flex;
-    justify-content: center;
-    gap: 500px;
+    justify-content: space-between;
 }
 
 .basket-top__left {
@@ -125,7 +124,7 @@
 }
 
 .full-data {
-    padding: 40px 0 250px 0;
+    padding: 40px 0 150px 0;
     display: flex;
     justify-content: space-between;
 }
@@ -142,4 +141,12 @@
 
 .span-full-data {
     color: $main-color;
+}
+
+//Adaptive
+
+@media screen and (max-width: 861px) {
+    .basket-card {
+        gap: 5px;
+    }
 }

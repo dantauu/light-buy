@@ -103,7 +103,9 @@ export const Filtering: FC<FilteringProps> = ({  setCardsData }) => {
 			<div
 				className={`filter-main__wrapper ${showFilter ? 'active-filter':''}`}>
 				<div className='container'>
-					<div onClick={() => setShowFilter(false)} className="cross">
+					<div 
+					onClick={() => setShowFilter(false)} 
+					className="cross">
 						<img className="cross-icon" src={crossIcon} alt="" />
 					</div>
 					<h2 className='filter-title'>Фильтрация</h2>

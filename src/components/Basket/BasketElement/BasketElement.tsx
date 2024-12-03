@@ -33,6 +33,7 @@ export const BasketElement: FC<BasketElementProps> =
 	}
 	return (
 		<div className='basket-card__wrapper'>
+			<div className="container">
 			<div className='basket-card'>
 				<div className='basket-img__title'>
 					<div className='basket-card__img'>
@@ -60,6 +61,7 @@ export const BasketElement: FC<BasketElementProps> =
 					<img className='basket-krest__img' src={krestIcon} />
 				</div>
 			</div>
+		</div>
 		</div>
 	)
 }
