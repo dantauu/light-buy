@@ -15,22 +15,33 @@ type ItemCardProps = {
 	price: number,
 }
 
+interface CardItem {
+	id: number
+	title: string
+	price: number
+	img: string
+	count: number
+}
+
+
+
 export const CardElement: FC<ItemCardProps> =
  ({ id, title, img, description, price }) => {
 	const navigate = useNavigate()
 
 	const dispatch = useDispatch()
-	const cardItem = useSelector((state: any) => state.card.items.
-		find((obj: { id: number }) => obj.id === id))
+	const cardItem = useSelector((state: { card: { items: CardItem[] }}) => 
+		state.card.items.find((obj: { id: number }) => obj.id === id))
 
 		console.log(cardItem)
 
 	const onClickAddBasket = () => { 
-		const item = {
+		const item: CardItem = {
 			id,
 			title,
 			img,
 			price,
+			count: 1
 		}
 		dispatch(addItem(item))
 	}

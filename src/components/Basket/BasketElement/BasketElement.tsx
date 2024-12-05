@@ -17,8 +17,8 @@ export const BasketElement: FC<BasketElementProps> =
 ({ id, img, title }) => {
 	const dispatch = useDispatch()
 
-	const itemCalculate = useSelector((state: any) => state.card.items.
-	find((item: { id: number }) => item.id === id))
+	const itemCalculate = useSelector((state: any) => 
+		state.card.items.find((item: { id: number }) => item.id === id))
 
 	const onClickRemove = () => {
 		dispatch(removeItem(id))

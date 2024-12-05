@@ -19,6 +19,14 @@ type MoreCardProps = {
 	id: number 
 }
 
+interface CardItem {
+	id: number
+	title: string
+	price: number
+	img: string
+	count: number
+}
+
 export const MoreInformationCard = ({ name, text }:InformationProps) => {
 	return (
 		<div className='more-card__country'>
@@ -39,11 +47,12 @@ export const MoreCardInformation:FC<MoreCardProps> = ({ title, img, price, id })
 	console.log(title, img, price)
 
 	const onClickAddBasket = () => {
-		const item = {
+		const item: CardItem = {
 			id,
 			title,
 			img,
-			price
+			price,
+			count: 1,
 		}
 		dispatch(addItem(item))
 	}
@@ -52,8 +61,8 @@ export const MoreCardInformation:FC<MoreCardProps> = ({ title, img, price, id })
 		state.card.items.find((obj: { id: number }) => obj.id === Number(id))
 	)
 	console.log(cardItem)
-
 	const card = MORECARD.find(card => Number(card.id) === id)
+
 	//Slider
 	const pagination = {
 		clickable: true,

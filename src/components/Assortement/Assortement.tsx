@@ -1,9 +1,9 @@
 import { FC, useContext, useRef, useState } from 'react'
-import arrow from '../../assets/img/arrow.svg'
-import './Assortement.scss'
 import { CARDS } from '../../data/data'
 import { CardContext } from '../../pages/Home'
 import { useClickOutside } from '../../hooks/useClickOutside'
+import arrow from '../../assets/img/arrow.svg'
+import './Assortement.scss'
 
 const AssortementNav = [
 	{ id: 1, name: 'Все' },
@@ -54,7 +54,7 @@ export const Assortement: FC<CategoryProps> = () => {
 	// }
 
 	useClickOutside(dropDownRef, () => {
-		if (isActive) setTimeout(() => {setArrowRotated(false), setIsActive(false)}, 50)
+		if (isActive) setTimeout(() => {setArrowRotated(false), setIsActive(false)}, 130)
 	})
 
 

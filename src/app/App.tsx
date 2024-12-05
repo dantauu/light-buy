@@ -8,7 +8,6 @@ import { MoreCard } from "../pages/MoreCard.tsx"
 
 export const SearchContext = createContext(({}))
 
-console.log(SearchContext)
 
 function App() {
 	const [searchValue, setSearchValue] = useState('')
