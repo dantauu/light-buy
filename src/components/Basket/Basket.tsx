@@ -2,12 +2,12 @@ import basketIcon from '../../assets/img/basket.svg'
 import basketClear from '../../assets/img/basket-clear.svg'
 import { BackBtn } from '../shared/BackBtn/BackBtn'
 import { useDispatch, useSelector } from 'react-redux'
-import './Basket.scss'
 import { BasketElement } from './BasketElement/BasketElement'
 import { JSX } from 'react/jsx-runtime'
 import { addItem, clearItem } from '../../redux/slices/cardSlice'
 import { useLocalStoreBasket } from '../../hooks/useLocalStoreBasket'
 import { useEffect, useRef } from 'react'
+import './Basket.scss'
 
 interface CardItem {
 	id: number
