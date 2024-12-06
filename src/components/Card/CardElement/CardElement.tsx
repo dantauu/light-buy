@@ -34,7 +34,9 @@ export const CardElement: FC<ItemCardProps> = ({
 
 
 	const cardItem = useSelector((state: { card: { items: CardItem[] } }) =>
-		state.card.items.find((obj: { id: number }) => obj.id === id)
+		Array.isArray(state.card.items)
+			? state.card.items.find(obj => obj.id === id)
+			: undefined
 	)
 
 	const onClickAddBasket = () => {

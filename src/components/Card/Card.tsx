@@ -4,6 +4,7 @@ import { CardElement } from './CardElement/CardElement'
 import { SearchContext } from "../../app/App"
 
 
+
 type CardProps = {
 	cardsData: CardsServer[]
 }

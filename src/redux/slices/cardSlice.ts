@@ -31,6 +31,7 @@ const cardSlice = createSlice({
 			if (!existingItem) {
 				state.items.push({ ...action.payload, count: 1 })
 			}
+			localStorage.setItem('basket', JSON.stringify(state.items))
 		},
 
 		plusItem: (state, action: PayloadAction<number>) => {

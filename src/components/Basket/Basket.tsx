@@ -25,13 +25,17 @@ export const Basket = () => {
 	const hasInitialized = useRef(false)
 
 	useEffect(() => {
-		if (!hasInitialized.current && itemsFromStorage.length > 0) {
+		if (
+		   !hasInitialized.current && Array.isArray(itemsFromStorage) && 
+		   itemsFromStorage.length > 0
+		) {
 			itemsFromStorage.forEach(item => {
 				dispatch(addItem(item))
 			})
 			hasInitialized.current = true
 		}
-	}, [itemsFromStorage, dispatch, items.length])
+	}, [itemsFromStorage, dispatch])
+
 
 	useEffect(() => {
 		if (items.length > 0) {
@@ -42,16 +46,13 @@ export const Basket = () => {
 	}, [items])
 
 
-	const totalPrice = items.reduce(
-		(sum: number, item: { count: number; price: number }) =>
-			sum + item.price * item.count,
-		0
-	)
+	const totalPrice = Array.isArray(items)
+		? items.reduce(
+				(sum: number, item: { count: number; price: number }) =>
+					sum + item.price * item.count, 0) : 0
 
-	const totalCount = items.reduce(
-		(sum: any, item: { count: any }) => sum + item.count,
-		0
-	)
+	const totalCount = Array.isArray(items)
+		? items.reduce((sum: any, item: { count: any }) => sum + item.count, 0) : 0
 
 	const onClickClear = () => {
 		dispatch(clearItem())
@@ -81,18 +82,20 @@ export const Basket = () => {
 							</div>
 						</div>
 					</div>
-					{items.map(
-						(
-							item: JSX.IntrinsicAttributes & {
-								img: string
-								title: string
-								price: number
-								count: number
-								id: number
-							}
-						) => (
-							<BasketElement key={item.id} {...item} />
+					{Array.isArray(items) && items.length > 0 ? (
+						items.map(
+							(
+								item: JSX.IntrinsicAttributes & {
+									img: string
+									title: string
+									price: number
+									count: number
+									id: number
+								}
+							) => <BasketElement key={item.id} {...item} />
 						)
+					) : (
+						<p>{items}</p> 
 					)}
 					<div className='full-data'>
 						<div className='total-count'>
