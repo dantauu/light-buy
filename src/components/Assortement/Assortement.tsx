@@ -1,4 +1,4 @@
-import { FC, useContext, useRef, useState } from 'react'
+import { useContext, useRef, useState } from 'react'
 import { CARDS } from '../../data/data'
 import { CardContext } from '../../pages/Home'
 import { useClickOutside } from '../../hooks/useClickOutside'
@@ -9,18 +9,15 @@ const AssortementNav = [
 	{ id: 1, name: 'Все' },
 	{ id: 2, name: 'Колонки' },
 	{ id: 3, name: 'Отопление' },
-	{ id: 4, name: 'Сушилки' },
+	{ id: 4, name: 'Сушилки' },		
 ]
 
 const More = [
 	{ name: 'Ещё' }
 ]
 
-interface CategoryProps {
-	// setCardsData: (data: CardsServer[]) => void
-}
 
-export const Assortement: FC<CategoryProps> = () => {
+export const Assortement = () => {
 	const { setCardsData }: any = useContext(CardContext)
 	
 	const [select, setSelect] = useState<string>('Все')
@@ -61,6 +58,7 @@ export const Assortement: FC<CategoryProps> = () => {
 	return (
 		<div className='assort-wrapper'>
 			<div className='container'>
+			  <div className='mobile-wrapper'>
 				<nav className='assort-nav'>
 					<h2 className='assort-title'>Ассортимент</h2>
 					<ul className='assort-list'>
@@ -84,7 +82,7 @@ export const Assortement: FC<CategoryProps> = () => {
 									handleSelect(item.name);
 									toggleMenu()
 								}}
-								className={`assort-button 
+								className={`assort-button more-mobile 
 								${select === item.name ? 'selected' : ''}`}
 							>
 								Ещё
@@ -124,6 +122,7 @@ export const Assortement: FC<CategoryProps> = () => {
 							</li>
 						</ul>
 					</div>
+				</div>
 				</div>
 			</div>
 		</div>

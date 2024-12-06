@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { MoreCardInformation } from "../components/MoreCard/MoreCard"
+import { MoreCardInformation } from "../components/MoreCard/MoreCardInform"
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { useEffect } from "react";

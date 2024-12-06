@@ -120,10 +120,46 @@
         /* justify-content: center; */
         align-items: center;
 }
-    }
-        .assort-list {
-            max-width: 433px;
-            // height: 213px;
-            // flex-direction: column;
+            .assort-list {
+                max-width: 433px;
+                background: none !important;
         }
+                .assort-button {
+                    font-size: 20px;
+                }
+                    .drop-down {
+                        opacity: 1;
+                        visibility: visible;
+                        box-shadow: none;
+                        transform: translateY(-20px);
+                        left: 520px;
+                        top: -37px;
+                    }
+                        .drop-down.active{
+                            transform: translateY(-20px);
+                        }
+                            .drop-list {
+                                display: flex;
+                                gap: 10px;
+                                background: none;
+                                box-shadow: none;
+                            }
+                                .drop-list__btn {
+                                    color: $color-white;
+                                    font-size: 20px;
+                                }
+                                    .arrow {
+                                        display: none;
+                                    }
+                                        .mobile-wrapper {
+                                            overflow: auto;
+                                        }
+                                            .more-mobile {
+                                                display: none;
+                                            }
+                                                .assort-list__item.select {
+                                                    width: 120px;
+                                                }
+
+    }
 

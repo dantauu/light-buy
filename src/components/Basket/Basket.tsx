@@ -48,7 +48,7 @@ export const Basket = () => {
 
 	const totalPrice = Array.isArray(items)
 		? items.reduce(
-				(sum: number, item: { count: number; price: number }) =>
+				(sum: number, item: { count: number, price: number }) =>
 					sum + item.price * item.count, 0) : 0
 
 	const totalCount = Array.isArray(items)
