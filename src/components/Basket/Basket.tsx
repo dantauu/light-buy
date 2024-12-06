@@ -22,25 +22,25 @@ export const Basket = () => {
 	const items = useSelector((state: any) => state.card.items)
 
 	const itemsFromStorage: CardItem[] = useLocalStoreBasket('basket', [])
-	const hasInitialized = useRef(false)//-что бы не было повторный загрузки данных
+	const hasInitialized = useRef(false)
 
 	useEffect(() => {
-		if (
-			!hasInitialized.current && itemsFromStorage.length > 0 && items.length === 0
-		) {
+		if (!hasInitialized.current && itemsFromStorage.length > 0) {
 			itemsFromStorage.forEach(item => {
 				dispatch(addItem(item))
 			})
 			hasInitialized.current = true
 		}
-	}, [itemsFromStorage, dispatch, items.length]) 
+	}, [itemsFromStorage, dispatch, items.length])
+
 	useEffect(() => {
 		if (items.length > 0) {
 			localStorage.setItem('basket', JSON.stringify(items))
 		} else {
-			localStorage.removeItem('basket') 
+			localStorage.removeItem('basket')
 		}
 	}, [items])
+
 
 	const totalPrice = items.reduce(
 		(sum: number, item: { count: number; price: number }) =>
@@ -55,6 +55,7 @@ export const Basket = () => {
 
 	const onClickClear = () => {
 		dispatch(clearItem())
+		console.log('удалено')
 	}
 
 	return (

@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+// import { useLocalStoreBasket } from '../../hooks/useLocalStoreBasket'
 
 interface CardItem {
 	id: number
@@ -8,8 +9,15 @@ interface CardItem {
 	count: number
 }
 
-const initialState = {
-	items: [] as CardItem[],
+interface intialStateProps {
+	items: CardItem[]  
+}
+
+const storedItems = localStorage.getItem('basket')
+const parsedItems: CardItem[] = storedItems ? JSON.parse(storedItems) : []
+
+const initialState: intialStateProps = {
+	items: parsedItems,
 }
 
 const cardSlice = createSlice({
@@ -44,6 +52,7 @@ const cardSlice = createSlice({
 		},
 
 		clearItem: state => {
+			localStorage.removeItem('basket'),
 			state.items = []
 		},
 

@@ -2,7 +2,6 @@ import mainLogo from '../../assets/img/main-logo.svg'
 import profileIcon from '../../assets/img/profile.svg'
 import basketIcon from '../../assets/img/basket.svg'
 import burgerIcon from '../../assets/img/burger-menu.svg'
-// import krestIcon from '../../assets/img/cross.svg'
 import { Link } from 'react-router-dom'
 import { Search } from '../Search/Search'
 import { Theme } from '../../Theme/Theme'
@@ -21,6 +20,7 @@ export const Header = () => {
 	const activeBurger = () => {
 		setIsActive(!isActive)
 	}
+	console.log(items)
 	return (
 		<>
 			<div className='container'>
