@@ -38,6 +38,9 @@ export const Card = () => {
 }
 export default Card
 
+// interface CardSecondProps {
+// 	cardsData: CardsServer[]
+// }
 
 export const CardSecond = () => {
 	const { cardsData } = useContext(CardContext)

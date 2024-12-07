@@ -6,13 +6,12 @@ import { CardContext } from '../../pages/Home'
 import './FilteringAndCardPagination.scss'
 
 type FilterAndCardProps = {
-	// searchValue: string
 	// cardsData: CardsServer[]
 	// setCardsData: (data: CardsServer[]) => void
 }
 
 export const FilterAndCardPagination: FC<FilterAndCardProps> = () => {
-	const { cardsData, setCardsData }: any = useContext(CardContext)
+	const { cardsData, setCardsData } = useContext(CardContext)
 
 	const [currentPage, setCurrentPage] = useState(1)
 	const totalPages = 3 
@@ -31,9 +30,9 @@ export const FilterAndCardPagination: FC<FilterAndCardProps> = () => {
 					</div>
 					<div className='home-right'>
 						{currentPage === 1 && (
-							<Card cardsData={cardsData} />
+							<Card />
 						)}
-						{currentPage === 2 && <CardSecond cardsData={cardsData} />}
+						{currentPage === 2 && <CardSecond />}
 					</div>
 				</div>
 				<Pagination
