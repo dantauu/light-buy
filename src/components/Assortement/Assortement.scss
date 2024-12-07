@@ -114,7 +114,7 @@
 
 @media screen and (max-width: 615px) {
     .assort-nav {
-        padding-top: 65px;
+        padding-top: 18px;
         display: flex;
         flex-direction: column;
         /* justify-content: center; */
@@ -125,41 +125,57 @@
                 background: none !important;
         }
                 .assort-button {
-                    font-size: 20px;
+                    font-size: 24px;
                 }
                     .drop-down {
                         opacity: 1;
                         visibility: visible;
                         box-shadow: none;
                         transform: translateY(-20px);
-                        left: 520px;
-                        top: -37px;
+                        left: 549px;
+                        top: -38px;
                     }
                         .drop-down.active{
                             transform: translateY(-20px);
                         }
                             .drop-list {
                                 display: flex;
-                                gap: 10px;
+                                align-items: center;
+                                gap: 20px;
                                 background: none;
                                 box-shadow: none;
                             }
                                 .drop-list__btn {
                                     color: $color-white;
-                                    font-size: 20px;
+                                    font-size: 24px;
                                 }
                                     .arrow {
                                         display: none;
                                     }
                                         .mobile-wrapper {
                                             overflow: auto;
+                                            height: 83px;
                                         }
                                             .more-mobile {
                                                 display: none;
                                             }
                                                 .assort-list__item.select {
-                                                    width: 120px;
+                                                    width: 135px;
                                                 }
+                                            .assort-title {
+                                                font-size: 35px;
+                                                padding-top: 40px;
+                                                display: flex;
+                                                justify-content: center;
+                                            }
+                                        .filter-svg-text__inner {
+                                            font-size: 35px;
+                                        }
+                                    .home-left {
+                                        display: flex;
+                                        justify-content: center;
+                                        padding-top: 40px;
+                                    }
 
     }
 
