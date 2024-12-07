@@ -1,16 +1,17 @@
 import { CardsServer } from "../../data/data"
-import { FC, useContext } from "react"
+import { useContext } from "react"
 import { CardElement } from './CardElement/CardElement'
 import { SearchContext } from "../../app/App"
-
+import { CardContext } from "../../pages/Home"
 
 
 type CardProps = {
 	cardsData: CardsServer[]
 }
 
-export const Card: FC<CardProps> = ({ cardsData }) => {
+export const Card = () => {
 	const { searchValue }: any = useContext(SearchContext)
+	const { cardsData }: CardProps = useContext(CardContext)
 
 	const cardses = cardsData.filter(obj => {
 		if (obj.title.toLowerCase().includes(searchValue.toLowerCase())) {
@@ -37,11 +38,9 @@ export const Card: FC<CardProps> = ({ cardsData }) => {
 }
 export default Card
 
-interface CardSecondProps {
-	cardsData: CardsServer[]
-}
 
-export const CardSecond: FC<CardSecondProps> = ({ cardsData }) => {
+export const CardSecond = () => {
+	const { cardsData } = useContext(CardContext)
 	return (
 		<div className='card-wrapper'>
 			{cardsData.slice(6, 12).map((card, id) => (

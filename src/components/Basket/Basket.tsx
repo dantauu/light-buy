@@ -52,7 +52,7 @@ export const Basket = () => {
 					sum + item.price * item.count, 0) : 0
 
 	const totalCount = Array.isArray(items)
-		? items.reduce((sum: any, item: { count: any }) => sum + item.count, 0) : 0
+		? items.reduce((sum: any, item: { count: number }) => sum + item.count, 0) : 0
 
 	const onClickClear = () => {
 		dispatch(clearItem())

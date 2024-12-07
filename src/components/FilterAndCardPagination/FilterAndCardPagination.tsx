@@ -1,9 +1,9 @@
 import { Filtering } from '../Filtering/Filtering'
 import Card, { CardSecond } from '../Card/Card'
 import { Pagination } from '../Pagination/Pagination'
-import './FilteringAndCardPagination.scss'
 import { FC, useContext, useState } from 'react'
 import { CardContext } from '../../pages/Home'
+import './FilteringAndCardPagination.scss'
 
 type FilterAndCardProps = {
 	// searchValue: string

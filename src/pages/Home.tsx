@@ -1,15 +1,21 @@
-import { createContext, FC, useState } from 'react'
+import { createContext, useState } from 'react'
 import { Assortement } from '../components/Assortement/Assortement'
 import { FilterAndCardPagination } from '../components/FilterAndCardPagination/FilterAndCardPagination'
 import { CARDS, CardsServer } from '../data/data'
 
-type HomeProps = {
-	// searchValue: string,
+interface CardContextProps {
+	cardsData: CardsServer[],
+	setCardsData: React.Dispatch<React.SetStateAction<CardsServer[]>>
 }
 
-export const CardContext = createContext(({}))
+const ContextValue: CardContextProps = {
+	cardsData: CARDS,
+	setCardsData: () => {}
+}
 
-const Home:FC<HomeProps> = () => {
+export const CardContext = createContext<CardContextProps>((ContextValue))
+
+const Home = () => {
 	const [cardsData, setCardsData] = useState<CardsServer[]>(CARDS)
 	return (
 		<>

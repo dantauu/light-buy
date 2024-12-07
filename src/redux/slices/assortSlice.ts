@@ -1,7 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit"
-import { CARDS } from "../../data/data"
-import { CardData } from "../../app/types/global"
-// import { CARDS } from "../../data/data"
+import { createSlice } from '@reduxjs/toolkit'
+import { CARDS } from '../../data/data'
+import { CardData } from '../../app/types/global'
 
 interface AssortState {
 	data: CardData[]
@@ -9,21 +8,22 @@ interface AssortState {
 }
 
 const initialState: AssortState = {
-    data: CARDS,
-	selectedCategory: 'Все'
+	data: CARDS,
+	selectedCategory: 'Все',
 }
 
-
 const assortSlice = createSlice({
-    name: 'assort',
-    initialState,
-    reducers: {
-        setCategory: (state, action) => {
-            state.selectedCategory = action.payload
-            state.data = action.payload === 'Все' ? CARDS : 
-            CARDS.filter((card) => card.category === action.payload)
-        }
-    }
+	name: 'assort',
+	initialState,
+	reducers: {
+		setCategory: (state, action) => {
+			state.selectedCategory = action.payload
+			state.data =
+				action.payload === 'Все'
+					? CARDS
+					: CARDS.filter(card => card.category === action.payload)
+		},
+	},
 })
 
 export const { setCategory } = assortSlice.actions

@@ -15,7 +15,6 @@ export const MoreCard = () => {
         if (id) {
             const _id = Number(id);
             dispatch(getOneProguct(Number(_id)));
-
         }
     }, [id]);
     return (
@@ -30,7 +29,6 @@ export const MoreCard = () => {
             ): (
                 <div></div>
             )}
-				
 			</>
 		)
 }
