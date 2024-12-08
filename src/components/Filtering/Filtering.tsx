@@ -1,10 +1,11 @@
-import { FC, useEffect, useState } from "react"
+import { FC, useContext, useEffect, useState } from "react"
 import plus from '../../assets/img/plus.svg'
 import minus from '../../assets/img/minus.svg'
 import rubleIcon from '../../assets/img/ruble.png'
-import { CARDS, CardsServer } from "../../data/data"
+import { CARDS } from "../../data/data"
 import filterIcon from '../../assets/img/filter.svg'
 import crossIcon from '../../assets/img/cross.svg'
+import { CardContext } from "../../pages/Home"
 import './Filtering.scss'
 
 type FilterItemProps = {
@@ -15,8 +16,6 @@ type FilterItemProps = {
 } 
 
 type FilteringProps = {
-	cardsData: CardsServer[]
-	setCardsData: (data: CardsServer[]) => void
 	onClick: () => void
 	name: string
 }
@@ -47,7 +46,9 @@ const FilterInputItem: FC<FilterItemProps> = ({ text, id, onChange }) => {
 		{ id: 4, name: 'Коридора' },
 	]
 
-export const Filtering: FC<FilteringProps> = ({  setCardsData }) => {
+export const Filtering: FC<FilteringProps> = () => {
+	const { setCardsData } = useContext(CardContext)
+
 	const [select, setSelect] = useState('')
 	 	const handleSelect = (name: string) => {
 	 		setSelect(name)
@@ -150,7 +151,8 @@ export const Filtering: FC<FilteringProps> = ({  setCardsData }) => {
 					<ul className={`filter-drop ${isActive ? 'active' : ''}`}>
 						<li
 							onClick={() => {
-								changeCategorys('Детской'), handleSelect('Детской')
+								changeCategorys('Детской'), 
+								handleSelect('Детской')
 							}}
 							className={`filter-drop__item 
 							${select === 'Детской' ? 'selectedId' : ''}`}
@@ -165,7 +167,8 @@ export const Filtering: FC<FilteringProps> = ({  setCardsData }) => {
 						</li>
 						<li
 							onClick={() => {
-								changeCategorys('Спальной'), handleSelect('Спальной')
+								changeCategorys('Спальной'), 
+								handleSelect('Спальной')
 							}}
 							className={`filter-drop__item ${
 								select === 'Спальной' ? 'selectedId' : ''

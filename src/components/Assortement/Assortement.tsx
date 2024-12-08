@@ -91,11 +91,10 @@ export const Assortement = () => {
 										viewBox='0 0 11 18'
 										fill='none'
 										stroke='currentColor'
-										stroke-width='2.5'
-										stroke-linecap='round'
-										stroke-linejoin='round'
+										strokeWidth='2.5'
+										strokeLinecap='round'
+										strokeLinejoin='round'
 									>
-										{/* Стрелка */}
 										<path d='M1.99333 15.9819L8.88445 8.95963L1.8325 2.09886' />
 									</svg>
 								</button>
@@ -112,10 +111,11 @@ export const Assortement = () => {
 								<li className='drop-list__item'>
 									<button
 										onClick={() => {
-											changeCategory('Видеоглазок')
+											changeCategory('Видеоглазок'), handleSelect('Видеоглазок')
 											toggleMenu()
 										}}
-										className='drop-list__btn'
+										className={`drop-list__btn 
+										${select === 'Видеоглазок' && 'select-drop'}`}
 									>
 										Видеоглазок
 									</button>
@@ -123,10 +123,11 @@ export const Assortement = () => {
 								<li className='drop-list__item'>
 									<button
 										onClick={() => {
-											changeCategory('Камера')
+											changeCategory('Камера'), handleSelect('Камера')
 											toggleMenu()
 										}}
-										className='drop-list__btn'
+										className={`drop-list__btn 
+											${select === 'Камера' && 'select-drop'}`}
 									>
 										Камера
 									</button>

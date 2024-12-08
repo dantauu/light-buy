@@ -28,6 +28,19 @@
     gap: 20px;
 }
 
+.drop-list__btn.select-drop {
+    background: #fff !important;
+    height: 40px;
+    color: #FE5F00 !important;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #0000003a;
+
+}
+
 .assort-list__item.select {
     background: #fff;
     width: 100px;
@@ -73,6 +86,10 @@
     transform: rotate(90deg);
     transition: all 0.3s ease-out
 }
+
+// body .arrow {
+//     color: $color-dark;  
+// }
 
 .arrow.rotated {
   transform: rotate(-90deg);
