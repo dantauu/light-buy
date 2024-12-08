@@ -8,9 +8,8 @@ import { MoreCard } from "../pages/MoreCard.tsx"
 
 export const SearchContext = createContext(({}))
 
-
 function App() {
-	const [searchValue, setSearchValue] = useState('')
+	const [searchValue, setSearchValue] = useState<string>('')
   return (
 		<>
 			<ThemeProvider>

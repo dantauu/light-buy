@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom'
 import { Search } from '../Search/Search'
 import { Theme } from '../../Theme/Theme'
 import { useSelector } from 'react-redux'
-import './Header.scss'
 import { useState } from 'react'
+import './Header.scss'
 
 // type HeaderProps = {
 // 	searchValue: string

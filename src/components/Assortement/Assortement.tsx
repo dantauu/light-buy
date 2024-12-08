@@ -2,7 +2,6 @@ import { useContext, useRef, useState } from 'react'
 import { CARDS } from '../../data/data'
 import { CardContext } from '../../pages/Home'
 import { useClickOutside } from '../../hooks/useClickOutside'
-import arrow from '../../assets/img/arrow.svg'
 import './Assortement.scss'
 
 const AssortementNav = [
@@ -57,7 +56,7 @@ export const Assortement = () => {
 	return (
 		<div className='assort-wrapper'>
 			<div className='container'>
-			  <h2 className='assort-title'>Ассортимент</h2>
+				<h2 className='assort-title'>Ассортимент</h2>
 				<div className='mobile-wrapper'>
 					<nav className='assort-nav'>
 						<ul className='assort-list'>
@@ -85,11 +84,20 @@ export const Assortement = () => {
 								${select === item.name ? 'selected' : ''}`}
 								>
 									Ещё
-									<img
+									<svg
 										className={`arrow ${arrowRotated ? 'rotated' : ''}`}
-										src={arrow}
-										alt=''
-									/>
+										width='11'
+										height='18'
+										viewBox='0 0 11 18'
+										fill='none'
+										stroke='currentColor'
+										stroke-width='2.5'
+										stroke-linecap='round'
+										stroke-linejoin='round'
+									>
+										{/* Стрелка */}
+										<path d='M1.99333 15.9819L8.88445 8.95963L1.8325 2.09886' />
+									</svg>
 								</button>
 							))}
 						</ul>
