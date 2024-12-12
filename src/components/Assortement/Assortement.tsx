@@ -1,7 +1,9 @@
-import { useContext, useRef, useState } from 'react'
-import { CARDS } from '../../data/data'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { CardContext } from '../../pages/Home'
 import { useClickOutside } from '../../hooks/useClickOutside'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from '../../redux/store'
+import { setCategory } from '../../redux/slices/assortSlice'
 import './Assortement.scss'
 
 const AssortementNav = [
@@ -17,21 +19,31 @@ const More = [
 
 
 export const Assortement = () => {
+	const dispatch = useDispatch()
 	const { setCardsData }: any = useContext(CardContext)
-	const [select, setSelect] = useState<string>('Все')
+	const { data, selectedCategory } = useSelector((state: RootState) => state.assort)
+	const [select, setSelect] = useState<string>(selectedCategory)
+
+	useEffect(() => {
+		setSelect(selectedCategory)
+	}, [selectedCategory])
 
 	const handleSelect = (name: string) => {
+		dispatch(setCategory(name))
 		setSelect(name) 
+		const filteredData = name === 'Все' ? data : data.filter((card) => 
+			card.category === name)
+		setCardsData(filteredData)
 	}
 
-	const changeCategory = (name: string) => {
-		if (name === 'Все') {
-			setCardsData(CARDS)
-		} else {
-			const filtered = CARDS.filter(card => card.category === name)
-			setCardsData(filtered)
-		}
-	}
+	// const changeCategory = (name: string) => {
+	// 	if (name === 'Все') {
+	// 		setCardsData(CARDS)
+	// 	} else {
+	// 		const filtered = CARDS.filter(card => card.category === name)
+	// 		setCardsData(filtered)
+	// 	}
+	// }
 
 	//--Popup menu
 	const [isActive, setIsActive] = useState<boolean>(false)
@@ -67,7 +79,6 @@ export const Assortement = () => {
 									key={index}
 									onClick={() => {
 										handleSelect(item.name)
-										changeCategory(item.name)
 									}}
 								>
 									<button className='assort-button'>{item.name}</button>
@@ -77,7 +88,7 @@ export const Assortement = () => {
 								<button
 									key={id}
 									onClick={() => {
-										handleSelect(item.name)
+										setSelect(item.name)
 										toggleMenu()
 									}}
 									className={`assort-button more-mobile 
@@ -111,7 +122,7 @@ export const Assortement = () => {
 								<li className='drop-list__item'>
 									<button
 										onClick={() => {
-											changeCategory('Видеоглазок'), handleSelect('Видеоглазок')
+											handleSelect('Видеоглазок')
 											toggleMenu()
 										}}
 										className={`drop-list__btn 
@@ -123,7 +134,7 @@ export const Assortement = () => {
 								<li className='drop-list__item'>
 									<button
 										onClick={() => {
-											changeCategory('Камера'), handleSelect('Камера')
+											handleSelect('Камера')
 											toggleMenu()
 										}}
 										className={`drop-list__btn 

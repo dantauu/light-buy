@@ -18,10 +18,10 @@ const assortSlice = createSlice({
 	reducers: {
 		setCategory: (state, action) => {
 			state.selectedCategory = action.payload
-			state.data =
-				action.payload === 'Все'
-					? CARDS
-					: CARDS.filter(card => card.category === action.payload)
+			// state.data =
+			// 	action.payload === 'Все'
+			// 		? CARDS
+			// 		: CARDS.filter(card => card.category === action.payload)
 		},
 	},
 })
