@@ -22,7 +22,7 @@
 }
 
 .card:hover {
-        background: #c6c6c657;
+        background: #c6c6c62f;
         border-radius: 20px;
 }
 
@@ -79,7 +79,8 @@
 }
 
 .price-button {
-    @include flex-center;
+    display: flex;
+    align-items: center;
     padding-top: 15px;
     gap: 80px;
 }
@@ -109,4 +110,10 @@
 .modify-next-fix {
     width: 295px;
     padding-right: 70px;
+}
+
+@media screen and (max-width: 615px) {
+    .card-title {
+        font-size: 20px;
+    }
 }

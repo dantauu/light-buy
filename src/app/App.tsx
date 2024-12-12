@@ -8,6 +8,7 @@ import { MoreCard } from "../pages/MoreCard.tsx"
 
 export const SearchContext = createContext(({}))
 
+
 function App() {
 	const [searchValue, setSearchValue] = useState<string>('')
   return (
@@ -23,9 +24,7 @@ function App() {
 						/>
 						<Route
 							path='/more-card/:id'
-							element={
-								<MoreCard />
-							}
+							element={<MoreCard />}
 						/>
 						<Route path='/basket' element={<BasketPage />} />
 					</Routes>

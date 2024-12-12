@@ -1,9 +1,9 @@
 import basketIcon from '../../assets/img/basket.svg'
+import clearIcon from '../../assets/img/basket-clear.png'
 import basketClear from '../../assets/img/basket-clear.svg'
 import { BackBtn } from '../shared/BackBtn/BackBtn'
 import { useDispatch, useSelector } from 'react-redux'
 import { BasketElement } from './BasketElement/BasketElement'
-import { JSX } from 'react/jsx-runtime'
 import { addItem, clearItem } from '../../redux/slices/cardSlice'
 import { useLocalStoreBasket } from '../../hooks/useLocalStoreBasket'
 import { useEffect, useRef } from 'react'
@@ -84,33 +84,36 @@ export const Basket = () => {
 					</div>
 					{Array.isArray(items) && items.length > 0 ? (
 						items.map(
-							(
-								item: JSX.IntrinsicAttributes & {
-									img: string
-									title: string
-									price: number
-									count: number
-									id: number
-								}
-							) => <BasketElement key={item.id} {...item} />
+							(item) => <BasketElement key={item.id} {...item} />
 						)
 					) : (
-						<p>{items}</p> 
+						<div className='clear-basket'>
+							<div className='clear-basket-inner__img'>
+								<img className='clear-basket__item' src={clearIcon} alt='' />
+							</div>
+							<div className='clear-basket__text'>
+								<h2 className='clear-basket-text__inner'>Корзина пустая</h2>
+							</div>
+						</div>
 					)}
-					<div className='full-data'>
-						<div className='total-count'>
-							<p className='full-count__text'>
-								Количество товаров:
-								<span className='span-full-data'> {totalCount} шт.</span>
-							</p>
+					{items.length === 0 ? (
+						<h1></h1>
+					) : (
+						<div className='full-data'>
+							<div className='total-count'>
+								<p className='full-count__text'>
+									Количество товаров:
+									<span className='span-full-data'> {totalCount} шт.</span>
+								</p>
+							</div>
+							<div className='total-price'>
+								<p className='full-price__text'>
+									Общая сумма:
+									<span className='span-full-data'> {totalPrice}р</span>
+								</p>
+							</div>
 						</div>
-						<div className='total-price'>
-							<p className='full-price__text'>
-								Общая сумма:
-								<span className='span-full-data'> {totalPrice}р</span>
-							</p>
-						</div>
-					</div>
+					)}
 				</div>
 			</div>
 		</div>

@@ -15,10 +15,7 @@ type FilterItemProps = {
 	id: string
 } 
 
-type FilteringProps = {
-	onClick: () => void
-	name: string
-}
+
 
 const FilterInputItem: FC<FilterItemProps> = ({ text, id, onChange }) => {
 	return (
@@ -46,7 +43,7 @@ const FilterInputItem: FC<FilterItemProps> = ({ text, id, onChange }) => {
 		{ id: 4, name: 'Коридора' },
 	]
 
-export const Filtering: FC<FilteringProps> = () => {
+export const Filtering = () => {
 	const { setCardsData } = useContext(CardContext)
 
 	const [select, setSelect] = useState('')

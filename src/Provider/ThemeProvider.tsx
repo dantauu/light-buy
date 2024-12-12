@@ -21,7 +21,7 @@ export const ThemeProvider:FC <{children: ReactNode }> = ({ children }) => {
 
     return (
         <ThemeContext.Provider value={[theme, setTheme]} >
-            {children}
+        {children}
         </ThemeContext.Provider>
     )
 }
