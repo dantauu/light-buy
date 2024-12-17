@@ -22,7 +22,7 @@ const PaginationPagesBtn = ({ num, onClick, isActive, }: PaginationPagesProps) =
 	)
 }
 
-export const Pagination = ({ totalPages, currentPage, onChange, }: PaginationProps) => {
+export const Pagination = ({ totalPages, currentPage, onChange }: PaginationProps) => {
 	const handlePageChange = (pageNumber: number) => {
 		if (pageNumber >= 1 && pageNumber <= totalPages) {
 			onChange(pageNumber)

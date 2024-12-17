@@ -33,7 +33,7 @@ export const Assortement = () => {
 		setSelect(name) 
 		const filteredData = name === 'Все' ? data : data.filter((card) => 
 			card.category === name)
-		setCardsData(filteredData)
+		setCardsData(filteredData) // засунуть в Redux
 	}
 
 	// const changeCategory = (name: string) => {
