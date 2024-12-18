@@ -3,8 +3,6 @@ import { useContext } from "react"
 import { CardElement } from './CardElement/CardElement'
 import { SearchContext } from "../../app/App"
 import { CardContext } from "../../pages/Home"
-import { useGetCardsQuery } from "../../redux/api/api"
-import load from '../../assets/img/loading.png'
 
 
 
