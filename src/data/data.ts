@@ -36,7 +36,7 @@ export const CARDS: CardsFromServer = [
 		description:
 			'Умная колонка Яндекс Станция Мини с часами на YaGPT, черный оникс, 10Вт. Обновленная версия колонки с Алисой.',
 		price: 6500,
-		img: '/src/assets/img/yandex_kolonka.png',
+		img: './src/assets/img/yandex_kolonka.png',
 		category: 'Колонки',
 		filter: 'Детской',
 	},
@@ -48,7 +48,7 @@ export const CARDS: CardsFromServer = [
 		description:
 			'Терморегулятор нового поколения, управляет системой электрообогрева «теплый пол»',
 		price: 9000,
-		img: '/src/assets/img/termo-honeywell.png',
+		img: './src/assets/img/termo-honeywell.png',
 		category: 'Отопление',
 		filter: 'Коридора',
 	},
@@ -60,7 +60,7 @@ export const CARDS: CardsFromServer = [
 		description:
 			'У Xiaomi Mi Mijia имеется 6 методов управления для сушки и контроля при температуре 45 градусов Цельсия',
 		price: 24000,
-		img: '/src/assets/img/xiaomi-sushilka-1.png',
+		img: './src/assets/img/xiaomi-sushilka-1.png',
 		category: 'Сушилки',
 		filter: 'Уборной',
 	},
@@ -72,7 +72,7 @@ export const CARDS: CardsFromServer = [
 		description:
 			'Обеспечит огромный прирост к уровню безопасности. Огромным плюсом являтся обзор видомости 80 градусов.',
 		price: 8400,
-		img: '/src/assets/img/video-ease-1.png',
+		img: './src/assets/img/video-ease-1.png',
 		category: 'Видеоглазок',
 		filter: 'Коридора',
 	},
@@ -83,7 +83,7 @@ export const CARDS: CardsFromServer = [
 		description:
 			'Яндекс Станция 2 - умная колонка второго поколения с новым дизайном и центром управления умного дома.',
 		price: 16800,
-		img: '/src/assets/img/yandex-krestina.png',
+		img: './src/assets/img/yandex-krestina.png',
 		category: 'Колонки',
 		filter: 'Гостинной',
 	},
@@ -95,7 +95,7 @@ export const CARDS: CardsFromServer = [
 		description:
 			'Эргономичный дизайн и монолитный круглый корпус белого цвета, угол обзора - 360 градусов.',
 		price: 18000,
-		img: '/src/assets/img/xiaomi-camera.png',
+		img: './src/assets/img/xiaomi-camera.png',
 		category: 'Камера',
 		filter: 'Коридора',
 	},
@@ -106,7 +106,7 @@ export const CARDS: CardsFromServer = [
 		description:
 			'Умная колонка Яндекс Станция Макс, данная модель совместима с операционными системами Android и iOS',
 		price: 30000,
-		img: '/src/assets/img/yandex-krestina-2.png',
+		img: './src/assets/img/yandex-krestina-2.png',
 		category: 'Колонки',
 		filter: 'Кухни',
 	},
@@ -117,7 +117,7 @@ export const CARDS: CardsFromServer = [
 		description:
 			'Bluetooth датчик температуры и влажности, цифровой гигрометр с ЖК дисплеем',
 		price: 700,
-		img: '/src/assets/img/xiaomi-termo-1.png',
+		img: './src/assets/img/xiaomi-termo-1.png',
 		category: 'Отопление',
 		filter: 'Гостинной',
 	},
@@ -129,7 +129,7 @@ export const CARDS: CardsFromServer = [
 		description:
 			'Умные весы от Xiaomi имеющие возможность синхронизации с телефоном на ОС Android, IOS.',
 		price: 2000,
-		img: '/src/assets/img/Smart-Scale.png',
+		img: './src/assets/img/Smart-Scale.png',
 		category: 'Отопление',
 		filter: 'Гостинной',
 	},
@@ -141,7 +141,7 @@ export const CARDS: CardsFromServer = [
 		description:
 			'Умный многофункциональный робот унитаз / туалет. Новинка и бестселлер 2024 года.',
 		price: 52000,
-		img: '/src/assets/img/unitaz.png',
+		img: './src/assets/img/unitaz.png',
 		category: 'Отопление',
 		filter: 'Уборной',
 	},
@@ -153,7 +153,7 @@ export const CARDS: CardsFromServer = [
 		description:
 			'Умный робот-пылесос, который отлично справится как с влажной, так и с сухой уборкой в Вашем доме',
 		price: 18000,
-		img: '/src/assets/img/vacuum-cleaner.png',
+		img: './src/assets/img/vacuum-cleaner.png',
 		category: 'Отопление',
 		filter: 'Спальной',
 	},
@@ -165,7 +165,7 @@ export const CARDS: CardsFromServer = [
 		description:
 			'Датчик движения инфракрасный предназначен для автоматического включения и выключения нагрузки.',
 		price: 29000,
-		img: '/src/assets/img/device-moov.png',
+		img: './src/assets/img/device-moov.png',
 		category: 'Отопление',
 		filter: 'Детской',
 	},
@@ -187,8 +187,8 @@ export const MORECARD = [
 		supportAI: 'Да', //Поддержка AI
 		width: 11, //Ширина
 		height: 6, //Высота
-		img: '/src/assets/img/yandex_kolonka.png',
-		imgTwo: '/src/assets/img/yandex-kolonka.png',
+		img: './src/assets/img/yandex_kolonka.png',
+		imgTwo: './src/assets/img/yandex-kolonka.png',
 	},
 
 	{
