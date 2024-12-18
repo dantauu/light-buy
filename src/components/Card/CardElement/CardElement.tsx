@@ -90,7 +90,7 @@ export const CardElement: FC<ItemCardProps> = ({
 					</div>
 					<div className='wrapper-card__button'>
 						<button className='card-button__inner'>
-							{cardItem ? 'Добавлено' : 'Добавить'}
+							{ cardItem ? 'Добавлено' : 'Добавить' }
 						</button>
 					</div>
 				</div>
