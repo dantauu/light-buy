@@ -4,9 +4,11 @@ import { FC } from 'react'
 import checkIcon from '../../../assets/img/check.svg'
 import plusIcon from '../../../assets/img/plus.svg'
 import { useNavigate } from 'react-router-dom'
+import { useGetCardsQuery } from '../../../redux/api/api'
+import load from '../../../assets/img/loading.png'
 import './CardElement.scss'
 
-type ItemCardProps = {
+interface ItemCardProps {
 	id: number
 	title: string
 	description: string
@@ -29,6 +31,7 @@ export const CardElement: FC<ItemCardProps> = ({
 	description,
 	price,
 }) => {
+	const { isLoading } = useGetCardsQuery()
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
 
@@ -48,6 +51,12 @@ export const CardElement: FC<ItemCardProps> = ({
 			count: 1,
 		}
 		dispatch(addItem(item))
+	}
+
+	if (isLoading) {
+		return <div className="">
+			<img className='loading' src={load} alt="" />
+		</div>
 	}
 
 	return (
@@ -89,3 +98,4 @@ export const CardElement: FC<ItemCardProps> = ({
 		</div>
 	)
 }
+

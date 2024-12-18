@@ -112,6 +112,13 @@
     padding-right: 70px;
 }
 
+.loading {
+    height: 460px;
+    width: 280px;
+    padding-right: 10px;
+    opacity: 0.4;
+}
+
 @media screen and (max-width: 615px) {
     .card-title {
         font-size: 20px;

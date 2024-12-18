@@ -1,7 +1,8 @@
 import { createContext, useState } from 'react'
 import { Assortement } from '../components/Assortement/Assortement'
 import { FilterAndCardPagination } from '../components/FilterAndCardPagination/FilterAndCardPagination'
-import { CARDS, CardsServer } from '../data/data'
+import { CardsServer } from '../data/data'
+import { useGetCardsQuery } from '../redux/api/api'
 
 interface CardContextProps {
 	cardsData: CardsServer[],
@@ -9,14 +10,20 @@ interface CardContextProps {
 }
 
 const ContextValue: CardContextProps = {
-	cardsData: CARDS,
+	cardsData: [],
 	setCardsData: () => {}
 }
 
 export const CardContext = createContext<CardContextProps>((ContextValue))
 
 const Home = () => {
-	const [cardsData, setCardsData] = useState<CardsServer[]>(CARDS)
+	const {  error } = useGetCardsQuery()
+	const [cardsData, setCardsData] = useState<CardsServer[]>([])
+
+	if(error) {
+		return <div className="">ОШИБКА !!</div>
+	}
+
 	return (
 		<>
 			<CardContext.Provider value={{ cardsData, setCardsData }}>
