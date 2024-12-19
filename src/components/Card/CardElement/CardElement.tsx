@@ -4,8 +4,8 @@ import { addItem } from '../../../redux/slices/cardSlice'
 import checkIcon from '../../../assets/img/check.svg'
 import plusIcon from '../../../assets/img/plus.svg'
 import { useNavigate } from 'react-router-dom'
+import img from '../../../assets/img/arrow-left.svg'
 import './CardElement.scss'
-// import { RootState } from '@reduxjs/toolkit/query'
 
 interface ItemCardProps {
   id: number
@@ -32,10 +32,7 @@ export const CardElement: FC<ItemCardProps> = ({
 }) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const { loading } = useSelector((state: any) => state.renderCard)
 
-  console.log('isLoading - CardElement', loading)
-  
 
   const cardItem = useSelector((state: { card: { items: CardItem[] } }) =>
     Array.isArray(state.card.items)
@@ -61,7 +58,6 @@ export const CardElement: FC<ItemCardProps> = ({
         <img
           className={`card-img__inner ${id === 7 && 'modify'} ${id === 5 && 'modify-pad'}`}
           src={img}
-          alt={title}
         />
       </div>
       <div className="card-title">

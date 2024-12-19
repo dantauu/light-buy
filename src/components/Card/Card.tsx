@@ -12,7 +12,6 @@ export const Card = () => {
 	const { searchValue }: any = useContext(SearchContext)
 	// const { cardsData }: CardProps = useContext(CardContext)
   	const { data: cardsData, loading } = useSelector((state: any) => state.renderCard)
-	console.log('isLoading - Card', loading)
 	if (loading) {
 		return (
 			<Loading />
