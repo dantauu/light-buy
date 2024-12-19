@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { CARDS } from '../../data/data'
 import { CardData } from '../../app/types/global'
+import { api } from '../api/api'
 
 interface AssortState {
 	data: CardData[]
@@ -8,7 +8,7 @@ interface AssortState {
 }
 
 const initialState: AssortState = {
-	data: CARDS,
+	data: [],
 	selectedCategory: 'Все',
 }
 
@@ -24,6 +24,14 @@ const assortSlice = createSlice({
 			// 		: CARDS.filter(card => card.category === action.payload)
 		},
 	},
+		extraReducers: (builder) => {
+			builder.addMatcher(
+				api.endpoints.getCards.matchFulfilled,
+				(state, action) => {
+					state.data = action.payload
+				}
+			)
+		}
 })
 
 export const { setCategory } = assortSlice.actions

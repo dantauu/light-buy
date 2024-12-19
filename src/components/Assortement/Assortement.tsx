@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../redux/store'
 import { setCategory } from '../../redux/slices/assortSlice'
 import './Assortement.scss'
+import { setRenderData } from '../../redux/slices/renderCardSlice'
 
 const AssortementNav = [
 	{ id: 1, name: 'Все' },
@@ -20,8 +21,8 @@ const More = [
 
 export const Assortement = () => {
 	const dispatch = useDispatch()
-	const { setCardsData }: any = useContext(CardContext)
-	const { data, selectedCategory } = useSelector((state: RootState) => state.assort)
+	const { cardsData } = useContext(CardContext)
+	const { selectedCategory } = useSelector((state: RootState) => state.assort)
 	const [select, setSelect] = useState<string>(selectedCategory)
 
 	useEffect(() => {
@@ -31,19 +32,10 @@ export const Assortement = () => {
 	const handleSelect = (name: string) => {
 		dispatch(setCategory(name))
 		setSelect(name) 
-		const filteredData = name === 'Все' ? data : data.filter((card) => 
+		const filteredData = name === 'Все' ? cardsData : cardsData.filter((card: { category: string }) => 
 			card.category === name)
-		setCardsData(filteredData) // засунуть в Redux
+		dispatch(setRenderData(filteredData)) // засунуть в Redux
 	}
-
-	// const changeCategory = (name: string) => {
-	// 	if (name === 'Все') {
-	// 		setCardsData(CARDS)
-	// 	} else {
-	// 		const filtered = CARDS.filter(card => card.category === name)
-	// 		setCardsData(filtered)
-	// 	}
-	// }
 
 	//--Popup menu
 	const [isActive, setIsActive] = useState<boolean>(false)

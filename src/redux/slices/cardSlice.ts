@@ -10,8 +10,9 @@ interface CardItem {
 }
 
 interface intialStateProps {
-	items: CardItem[]  
+	items: CardItem[]
 }
+
 
 const storedItems = localStorage.getItem('basket')
 const parsedItems: CardItem[] = storedItems ? JSON.parse(storedItems) : []
