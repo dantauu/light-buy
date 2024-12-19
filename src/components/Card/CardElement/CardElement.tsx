@@ -4,7 +4,6 @@ import { addItem } from '../../../redux/slices/cardSlice'
 import checkIcon from '../../../assets/img/check.svg'
 import plusIcon from '../../../assets/img/plus.svg'
 import { useNavigate } from 'react-router-dom'
-import img from '../../../assets/img/arrow-left.svg'
 import './CardElement.scss'
 
 interface ItemCardProps {
