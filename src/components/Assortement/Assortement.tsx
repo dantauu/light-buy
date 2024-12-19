@@ -4,8 +4,8 @@ import { useClickOutside } from '../../hooks/useClickOutside'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../redux/store'
 import { setCategory } from '../../redux/slices/assortSlice'
-import './Assortement.scss'
 import { setRenderData } from '../../redux/slices/renderCardSlice'
+import './Assortement.scss'
 
 const AssortementNav = [
 	{ id: 1, name: 'Все' },

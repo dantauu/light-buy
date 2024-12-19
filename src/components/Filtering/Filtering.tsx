@@ -2,11 +2,12 @@ import { FC, useContext, useEffect, useState } from "react"
 import plus from '../../../public/assets/img/plus.svg'
 import minus from '../../../public/assets/img/minus.svg'
 import rubleIcon from '../../../public/assets/img/ruble.png'
-import { CARDS } from "../../data/data"
 import filterIcon from '../../../public/assets/img/filter.svg'
 import crossIcon from '../../../public/assets/img/cross.svg'
 import { CardContext } from "../../pages/Home"
 import './Filtering.scss'
+import { useDispatch } from "react-redux"
+import { setRenderData } from "../../redux/slices/renderCardSlice"
 
 type FilterItemProps = {
 	text: string
@@ -44,7 +45,8 @@ const FilterInputItem: FC<FilterItemProps> = ({ text, id, onChange }) => {
 	]
 
 export const Filtering = () => {
-	const { setCardsData } = useContext(CardContext)
+	const dispatch = useDispatch()
+	const { cardsData } = useContext(CardContext)
 
 	const [select, setSelect] = useState('')
 	 	const handleSelect = (name: string) => {
@@ -56,8 +58,8 @@ export const Filtering = () => {
 		}
 
 	const changeCategorys = (name: string) => {
-		const filtered = CARDS.filter(card => card.filter === name)
-		setCardsData(filtered)
+		const filtered = cardsData.filter(card => card.filter === name)
+		dispatch(setRenderData(filtered))
 		}
 
 	//MENU
@@ -78,15 +80,15 @@ export const Filtering = () => {
 		}, [minPrice, maxPrice])
 
 	const applyFilters = () => {
-		let filteredPrice = CARDS
-		const minPriceNum = parseInt(minPrice) || 0
+		let filteredPrice = cardsData
+		const minPriceNum = parseInt(minPrice) || 1
 		const maxPriceNum = parseInt(maxPrice) || Infinity
 
 		filteredPrice = filteredPrice.filter(card => {
 			const price = card.price
 			return price >= minPriceNum && price <= maxPriceNum
 		})
-		setCardsData(filteredPrice)
+		dispatch(setRenderData(filteredPrice))
 	}
 	return (
 		<>
@@ -99,12 +101,11 @@ export const Filtering = () => {
 				</div>
 			</div>
 			<div
-				className={`filter-main__wrapper ${showFilter ? 'active-filter':''}`}>
+				className={`filter-main__wrapper ${showFilter ? 'active-filter' : ''}`}
+			>
 				<div className='container'>
-					<div 
-					onClick={() => setShowFilter(false)} 
-					className="cross">
-						<img className="cross-icon" src={crossIcon} alt="" />
+					<div onClick={() => setShowFilter(false)} className='cross'>
+						<img className='cross-icon' src={crossIcon} alt='' />
 					</div>
 					<h2 className='filter-title'>Фильтрация</h2>
 					<div className='price-wrapper'>
@@ -148,8 +149,7 @@ export const Filtering = () => {
 					<ul className={`filter-drop ${isActive ? 'active' : ''}`}>
 						<li
 							onClick={() => {
-								changeCategorys('Детской'), 
-								handleSelect('Детской')
+								changeCategorys('Детской'), handleSelect('Детской')
 							}}
 							className={`filter-drop__item 
 							${select === 'Детской' ? 'selectedId' : ''}`}
@@ -164,8 +164,7 @@ export const Filtering = () => {
 						</li>
 						<li
 							onClick={() => {
-								changeCategorys('Спальной'), 
-								handleSelect('Спальной')
+								changeCategorys('Спальной'), handleSelect('Спальной')
 							}}
 							className={`filter-drop__item ${
 								select === 'Спальной' ? 'selectedId' : ''
