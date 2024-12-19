@@ -2,9 +2,9 @@ import { useContext } from "react"
 import { CardElement } from './CardElement/CardElement'
 import { SearchContext } from "../../app/App"
 import { useSelector } from "react-redux"
-import { Loading } from "../loading/Loading"
 import { RootState } from "../../redux/store"
 import { CardData } from "../../app/types/global"
+import Loading from "../Loading/Loading"
 
 
 

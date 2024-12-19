@@ -1,7 +1,7 @@
 import { JSX } from 'react/jsx-runtime'
 import ContentLoader, { IContentLoaderProps } from 'react-content-loader'
 
-export const Loading = (props: JSX.IntrinsicAttributes & IContentLoaderProps) => {
+const Loading = (props: JSX.IntrinsicAttributes & IContentLoaderProps) => {
     return (
 			<div className='card-wrapper'>
 				{Array.from({ length: 6 }, (_, index) => (
@@ -25,4 +25,5 @@ export const Loading = (props: JSX.IntrinsicAttributes & IContentLoaderProps) =>
 			</div>
 		)
 }
+export default Loading
 
