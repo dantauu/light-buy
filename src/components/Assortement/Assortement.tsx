@@ -18,7 +18,6 @@ const More = [
 	{ name: 'Ещё' }
 ]
 
-
 export const Assortement = () => {
 	const dispatch = useDispatch()
 	const { cardsData } = useContext(CardContext)
@@ -34,7 +33,7 @@ export const Assortement = () => {
 		setSelect(name) 
 		const filteredData = name === 'Все' ? cardsData : cardsData.filter((card: { category: string }) => 
 			card.category === name)
-		dispatch(setRenderData(filteredData)) // засунуть в Redux
+		dispatch(setRenderData(filteredData)) 
 	}
 
 	//--Popup menu

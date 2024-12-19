@@ -8,7 +8,7 @@ export const api = createApi({
 	reducerPath: 'api',
 	tagTypes: ['cards'],
 	baseQuery: async (args, api, extraOption) => {
-		await delay(1000)
+		await delay(2000)
 		return fetchBaseQuery({
 			baseUrl: API_URL,
 		})(args, api, extraOption)
