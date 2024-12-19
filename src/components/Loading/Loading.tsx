@@ -1,4 +1,4 @@
-import load from '../../assets/img/loading.png'
+import load from '../../../public/assets/img/loading.png'
 
 export const Loading = () => {
     return (

@@ -1,10 +1,10 @@
 import { FC, useContext, useEffect, useState } from "react"
-import plus from '../../assets/img/plus.svg'
-import minus from '../../assets/img/minus.svg'
-import rubleIcon from '../../assets/img/ruble.png'
+import plus from '../../../public/assets/img/plus.svg'
+import minus from '../../../public/assets/img/minus.svg'
+import rubleIcon from '../../../public/assets/img/ruble.png'
 import { CARDS } from "../../data/data"
-import filterIcon from '../../assets/img/filter.svg'
-import crossIcon from '../../assets/img/cross.svg'
+import filterIcon from '../../../public/assets/img/filter.svg'
+import crossIcon from '../../../public/assets/img/cross.svg'
 import { CardContext } from "../../pages/Home"
 import './Filtering.scss'
 

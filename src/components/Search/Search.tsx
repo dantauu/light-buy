@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import glass from '../../assets/img/glass.png'
+import glass from '../../../public/assets/img/glass.png'
 import { SearchContext } from '../../app/App'
 
 

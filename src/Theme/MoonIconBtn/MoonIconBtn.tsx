@@ -1,4 +1,4 @@
-import moonIcon from '../../assets/img/moon.svg'
+import moonIcon from '../../../public/assets/img/moon.svg'
 import '../Theme.scss'
 
 const MoonIconBtn = () => {

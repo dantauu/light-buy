@@ -1,8 +1,8 @@
 import { FC } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addItem } from '../../../redux/slices/cardSlice'
-import checkIcon from '../../../assets/img/check.svg'
-import plusIcon from '../../../assets/img/plus.svg'
+import checkIcon from '../../../../public/assets/img/check.svg'
+import plusIcon from '../../../../public/assets/img/plus.svg'
 import { useNavigate } from 'react-router-dom'
 import './CardElement.scss'
 

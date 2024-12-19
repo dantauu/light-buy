@@ -1,22 +1,23 @@
-// import columnOne from '../assets/img/yandex_kolonka.png'
-// import columnTwo from '../assets/img/yandex-kolonka.png'
-import columnThree from '../assets/img/yandex-krestina.png'
-import columnFour from '../assets/img/yandex-krestina-2.png'
-import dryerOne from '../assets/img/xiaomi-sushilka-1.png'
-import dryerTwo from '../assets/img/xiaomi-sushilka-2.png'
-import termoOne from '../assets/img/termo-honeywell.png'
-import termoTwo from '../assets/img/xiaomi-termo-1.png'
-import videoEaseOne from '../assets/img/video-ease-1.png'
-import videoEaseTwo from '../assets/img/video-ease-2.png'
-import cameraOne from '../assets/img/xiaomi-camera.png'
-import scaleIcon from '../assets/img/Smart-Scale.png'
-import unitazIcon from '../assets/img/unitaz.png'
-import vacuumIcon from '../assets/img/vacuum-cleaner.png'
-import deviceMoove from '../assets/img/device-moov.png'
+import columnOne from '../../public/assets/img/yandex_kolonka.png'
+import columnTwo from '../../public/assets/img/yandex-kolonka.png'
+import columnThree from '../../public/assets/img/yandex-krestina.png'
+import columnFour from '../../public/assets/img/yandex-krestina-2.png'
+import dryerOne from '../../public/assets/img/xiaomi-sushilka-1.png'
+import dryerTwo from '../../public/assets/img/xiaomi-sushilka-2.png'
+import termoOne from '../../public/assets/img/termo-honeywell.png'
+import termoTwo from '../../public/assets/img/xiaomi-termo-1.png'
+import videoEaseOne from '../../public/assets/img/video-ease-1.png'
+import videoEaseTwo from '../../public/assets/img/video-ease-2.png'
+import cameraOne from '../../public/assets/img/xiaomi-camera.png'
+import scaleIcon from '../../public/assets/img/Smart-Scale.png'
+import unitazIcon from '../../public/assets/img/unitaz.png'
+import vacuumIcon from '../../public/assets/img/vacuum-cleaner.png'
+import deviceMoove from '../../public/assets/img/device-moov.png'
 
 
 
 export type CardsServer = {
+	[x: string]: any
 	id: number
 	title: string
 	description: string
@@ -188,8 +189,8 @@ export const MORECARD = [
 		supportAI: 'Да', //Поддержка AI
 		width: 11, //Ширина
 		height: 6, //Высота
-		img: './src/assets/img/yandex_kolonka.png',
-		imgTwo: './src/assets/img/yandex-kolonka.png',
+		img: columnOne,
+		imgTwo: columnTwo,
 	},
 
 	{

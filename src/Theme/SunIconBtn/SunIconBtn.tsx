@@ -1,4 +1,4 @@
-import sunIcon from '../../assets/img/sun.svg'
+import sunIcon from '../../../public/assets/img/sun.svg'
 import '../Theme.scss'
 
 const SunIconBtn = () => {

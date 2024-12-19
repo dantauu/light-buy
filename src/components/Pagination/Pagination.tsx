@@ -1,5 +1,5 @@
-import arrowLeftIcon from '../../assets/img/arrow-left.svg'
-import arrowRightIcon from '../../assets/img/arrow-right.svg'
+import arrowLeftIcon from '../../../public/assets/img/arrow-left.svg'
+import arrowRightIcon from '../../../public/assets/img/arrow-right.svg'
 import './Pagination.scss'
 
 type PaginationPagesProps = {
