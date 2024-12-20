@@ -16,7 +16,7 @@ export const api = createApi({
 	endpoints: builder => ({
 		getCards: builder.query<CardsServer[], void>({
 			query: () => '/dataCards',
-		})
+		}),
 	})
     
 })

@@ -5,9 +5,9 @@ import rubleIcon from '../../../public/assets/img/ruble.png'
 import filterIcon from '../../../public/assets/img/filter.svg'
 import crossIcon from '../../../public/assets/img/cross.svg'
 import { CardContext } from "../../pages/Home"
-import './Filtering.scss'
 import { useDispatch } from "react-redux"
 import { setRenderData } from "../../redux/slices/renderCardSlice"
+import './Filtering.scss'
 
 type FilterItemProps = {
 	text: string
@@ -48,10 +48,17 @@ export const Filtering = () => {
 	const dispatch = useDispatch()
 	const { cardsData } = useContext(CardContext)
 
-	const [select, setSelect] = useState('')
-	 	const handleSelect = (name: string) => {
-	 		setSelect(name)
-		}
+	const [select, setSelect] = useState<string | null>(null)
+	
+	const handleSelect = (name: string) => {
+	 	setSelect(name)
+	}
+
+	const clickCross = () => {
+		setSelect(null)
+		dispatch(setRenderData(cardsData))
+	}
+
 	const [showFilter, setShowFilter] = useState<boolean>(false)
 		const handleShowFilter = () => {
 			setShowFilter(!showFilter)
@@ -135,48 +142,68 @@ export const Filtering = () => {
 									onClick={() => {
 										changeCategorys(item.name), handleSelect(item.name)
 									}}
-									className={`after-filter ${
-										select === item.name && 'selectedId'
-									}`}
+									className='after-filter'
 								>
-									<div className='after-filter__text'>
+									<div
+										className={`after-filter__text ${
+											select === item.name && 'selectedId'
+										}`}
+									>
 										<p className='filter-discount__inner'>{item.name}</p>
+									</div>
+									<div
+										onClick={e => {
+											e.stopPropagation(), clickCross()
+										}}
+										className='after-filter-cross__img'
+									>
+										{select === item.name ? (
+											<img className='cross-img__inner' src={crossIcon} />
+										) : null}
 									</div>
 								</div>
 							))}
 						</div>
 					</div>
 					<ul className={`filter-drop ${isActive ? 'active' : ''}`}>
-						<li
-							onClick={() => {
-								changeCategorys('Детской'), handleSelect('Детской')
-							}}
-							className={`filter-drop__item 
-							${select === 'Детской' ? 'selectedId' : ''}`}
-						>
+						<li className='filter-drop__item'>
 							<button
+								onClick={() => {
+									changeCategorys('Детской'), handleSelect('Детской')
+								}}
 								className={`drop-item__inner ${
 									select === 'Детской' ? 'selectedId' : ''
 								}`}
 							>
 								Детской
 							</button>
+							<div
+								onClick={() => clickCross()}
+								className='after-filter-cross__img'
+							>
+								{select === 'Детской' ? (
+									<img src={crossIcon} className='cross-img__inner' />
+								) : null}
+							</div>
 						</li>
-						<li
-							onClick={() => {
-								changeCategorys('Спальной'), handleSelect('Спальной')
-							}}
-							className={`filter-drop__item ${
-								select === 'Спальной' ? 'selectedId' : ''
-							}`}
-						>
+						<li className='filter-drop__item'>
 							<button
+								onClick={() => {
+									changeCategorys('Спальной'), handleSelect('Спальной')
+								}}
 								className={`drop-item__inner ${
 									select === 'Спальной' ? 'selectedId' : ''
 								}`}
 							>
 								Спальной
 							</button>
+							<div onClick={clickCross} 
+							className='after-filter-cross__img'
+							>
+								{select === 'Спальной' ? (
+									<img src={crossIcon} className='cross-img__inner' />
+								) : null}
+							</div>
 						</li>
 					</ul>
 					<div style={{ position: 'relative' }} className=''>
