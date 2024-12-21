@@ -4,11 +4,9 @@
     cursor: pointer;
     transition: all 0.2s ease-in;
     @include button-reset;
-
-    &:hover {
-        transition: all 0.2s ease-in;
-        transform: rotate(0.10turn);
-    }
+    border: 1px solid $main-color;
+    padding: 5px 7px 5px 7px;
+    border-radius: 10px;
 }
 
 .sun-btn__img {
@@ -18,12 +16,9 @@
 .moon-btn {
     cursor: pointer;
     @include button-reset;
-    transition: all 0.2s ease-in;
-
-     &:hover {
-        transition: all 0.2s ease-in;
-        transform: rotate(0.10turn);
-    }
+    border: 1px solid $main-color;
+    padding: 5px 7px 5px 7px;
+    border-radius: 10px;
 }
 
 .moon-btn__img {

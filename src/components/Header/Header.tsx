@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom'
 import { Search } from '../Search/Search'
 import { Theme } from '../../Theme/Theme'
 import { useSelector } from 'react-redux'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import './Header.scss'
+import { ModalContext } from '../../app/App'
 
 // type HeaderProps = {
 // 	searchValue: string
@@ -16,6 +17,7 @@ import './Header.scss'
 
 export const Header = () => {
 	const { items } = useSelector((state: any) => state.card)
+	const { setShowModal } = useContext(ModalContext)
 	const [isActive, setIsActive] = useState<boolean>(false)
 	const activeBurger = () => {
 		setIsActive(!isActive)
@@ -42,7 +44,7 @@ export const Header = () => {
 							<div className='header-right__img'>
 								<Theme />
 							</div>
-							<div className='header-right__welcome'>
+							<div onClick={() => setShowModal(true)} className='header-right__welcome'>
 								<div className='header-welcome__img'>
 									<img
 										className='header-welcome__img__inner'

@@ -18,6 +18,7 @@ const ContextValue: CardContextProps = {
 	setCardsData: () => {}, 
 }
 
+
 export const CardContext = createContext<CardContextProps>((ContextValue))
 
 const Home = () => {
@@ -39,10 +40,10 @@ const Home = () => {
 	console.log('isLoading - Home', isLoading)
 	return (
 		<>
-			<CardContext.Provider value={{ cardsData, setCardsData }}>
-				<Assortement />
-				<FilterAndCardPagination />
-			</CardContext.Provider>
+				<CardContext.Provider value={{ cardsData, setCardsData }}>
+					<Assortement />
+					<FilterAndCardPagination />
+				</CardContext.Provider>
 		</>
 	)
 }
