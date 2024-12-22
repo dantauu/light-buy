@@ -1,58 +1,82 @@
 @import '../../app/index.scss';
 
 .modal {
-    position: fixed;
-    background: #0000007b;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    overflow-y: auto;
-    opacity: 1;
-    transition: opacity 300ms ease;
-    z-index: 20;
+  position: fixed;
+  background: #0000007b;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+  z-index: 999;
 }
 
+.modal-anim-enter {
+  opacity: 0;
+}
+
+.modal-anim-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
+}
+
+.modal-anim-exit {
+  opacity: 1;
+}
+
+.modal-anim-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.modal-anim-enter-done {
+    opacity: 1;
+}
+
+
 .modal-wrapper {
-    @include flex-center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100%;
+  @include flex-center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
 }
 
 .form {
-    position: relative;
-    width: 600px;
-    height: 500px;
-    background: #fff;
-    border-radius: 20px;
-    transition: all 1s ease;
+  position: relative;
+  width: 600px;
+  height: 500px;
+  background: #fff;
+  border-radius: 20px;
+  transform: translateY(-50px);
+  transition: opacity 0.3s, transform 0.3s;
 }
 
 .form-input__items {
-    @include flex-center;
-    gap: 50px;
-    flex-direction: column;
-    padding-top: 22%;
-    
+  @include flex-center;
+  gap: 50px;
+  flex-direction: column;
+  padding-top: 22%;
 }
 
 .form-title {
-    text-align: center;
-    padding-top: 20px;
+  text-align: center;
+  padding-top: 20px;
 }
 
 .form-cross {
-    position: absolute;
-    cursor: pointer;
-    margin: 10px;
-    top: 0;
-    right: 0;
+  position: absolute;
+  cursor: pointer;
+  margin: 10px;
+  top: 0;
+  right: 0;
 }
 
 .form-cross__img {
-    width: 55px;
+  width: 55px;
 }
+

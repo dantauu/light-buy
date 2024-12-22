@@ -1,14 +1,13 @@
 import { useContext } from 'react'
 import crossIcon from '../../../public/assets/img/cross.svg' 
 import { ModalContext } from '../../app/App'
-// import { CSSTransition } from 'react-transition-group'
 import './Modal.scss'
 
-export const Modal = () => {
+export const Modal = ({ modalRef }: any) => {
     const { setShowModal } = useContext(ModalContext)
     return (
 			<>
-					<div className='modal'>
+					<div ref={modalRef} className='modal'>
 						<div className='modal-wrapper'>
 							<form action='' className='form'>
 								<div className='form-title'>

@@ -7,8 +7,8 @@ import { Search } from '../Search/Search'
 import { Theme } from '../../Theme/Theme'
 import { useSelector } from 'react-redux'
 import { useContext, useState } from 'react'
-import './Header.scss'
 import { ModalContext } from '../../app/App'
+import './Header.scss'
 
 // type HeaderProps = {
 // 	searchValue: string
@@ -22,7 +22,6 @@ export const Header = () => {
 	const activeBurger = () => {
 		setIsActive(!isActive)
 	}
-	console.log(items)
 	return (
 		<>
 			<div className='container'>
