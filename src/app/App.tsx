@@ -19,7 +19,7 @@ const ModalValue: ModalContextProps = {
 }
 
 export const ModalContext = createContext(ModalValue)
-export const SearchContext = createContext(({}))
+export const SearchContext = createContext(({})) //!
 
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
 		<>
 			<ThemeProvider>
 				<SearchContext.Provider value={{ searchValue, setSearchValue }}>
-					<ModalContext.Provider value={{showModal, setShowModal}}>
+					<ModalContext.Provider value={{ showModal, setShowModal }}>
 						<CSSTransition
 							in={showModal}
 							timeout={300}
