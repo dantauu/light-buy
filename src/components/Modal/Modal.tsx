@@ -15,12 +15,14 @@ export const Modal = ({ modalRef }: any) => {
 			email: 'dantau@gmail.com',
 			password: '99999'
 		},
-		mode: "all"
+		mode: "onChange"
 	})
 	const onSubmit = (values: any) => {
 		const userData = { user: { email: values.email, password: values.password } }
 		dispatch(fetchAuth(userData))
+		console.log(userData)
 	}
+
 	console.log(errors, isValid)
     const { setShowModal } = useContext(ModalContext)
     return (

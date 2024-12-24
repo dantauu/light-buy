@@ -24,7 +24,7 @@ const axiosStance = axios.create({
 
 export const fetchAuth = createAsyncThunk<AuthParams, BeforeAuthParams>(
     'auth/fetchAuth', async (params) => {
-    const { data } = await axiosStance.post('/auth/login', params)
+    const { data } = await axiosStance.post('/auth/login', params.user)
     return data
 })
 
