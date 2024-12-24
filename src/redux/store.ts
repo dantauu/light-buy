@@ -2,7 +2,8 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import card from './slices/cardSlice'
 import product from './slices/productSlice'
 import assort from './slices/assortSlice'
-import renderCard from '../redux/slices/renderCardSlice'
+import renderCard from './slices/renderCardSlice'
+import auth from './slices/authSlice'
 import { api } from './api/api'
 
 
@@ -11,6 +12,7 @@ const reducers = combineReducers({
 		product,
 		assort,
 		renderCard,
+		auth,
 		[api.reducerPath]: api.reducer,
 })
 
@@ -21,3 +23,4 @@ export const store = configureStore({
 })
 
 export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch

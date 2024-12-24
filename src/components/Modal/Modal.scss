@@ -85,6 +85,9 @@
 }
 
 .modal-login {
+  display: flex;
+  flex-direction: column;
+  position: relative;
   background: #0000004c;
   padding: 20px;
   font-size: 19px;
@@ -95,8 +98,17 @@
   outline: none;
 }
 
+.login-error {
+  position: absolute;
+  left: 208px;
+  font-family: 'Montserrat-M';
+  font-size: 14px;
+  color: red;
+}
+
 .modal-content-button__inner {
   @include button-reset;
+  cursor: pointer;
   font-size: 19px;
   color: $color-white;
 }
