@@ -6,6 +6,7 @@ import plusIcon from '../../../../public/assets/img/plus.svg'
 import { useNavigate } from 'react-router-dom'
 import { selectIsAuth } from '../../../redux/slices/authSlice'
 import './CardElement.scss'
+import ModalError from '../../ModalError/ModalError'
 
 interface ItemCardProps {
   id: number
@@ -44,7 +45,7 @@ export const CardElement: FC<ItemCardProps> = ({
   const onClickAddBasket = () => {
     if (!isAuth) {
       setShowMessage(true)
-      setTimeout(() => setShowMessage(false), 3000) 
+      setTimeout(() => setShowMessage(false), 2400) 
       return
     }
     const item: CardItem = {
@@ -55,6 +56,10 @@ export const CardElement: FC<ItemCardProps> = ({
       count: 1,
     }
     dispatch(addItem(item))
+  }
+
+  const closeModalErr = () => {
+    setShowMessage(false)
   }
   
 
@@ -78,9 +83,9 @@ export const CardElement: FC<ItemCardProps> = ({
         </div>
 
         {showMessage && !isAuth && (
-          <div className="error-add">
-            <h2 className='error-add__text'>Пожалуйста, зерегистрируйтесь</h2>
-          </div>
+          <ModalError 
+          message='Вы должны быть авторизовыны что бы добавить товар в корзину' 
+          onClose={closeModalErr} />
         )}
 
         <div onClick={onClickAddBasket} className="card-button">

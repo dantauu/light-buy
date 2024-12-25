@@ -1,0 +1,56 @@
+@import '../../app/index.scss';
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Модальное окно */
+.modal-content-wrapper {
+  background-color: #fff;
+  border-radius: 8px;
+  width: 400px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Сообщение внутри модального окна */
+.modal-content__inner {
+  font-family: 'Montserrat-M';
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Кнопка закрытия */
+.modal-close-button {
+  background-color: $main-color;
+  font-family: 'Montserrat-M';
+  font-size: 15px;
+  color: #fff;
+  border: none;
+  padding: 18px 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
