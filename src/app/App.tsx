@@ -2,11 +2,14 @@ import { Route, Routes } from "react-router-dom"
 import { BasketPage } from "../pages/BasketPage.tsx"
 import { Header } from "../components/Header/Header.tsx"
 import Home from "../pages/Home.tsx"
-import { createContext, useRef, useState } from "react"
+import { createContext, useEffect, useRef, useState } from "react"
 import { ThemeProvider } from "../Provider/ThemeProvider.tsx"
 import { MoreCard } from "../pages/MoreCard.tsx"
 import { Modal } from "../components/Modal/Modal.tsx"
 import { CSSTransition } from "react-transition-group"
+import { useDispatch } from "react-redux"
+import { fetchAuthMe } from "../redux/slices/authSlice.ts"
+import { AppDispatch } from "../redux/store.ts"
 
 interface ModalContextProps {
 	showModal: boolean
@@ -23,6 +26,11 @@ export const SearchContext = createContext(({})) //!
 
 
 function App() {
+	//Проверка есть ли пользователь
+	const dispatch = useDispatch<AppDispatch>()
+	useEffect(() => {
+		dispatch(fetchAuthMe())
+	}, [])
 	const [searchValue, setSearchValue] = useState<string>('')
 	const [showModal, setShowModal] = useState<boolean>(false)
 	const modalRef = useRef(null)

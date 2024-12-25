@@ -5,10 +5,11 @@ import burgerIcon from '../../../public/assets/img/burger-menu.svg'
 import { Link } from 'react-router-dom'
 import { Search } from '../Search/Search'
 import { Theme } from '../../Theme/Theme'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useContext, useState } from 'react'
 import { ModalContext } from '../../app/App'
 import './Header.scss'
+import { logout, selectIsAuth } from '../../redux/slices/authSlice'
 
 // type HeaderProps = {
 // 	searchValue: string
@@ -21,6 +22,12 @@ export const Header = () => {
 	const [isActive, setIsActive] = useState<boolean>(false)
 	const activeBurger = () => {
 		setIsActive(!isActive)
+	}
+	const dispatch = useDispatch()
+	const isAuth = useSelector(selectIsAuth)
+	const onClickLogout = () => {
+		dispatch(logout())
+		window.localStorage.removeItem('token')
 	}
 	return (
 		<>
@@ -43,18 +50,38 @@ export const Header = () => {
 							<div className='header-right__img'>
 								<Theme />
 							</div>
-							<div onClick={() => setShowModal(true)} className='header-right__welcome'>
-								<div className='header-welcome__img'>
-									<img
-										className='header-welcome__img__inner'
-										src={profileIcon}
-										alt=''
-									/>
+							{isAuth ? (
+								<div 
+								onClick={onClickLogout}
+								className='header-right__welcome'>
+									<div className='header-welcome__img'>
+										<img
+											className='header-welcome__img__inner'
+											src={profileIcon}
+											alt=''
+										/>
+									</div>
+									<div className='header-welcome__btn'>
+										<p className='header-welcome-btn__inner'>Выйти</p>
+									</div>
 								</div>
-								<div className='header-welcome__btn'>
-									<p className='header-welcome-btn__inner'>Войти</p>
+							) : (
+								<div
+									onClick={() => setShowModal(true)}
+									className='header-right__welcome'
+								>
+									<div className='header-welcome__img'>
+										<img
+											className='header-welcome__img__inner'
+											src={profileIcon}
+											alt=''
+										/>
+									</div>
+									<div className='header-welcome__btn'>
+										<p className='header-welcome-btn__inner'>Войти</p>
+									</div>
 								</div>
-							</div>
+							)}
 							<Link to='/basket' className='header-welcome'>
 								<div className=''>
 									<img

@@ -1,9 +1,10 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addItem } from '../../../redux/slices/cardSlice'
 import checkIcon from '../../../../public/assets/img/check.svg'
 import plusIcon from '../../../../public/assets/img/plus.svg'
 import { useNavigate } from 'react-router-dom'
+import { selectIsAuth } from '../../../redux/slices/authSlice'
 import './CardElement.scss'
 
 interface ItemCardProps {
@@ -31,7 +32,8 @@ export const CardElement: FC<ItemCardProps> = ({
 }) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-
+  const isAuth = useSelector(selectIsAuth)
+  const [ showMessage, setShowMessage ] = useState(false)
 
   const cardItem = useSelector((state: { card: { items: CardItem[] } }) =>
     Array.isArray(state.card.items)
@@ -40,6 +42,11 @@ export const CardElement: FC<ItemCardProps> = ({
   )
 
   const onClickAddBasket = () => {
+    if (!isAuth) {
+      setShowMessage(true)
+      setTimeout(() => setShowMessage(false), 3000) 
+      return
+    }
     const item: CardItem = {
       id,
       title,
@@ -49,7 +56,7 @@ export const CardElement: FC<ItemCardProps> = ({
     }
     dispatch(addItem(item))
   }
-
+  
 
   return (
     <div className="card">
@@ -69,6 +76,13 @@ export const CardElement: FC<ItemCardProps> = ({
         <div className="card-price">
           <p>{price} р</p>
         </div>
+
+        {showMessage && !isAuth && (
+          <div className="error-add">
+            <h2 className='error-add__text'>Пожалуйста, зерегистрируйтесь</h2>
+          </div>
+        )}
+
         <div onClick={onClickAddBasket} className="card-button">
           <div className="card-button__img">
             {cardItem ? <img src={checkIcon} alt="" /> : <img src={plusIcon} alt="" />}
