@@ -124,3 +124,12 @@
   background: $main-color;
   border-radius: 15px;
 }
+
+.register-auth {
+  display: flex;
+}
+
+.register-button {
+  @include button-reset;
+  cursor: pointer;
+}

@@ -5,11 +5,12 @@ import Home from "../pages/Home.tsx"
 import { createContext, useEffect, useRef, useState } from "react"
 import { ThemeProvider } from "../Provider/ThemeProvider.tsx"
 import { MoreCard } from "../pages/MoreCard.tsx"
-import { Modal } from "../components/Modal/Modal.tsx"
+import { Modal } from "../components/ModalAuth/Modal.tsx"
 import { CSSTransition } from "react-transition-group"
 import { useDispatch } from "react-redux"
 import { fetchAuthMe } from "../redux/slices/authSlice.ts"
 import { AppDispatch } from "../redux/store.ts"
+import { ModalRegister } from "../components/ModalRegistr/ModalRegistr.tsx"
 
 interface ModalContextProps {
 	showModal: boolean
@@ -54,6 +55,7 @@ function App() {
 							<Route path='/' element={<Home />} index />
 							<Route path='/more-card/:id' element={<MoreCard />} />
 							<Route path='/basket' element={<BasketPage />} />
+							<Route path='/register' element={<ModalRegister />} />
 						</Routes>
 					</ModalContext.Provider>
 				</SearchContext.Provider>

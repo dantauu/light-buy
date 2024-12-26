@@ -33,14 +33,14 @@ export const Header = () => {
 		<>
 			<div className='container'>
 				<div className='header-wrapper'>
-					<div className='light-part'>
+					<Link to={'/'} className='light-part'>
 						<div className='light-img'>
 							<img src={mainLogo} alt='logo' />
 						</div>
 						<div className='light-text'>
 							<h2 className='light-text__inner'>Light Buy</h2>
 						</div>
-					</div>
+					</Link>
 					<Search />
 					<div className='header-right__wrapper'>
 						<div

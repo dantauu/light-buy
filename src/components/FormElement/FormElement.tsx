@@ -1,11 +1,11 @@
 import { forwardRef } from 'react'
-import '../Modal/Modal.scss'
+import '../ModalAuth/Modal.scss'
 
 interface FormElementProps {
     placeholder: string
     type: string
 	error: boolean,
-	helpertext: any
+	helpertext: string | undefined
 	name: string
 }
 

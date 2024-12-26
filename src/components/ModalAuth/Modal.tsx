@@ -6,26 +6,28 @@ import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 import { AuthParams, fetchAuth, selectIsAuth } from '../../redux/slices/authSlice'
 import { AppDispatch } from '../../redux/store'
-import './Modal.scss'
 import { PayloadAction } from '@reduxjs/toolkit'
+import './Modal.scss'
+import { useNavigate } from 'react-router-dom'
 
 export const Modal = ({ modalRef }: any) => {
+	const navigate = useNavigate()
+	const goToNavigate = () => {
+		navigate('/register')
+	}
 	const dispatch = useDispatch<AppDispatch>()
 	const { register, handleSubmit, formState: {errors, isValid} } = useForm({
 		defaultValues: {
 			email: 'dantau@gmail.com',
 			password: '99999'
 		},
-		mode: "onChange"
+		mode: "all"
 	})
 	//Проверка на наличие токена и сохранение его в localstorage
 	const onSubmit = async (values: any) => {
 		const userData = { user: { email: values.email, password: values.password } }
 		const takeDataUser = await dispatch(fetchAuth(userData)) as PayloadAction<AuthParams>
 
-		if (!takeDataUser.payload) {
-			alert('Are you vvel nepravelno ?')
-		}
 		if ('token' in takeDataUser.payload) {
 			window.localStorage.setItem('token', takeDataUser.payload.token)
 		}
@@ -76,6 +78,21 @@ export const Modal = ({ modalRef }: any) => {
 								<img className='form-cross__img' src={crossIcon} alt='' />
 							</div>
 						</form>
+						<div className='register-auth'>
+							<div className=''>
+								<p className=''>Не зарегистрированы ?</p>
+							</div>
+							<div className=''>
+								<button
+									onClick={() => {
+										goToNavigate(), setShowModal(false)
+									}}
+									className='register-button'
+								>
+									Зарегистрироваться
+								</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</>
