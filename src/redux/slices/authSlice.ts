@@ -4,14 +4,21 @@ import axios from "axios";
 
 //Вынести axios в отдельный компонент
 
+export interface ServerErrors {
+	type: string
+	value: string
+	msg: string
+	path: string
+	location: string
+}
+
 export interface AuthParams {
-	errors?: any;
-    message?: any
-    msg?: any
+    token: string
+    message?: string
+    msg?: string
     email: string
     password: string
-    name?: string
-    token: string
+    name: string
 }
 
 export interface BeforeAuthParams {
@@ -25,6 +32,7 @@ export interface BeforeAuthParams {
 interface AuthState {
     data: AuthParams | null
     status: 'loading' | 'loaded' | 'error'
+    errors?: ServerErrors[]
 }
 
 
@@ -39,32 +47,49 @@ axiosStance.interceptors.request.use((config) => {
     return config
 })
 
-//Авторизация
-export const fetchAuth = createAsyncThunk<AuthParams, BeforeAuthParams>(
-    'auth/fetchAuth', async (params) => {
-    const { data } = await axiosStance.post<AuthParams>('/auth/login', params.user)
-    return data
-})
 
 //Получение пользователя
 export const fetchAuthMe = createAsyncThunk(
-	'auth/fetchAuthMe', async () => {
-		const { data } = await axiosStance.get('/auth/me')
+    'auth/fetchAuthMe', async () => {
+        const { data } = await axiosStance.get('/auth/me')
 		return data
 	}
 )
 
+//Авторизация
+export const fetchAuth = createAsyncThunk<AuthParams, BeforeAuthParams>(
+    'auth/fetchAuth', async (params, { rejectWithValue }) => {
+        try {
+        const { data } = await axiosStance.post<AuthParams>(
+            '/auth/login', 
+            params.user
+        )
+            return data
+        } catch (error: any) {
+            return rejectWithValue(error.response?.data || error.message)
+        }
+})
+
 //Регистрация
 export const fetchRegister = createAsyncThunk<AuthParams, BeforeAuthParams>(
-    'auth/fetchRegister', async (params) => {
-        const { data } = await axiosStance.post<AuthParams>('auth/register', params.user)
-        return data
-    }
+	'auth/fetchRegister',
+	async (params, { rejectWithValue }) => {
+		try {
+			const { data } = await axiosStance.post<AuthParams>(
+				'auth/register',
+				params.user
+			)
+			return data 
+		} catch (error: any) {
+			return rejectWithValue(error.response?.data || error.message)
+		}
+	}
 )
 
 const initialState: AuthState = {
     data: null,
     status: 'loading',
+    errors: []
 }
 
 const authSlice = createSlice({
@@ -80,10 +105,12 @@ const authSlice = createSlice({
         .addCase(fetchAuth.pending, (state) => {
 			state.status = 'loading'; 
             state.data = null;
+            state.errors = []
 		})
 		.addCase(fetchAuth.fulfilled, (state, action) => {
 			state.status = 'loaded';
             state.data = action.payload;
+            state.errors = []
 		})
         .addCase(fetchAuth.rejected, (state) => {
             state.status = 'error';
@@ -106,15 +133,15 @@ const authSlice = createSlice({
 
 
          .addCase(fetchRegister.pending, (state) => {
-            state.status = 'error';
+            state.status = 'loading';
             state.data = null;
+            state.errors = []
         })
-
-         .addCase(fetchRegister.fulfilled, (state) => {
-            state.status = 'error';
-            state.data = null;
+         .addCase(fetchRegister.fulfilled, (state, action) => {
+            state.status = 'loaded';
+            state.data = action.payload;
+            state.errors = []
         })
-
          .addCase(fetchRegister.rejected, (state) => {
             state.status = 'error';
             state.data = null;

@@ -8,11 +8,7 @@ import './ModalRegister.scss'
 
 export const ModalRegister = () => {
 	const dispatch = useDispatch<AppDispatch>()
-	const {
-		register,
-		handleSubmit,
-		formState: { errors, isValid },
-	} = useForm({
+	const { register, handleSubmit, setError, formState: { errors, } } = useForm({
 		defaultValues: {
 			email: '',
 			password: '',
@@ -20,20 +16,29 @@ export const ModalRegister = () => {
 		},
 		mode: 'all',
 	})
-	//Проверка на наличие токена и сохранение его в localstorage
-	const onSubmit = async (values: any) => {
-		const userData = {
-			user: { email: values.email, password: values.password, fullName: values.fullName },
-		}
-		const takeDataUser = (await dispatch(
-			fetchRegister(userData)
-		)) as PayloadAction<AuthParams>
+	 const onSubmit = async (values: any) => {
+			const userData = {
+			  user: {
+					email: values.email,
+					password: values.password,
+					fullName: values.fullName,
+				},
+			}
+			const takeDataUser = (await dispatch( fetchRegister(userData))) as PayloadAction<AuthParams>
 
-		if ('token' in takeDataUser.payload) {
-			window.localStorage.setItem('token', takeDataUser.payload.token)
+			if (takeDataUser.payload && Array.isArray(takeDataUser.payload)) {
+				takeDataUser.payload.forEach((error: any) => {
+					setError(error.path, {
+						type: 'manual', 
+						message: error.msg,
+					})
+				})
+			} else {
+				if ('token' in takeDataUser.payload) {
+					window.localStorage.setItem('token', takeDataUser.payload.token)
+				}
+			}
 		}
-	}
-	console.log(errors, isValid)
 
 	return (
         <div className="container">

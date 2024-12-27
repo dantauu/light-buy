@@ -11,15 +11,16 @@ import './Modal.scss'
 import { useNavigate } from 'react-router-dom'
 
 export const Modal = ({ modalRef }: any) => {
+	const { setShowModal } = useContext(ModalContext)
 	const navigate = useNavigate()
 	const goToNavigate = () => {
 		navigate('/register')
 	}
 	const dispatch = useDispatch<AppDispatch>()
-	const { register, handleSubmit, formState: {errors, isValid} } = useForm({
+	const { register, handleSubmit, setError, formState: {errors} } = useForm({
 		defaultValues: {
-			email: 'dantau@gmail.com',
-			password: '99999'
+			email: '',
+			password: ''
 		},
 		mode: "all"
 	})
@@ -28,12 +29,19 @@ export const Modal = ({ modalRef }: any) => {
 		const userData = { user: { email: values.email, password: values.password } }
 		const takeDataUser = await dispatch(fetchAuth(userData)) as PayloadAction<AuthParams>
 
-		if ('token' in takeDataUser.payload) {
-			window.localStorage.setItem('token', takeDataUser.payload.token)
+		if (takeDataUser.payload && Array.isArray(takeDataUser.payload)) {
+			takeDataUser.payload.forEach((error: any) => {
+				setError(error.path, {
+					type: 'manual',
+					message: error.message
+				})
+			})
+		} else {
+			if ('token' in takeDataUser.payload) {
+				window.localStorage.setItem('token', takeDataUser.payload.token)
+			}
 		}
 	}
-	console.log(errors, isValid)
-    const { setShowModal } = useContext(ModalContext)
 
 	const isAuth = useSelector(selectIsAuth)
 	useEffect(() => {
