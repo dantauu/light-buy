@@ -6,8 +6,19 @@
 
 .modal-register {
     position: relative;
-    width: 600px;
+    width: 700px;
     height: 562px;
-    background: #fff;
+    background: #00000018;
     border-radius: 20px;
+}
+
+.register {
+    width: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-btn {
+    width: 240px;
 }

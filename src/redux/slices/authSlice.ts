@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import { axiosStance } from "../api/apiAuth";
 
 
 //Вынести axios в отдельный компонент
@@ -35,18 +35,11 @@ interface AuthState {
     errors?: ServerErrors[]
 }
 
-
-
-const axiosStance = axios.create({
-	baseURL: 'http://localhost:4444',
-})
-
 //Сохраняем в localstorage
 axiosStance.interceptors.request.use((config) => {
     config.headers.Authorization = window.localStorage.getItem('token')
     return config
 })
-
 
 //Получение пользователя
 export const fetchAuthMe = createAsyncThunk(
@@ -61,8 +54,7 @@ export const fetchAuth = createAsyncThunk<AuthParams, BeforeAuthParams>(
     'auth/fetchAuth', async (params, { rejectWithValue }) => {
         try {
         const { data } = await axiosStance.post<AuthParams>(
-            '/auth/login', 
-            params.user
+            '/auth/login', params.user
         )
             return data
         } catch (error: any) {
@@ -72,12 +64,10 @@ export const fetchAuth = createAsyncThunk<AuthParams, BeforeAuthParams>(
 
 //Регистрация
 export const fetchRegister = createAsyncThunk<AuthParams, BeforeAuthParams>(
-	'auth/fetchRegister',
-	async (params, { rejectWithValue }) => {
+	'auth/fetchRegister', async (params, { rejectWithValue }) => {
 		try {
 			const { data } = await axiosStance.post<AuthParams>(
-				'auth/register',
-				params.user
+				'auth/register', params.user
 			)
 			return data 
 		} catch (error: any) {

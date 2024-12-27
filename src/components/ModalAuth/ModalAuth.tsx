@@ -7,10 +7,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { AuthParams, fetchAuth, selectIsAuth } from '../../redux/slices/authSlice'
 import { AppDispatch } from '../../redux/store'
 import { PayloadAction } from '@reduxjs/toolkit'
-import './Modal.scss'
 import { useNavigate } from 'react-router-dom'
+import './ModalAuth.scss'
 
-export const Modal = ({ modalRef }: any) => {
+export const ModalAuth = ({ modalRef }: any) => {
 	const { setShowModal } = useContext(ModalContext)
 	const navigate = useNavigate()
 	const goToNavigate = () => {
@@ -88,7 +88,9 @@ export const Modal = ({ modalRef }: any) => {
 						</form>
 						<div className='register-auth'>
 							<div className=''>
-								<p className=''>Не зарегистрированы ?</p>
+								<p className='register-auth__quest'>
+									Не зарегистрированы ?
+								</p>
 							</div>
 							<div className=''>
 								<button

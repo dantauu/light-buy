@@ -85,15 +85,11 @@
 
 .header-right {
     @include flex-center;
-    gap: 10px;
+    gap: 13px;
 }
 
 .light-img {
     width: 60px;
-}
-
-.header-right__img {
-    padding-right: 18px;
 }
 
 .header-input__img {

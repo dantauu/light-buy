@@ -1,13 +1,20 @@
 import { FormElement } from '../FormElement/FormElement'
 import { useForm } from 'react-hook-form'
-import { useDispatch } from 'react-redux'
-import {AuthParams, fetchRegister} from '../../redux/slices/authSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import {AuthParams, fetchRegister, selectIsAuth} from '../../redux/slices/authSlice'
 import { AppDispatch } from '../../redux/store'
 import { PayloadAction } from '@reduxjs/toolkit'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './ModalRegister.scss'
 
 export const ModalRegister = () => {
 	const dispatch = useDispatch<AppDispatch>()
+    const isAuth = useSelector(selectIsAuth)
+    const navigate = useNavigate()
+    const goToHome = () => {
+        navigate('/')
+    }
 	const { register, handleSubmit, setError, formState: { errors, } } = useForm({
 		defaultValues: {
 			email: '',
@@ -39,6 +46,11 @@ export const ModalRegister = () => {
 				}
 			}
 		}
+             useEffect(() => {
+            if (isAuth) {
+                goToHome()
+            }
+        }, [isAuth, goToHome])   
 
 	return (
         <div className="container">
@@ -47,7 +59,7 @@ export const ModalRegister = () => {
 				<div className='modal-wrapper__register'>
 					<form onSubmit={handleSubmit(onSubmit)} className='form-register'>
 						<div className='form-title'>
-							<h1 className='form-title__inner'>Вход</h1>
+							<h1 className='form-title__inner'>Регистрация</h1>
 						</div>
 						<div className='form-input__items'>
 							<FormElement 
@@ -77,8 +89,8 @@ export const ModalRegister = () => {
 									required: 'Вы пропустили это поле !',
 								})}
 							/>
-							<div className='modal-content__button'>
-								<button type='submit' className='modal-content-button__inner'>
+							<div className='modal-content__button register'>
+								<button type='submit' className='modal-content-button__inner register-btn'>
 									Зарегистрироваться
 								</button>
 							</div>

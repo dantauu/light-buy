@@ -1,5 +1,5 @@
 import { forwardRef } from 'react'
-import '../ModalAuth/Modal.scss'
+import '../ModalAuth/ModalAuth.scss'
 
 interface FormElementProps {
     placeholder: string

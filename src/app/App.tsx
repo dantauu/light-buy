@@ -5,7 +5,7 @@ import Home from "../pages/Home.tsx"
 import { createContext, useEffect, useRef, useState } from "react"
 import { ThemeProvider } from "../Provider/ThemeProvider.tsx"
 import { MoreCard } from "../pages/MoreCard.tsx"
-import { Modal } from "../components/ModalAuth/Modal.tsx"
+import { ModalAuth } from "../components/ModalAuth/ModalAuth.tsx"
 import { CSSTransition } from "react-transition-group"
 import { useDispatch } from "react-redux"
 import { fetchAuthMe } from "../redux/slices/authSlice.ts"
@@ -48,7 +48,7 @@ function App() {
 							mountOnEnter
 							nodeRef={modalRef}
 						>
-							<Modal modalRef={modalRef} />
+							<ModalAuth modalRef={modalRef} />
 						</CSSTransition>
 						<Header />
 						<Routes>
