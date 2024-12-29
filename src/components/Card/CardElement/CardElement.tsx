@@ -1,12 +1,12 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addItem } from '../../../redux/slices/cardSlice'
 import checkIcon from '../../../../public/assets/img/check.svg'
 import plusIcon from '../../../../public/assets/img/plus.svg'
 import { useNavigate } from 'react-router-dom'
-import { selectIsAuth } from '../../../redux/slices/authSlice'
+// import { selectIsAuth } from '../../../redux/slices/authSlice'
 import './CardElement.scss'
-import ModalError from '../../ModalError/ModalError'
+// import ModalError from '../../ModalError/ModalError'
 
 interface ItemCardProps {
   id: number
@@ -33,8 +33,8 @@ export const CardElement: FC<ItemCardProps> = ({
 }) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const isAuth = useSelector(selectIsAuth)
-  const [ showMessage, setShowMessage ] = useState(false)
+  // const isAuth = useSelector(selectIsAuth)
+  // const [ showMessage, setShowMessage ] = useState(false)
 
   const cardItem = useSelector((state: { card: { items: CardItem[] } }) =>
     Array.isArray(state.card.items)
@@ -43,11 +43,11 @@ export const CardElement: FC<ItemCardProps> = ({
   )
 
   const onClickAddBasket = () => {
-    if (!isAuth) {
-      setShowMessage(true)
-      setTimeout(() => setShowMessage(false), 2400) 
-      return
-    }
+    // if (!isAuth) {
+    //   setShowMessage(true)
+    //   setTimeout(() => setShowMessage(false), 2400) 
+    //   return
+    // }
     const item: CardItem = {
       id,
       title,
@@ -58,9 +58,9 @@ export const CardElement: FC<ItemCardProps> = ({
     dispatch(addItem(item))
   }
 
-  const closeModalErr = () => {
-    setShowMessage(false)
-  }
+  // const closeModalErr = () => {
+  //   setShowMessage(false)
+  // }
   
 
   return (
@@ -82,11 +82,11 @@ export const CardElement: FC<ItemCardProps> = ({
           <p>{price} р</p>
         </div>
 
-        {showMessage && !isAuth && (
+        {/* {showMessage && !isAuth && (
           <ModalError 
           message='Вы должны быть авторизовыны что бы добавить товар в корзину' 
           onClose={closeModalErr} />
-        )}
+        )} */}
 
         <div onClick={onClickAddBasket} className="card-button">
           <div className="card-button__img">
