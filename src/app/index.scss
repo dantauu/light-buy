@@ -81,6 +81,20 @@ img {
     padding: 0 30px 0 30px;
 }
 
+//Settings notify
+// :root {
+//     --toastify-color-light: #ffdbab;
+//     --toastify-font-family: 'Montserrat-B';
+//    --toastify-text-color-light: #000000;
+// };
+
+.notify {
+    --toastify-color-light: #ffd6a2;
+    --toastify-font-family: 'Montserrat-B';
+    --toastify-text-color-light: #424242;
+    --toastify-color-progress-light: linear-gradient(to right, #acb7f9, #9eaefa, #516dfa, #3153fc, #2e50f9, #002afd);
+}
+
 body.dark {
    background: $back-body_dark;
     .light-text__inner {
@@ -164,7 +178,10 @@ body.dark {
             .modal-register {
                 background: $color-white;
             }
-    
+                .notify {
+                    --toastify-color-light: #fde5c7;
+                    --toastify-text-color-light: #141414;
+                }
 }
 
 

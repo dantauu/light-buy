@@ -8,8 +8,8 @@ import { Theme } from '../../Theme/Theme'
 import { useDispatch, useSelector } from 'react-redux'
 import { useContext, useState } from 'react'
 import { ModalContext } from '../../app/App'
-import './Header.scss'
 import { logout, selectIsAuth } from '../../redux/slices/authSlice'
+import './Header.scss'
 
 // type HeaderProps = {
 // 	searchValue: string
@@ -17,6 +17,7 @@ import { logout, selectIsAuth } from '../../redux/slices/authSlice'
 // }
 
 export const Header = () => {
+	// const cardItem = useSelector((_items: CardItem[]))
 	const { items } = useSelector((state: any) => state.card)
 	const { setShowModal } = useContext(ModalContext)
 	const [isActive, setIsActive] = useState<boolean>(false)

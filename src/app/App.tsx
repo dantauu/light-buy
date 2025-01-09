@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux"
 import { fetchAuthMe } from "../redux/slices/authSlice.ts"
 import { AppDispatch } from "../redux/store.ts"
 import { ModalRegister } from "../components/ModalRegistr/ModalRegistr.tsx"
+import { ToastContainer } from "react-toastify"
 
 interface ModalContextProps {
 	showModal: boolean
@@ -37,6 +38,7 @@ function App() {
 	const modalRef = useRef(null)
   return (
 		<>
+		<ToastContainer className='notify' />
 			<ThemeProvider>
 				<SearchContext.Provider value={{ searchValue, setSearchValue }}>
 					<ModalContext.Provider value={{ showModal, setShowModal }}>
