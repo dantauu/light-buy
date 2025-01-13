@@ -9,6 +9,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useContext, useState } from 'react'
 import { ModalContext } from '../../app/App'
 import { logout, selectIsAuth } from '../../redux/slices/authSlice'
+import { useMediaQuery } from '../../hooks/useMediaQuery'
+import { HeaderMobile } from './HeaderMobile/HeaderMobile'
 import './Header.scss'
 
 // type HeaderProps = {
@@ -18,6 +20,7 @@ import './Header.scss'
 
 export const Header = () => {
 	// const cardItem = useSelector((_items: CardItem[]))
+	const isMobile = useMediaQuery('(max-width: 719px)')
 	const { items } = useSelector((state: any) => state.card)
 	const { setShowModal } = useContext(ModalContext)
 	const [isActive, setIsActive] = useState<boolean>(false)
@@ -32,82 +35,97 @@ export const Header = () => {
 	}
 	return (
 		<>
-			<div className='container'>
-				<div className='header-wrapper'>
-					<Link to={'/'} className='light-part'>
-						<div className='light-img'>
-							<img src={mainLogo} alt='logo' />
+			{isMobile ? (
+				<div className='container'>
+					<div className='burger-wrapper'>
+						<div className=''>
+							<h1>LightBuy</h1>
 						</div>
-						<div className='light-text'>
-							<h2 className='light-text__inner'>Light Buy</h2>
+						<div onClick={() => activeBurger()} className='burger-img'>
+							<img className='burger__img-inner' src={burgerIcon} alt='' />
 						</div>
-					</Link>
-					<Search />
-					<div className='header-right__wrapper'>
-						<div
-							onClick={() => setIsActive(false)}
-							className={`header-right ${isActive ? 'active-right' : ''}`}
-						>
-							<div className='header-right__img'>
-								<Theme />
-							</div>
-							{isAuth ? (
-								<div 
-								onClick={onClickLogout}
-								className='header-right__welcome'>
-									<div className='header-welcome__img'>
-										<img
-											className='header-welcome__img__inner'
-											src={profileIcon}
-											alt=''
-										/>
-									</div>
-									<div className='header-welcome__btn'>
-										<p className='header-welcome-btn__inner'>Выйти</p>
-									</div>
+					</div>
+					{isActive && (
+						<HeaderMobile />
+					)}
+				</div>
+			) : (
+				<>
+					<div className='container'>
+						<div className='header-wrapper'>
+							<Link to={'/'} className='light-part'>
+								<div className='light-img'>
+									<img src={mainLogo} alt='logo' />
 								</div>
-							) : (
-								<div
-									onClick={() => setShowModal(true)}
-									className='header-right__welcome'
-								>
-									<div className='header-welcome__img'>
-										<img
-											className='header-welcome__img__inner'
-											src={profileIcon}
-											alt=''
-										/>
-									</div>
-									<div className='header-welcome__btn'>
-										<p className='header-welcome-btn__inner'>Войти</p>
-									</div>
-								</div>
-							)}
-							<Link to='/basket' className='header-welcome'>
-								<div className=''>
-									<img
-										className='header-welcome__img'
-										src={basketIcon}
-										alt=''
-									/>
-								</div>
-								<div className='header-welcome__count'>
-									<p>{items.length}</p>
+								<div className='light-text'>
+									<h2 className='light-text__inner'>Light Buy</h2>
 								</div>
 							</Link>
+							<Search />
+							<div className='header-right__wrapper'>
+								<div
+									onClick={() => setIsActive(false)}
+									className={`header-right ${isActive ? 'active-right' : ''}`}
+								>
+									<div className='header-right__img'>
+										<Theme />
+									</div>
+									{isAuth ? (
+										<div
+											onClick={onClickLogout}
+											className='header-right__welcome'
+										>
+											<div className='header-welcome__img'>
+												<img
+													className='header-welcome__img__inner'
+													src={profileIcon}
+													alt=''
+												/>
+											</div>
+											<div className='header-welcome__btn'>
+												<p className='header-welcome-btn__inner'>Выйти</p>
+											</div>
+										</div>
+									) : (
+										<div
+											onClick={() => setShowModal(true)}
+											className='header-right__welcome'
+										>
+											<div className='header-welcome__img'>
+												<img
+													className='header-welcome__img__inner'
+													src={profileIcon}
+													alt=''
+												/>
+											</div>
+											<div className='header-welcome__btn'>
+												<p className='header-welcome-btn__inner'>Войти</p>
+											</div>
+										</div>
+									)}
+									<Link to='/basket' className='header-welcome'>
+										<div className=''>
+											<img
+												className='header-welcome__img'
+												src={basketIcon}
+												alt=''
+											/>
+										</div>
+										<div className='header-welcome__count'>
+											<p>{items.length}</p>
+										</div>
+									</Link>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div className='burger-wrapper'>
-						<button onClick={() => activeBurger()} className='burger-btn'>
-							<img className='burger-img' src={burgerIcon} alt='' />
-						</button>
-					</div>
-				</div>
-			</div>
-			<div
-				style={{ borderBottom: '1px solid #ededed' }}
-				className='border'
-			></div>
+					<div
+						style={{ borderBottom: '1px solid #ededed' }}
+						className='border'
+					></div>
+				</>
+			)}
 		</>
 	)
 }
+

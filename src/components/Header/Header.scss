@@ -102,41 +102,39 @@
 }
 
 
-
-
 //Adaptive
 
-// .header-right__wrapper {
-//     position: relative;
-// }
-
-.header-right.active-right {
-    transform: translateY(1px);
-    transition: all 0.5s ease-in;
-    position: absolute;
-    display: flex;
-    background: #ffffffeb;
-    padding: 40px 0 40px 0;
-    z-index: 10;
-    width: 160%;
+.header__container-mobile {
+    position: fixed;
+    z-index: 2000;
     left: 0;
     top: 0;
-}
-
-.burger-close {
-    position: absolute;
-    left: 0;
-    padding-bottom: 92%;
-    width: 40px;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
 }
 
 .burger-wrapper {
-    max-width: 60px;
-    display: none;
+    display: flex;
+    justify-content: space-between;
 }
 
+// .header__wrapper-mobile {
+//     width: 100%;
+// }
+
 .burger-img {
-    min-width: 60px;
+    z-index: 2500;
+}
+
+.burger__img-inner {
+    width: 80px;
 }
 
 .burger-btn {
@@ -145,43 +143,8 @@
     cursor: pointer;
 }
 
-
-
-//Adaptive
-
-@media screen and (max-width: 719px) {
-    .header-wrapper {
-        gap: 10px;
-    }
-        .light-part {
-            flex-direction: column;
-            gap: 0;
-            padding-top: 10px;
-        }
-            .header-right {
-                transform: translateY(-10px);
-                transition: all 0.5s ease-in;
-                display: none;
-            }
-                .burger-wrapper {
-                    display: block;
-                }
-                    .header-input__inner {
-                        width: 170px;
-                            &:focus {
-                                width: 170px;
-                            }
-                        }
-                                // .header-welcome__img {
-                                //     display: none;
-                                // }
-                                    .light-img {
-                                        width: 50px !important;
-                                    }
+.header-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
-
-// @media screen and (min-width: 696px) {
-//     .header-right.active-right {
-//         display: none;
-//     }
-// }
