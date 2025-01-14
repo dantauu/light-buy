@@ -25,3 +25,18 @@
     width: 32px;
     opacity: 0.8;
 }
+
+@media screen and (max-width: 719px) {
+    .sun-btn__img {
+        width: 63px;
+    }
+        .moon-btn__img {
+            width: 50px;
+        }
+            .moon-btn {
+                padding: 14px;
+            }
+                .sun-btn {
+                    padding: 11px;
+                }
+}

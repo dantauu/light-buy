@@ -182,6 +182,15 @@ body.dark {
                     --toastify-color-light: #fde5c7;
                     --toastify-text-color-light: #141414;
                 }
+                    .light__text-mobile {
+                        color: $color-white;
+                    }
+                        .burger {
+                            background: #ffffffe1;
+                        }
+                            .header__container-mobile {
+                                background: $back-body_dark;
+                            }
 }
 
 

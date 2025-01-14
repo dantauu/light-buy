@@ -29,15 +29,10 @@ export const HeaderMobile = () => {
 								isActive ? 'active-right' : ''
 							}`}
 						>
-							<div className='header-right__img'></div>
 							{isAuth ? (
 								<div onClick={onClickLogout} className='header-right__welcome'>
 									<div className='header-welcome__img'>
-										<img
-											className='header-welcome__img__inner'
-											src={profileIcon}
-											alt=''
-										/>
+										<img className='profile__mobile' src={profileIcon} alt='' />
 									</div>
 									<div className='header-welcome__btn'>
 										<p className='header-welcome-btn__inner'>Выйти</p>
@@ -46,17 +41,15 @@ export const HeaderMobile = () => {
 							) : (
 								<div
 									onClick={() => setShowModal(true)}
-									className='header-right__welcome'
+									className='header-right__welcome right__mobile'
 								>
 									<div className='header-welcome__img'>
-										<img
-											className='header-welcome__img__inner'
-											src={profileIcon}
-											alt=''
-										/>
+										<img className='profile__mobile' src={profileIcon} alt='' />
 									</div>
-									<div className='header-welcome__btn'>
-										<p className='header-welcome-btn__inner'>Войти</p>
+									<div className='header-welcome__btn header__btn-mobile'>
+										<p className='header-welcome-btn__inner welcome__header-btn'>
+											Войти
+										</p>
 									</div>
 								</div>
 							)}
@@ -64,12 +57,12 @@ export const HeaderMobile = () => {
 							<Link to='/basket' className='header-welcome'>
 								<div className=''>
 									<img
-										className='header-welcome__img'
+										className='header-welcome__img basket__img'
 										src={basketIcon}
 										alt=''
 									/>
 								</div>
-								<div className='header-welcome__count'>
+								<div className='header-welcome__count count__mobile'>
 									<p>{items.length}</p>
 								</div>
 							</Link>

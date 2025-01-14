@@ -1,7 +1,6 @@
 import mainLogo from '../../../public/assets/img/main-logo.svg'
 import profileIcon from '../../../public/assets/img/profile.svg'
 import basketIcon from '../../../public/assets/img/basket.svg'
-import burgerIcon from '../../../public/assets/img/burger-menu.svg'
 import { Link } from 'react-router-dom'
 import { Search } from '../Search/Search'
 import { Theme } from '../../Theme/Theme'
@@ -39,15 +38,15 @@ export const Header = () => {
 				<div className='container'>
 					<div className='burger-wrapper'>
 						<div className=''>
-							<h1>LightBuy</h1>
+							<h1 className='light__text-mobile'>LightBuy</h1>
 						</div>
-						<div onClick={() => activeBurger()} className='burger-img'>
-							<img className='burger__img-inner' src={burgerIcon} alt='' />
+						<div onClick={() => activeBurger()} className={`burger-img ${isActive && 'open'}`}>
+							<div className='burger'></div>
+							<div className='burger'></div>
+							<div className='burger'></div>
 						</div>
 					</div>
-					{isActive && (
-						<HeaderMobile />
-					)}
+					{isActive && <HeaderMobile />}
 				</div>
 			) : (
 				<>
