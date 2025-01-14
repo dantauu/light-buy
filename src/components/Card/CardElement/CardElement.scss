@@ -121,3 +121,12 @@
         font-size: 20px;
     }
 }
+
+@media screen and (max-width: 719px) {
+    .card {
+        justify-content: space-between;
+    }
+        .card-description {
+            font-size: 17px;
+        }
+}
