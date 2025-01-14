@@ -6,6 +6,8 @@ import { RootState } from '../../redux/store'
 import { setCategory } from '../../redux/slices/assortSlice'
 import { setRenderData } from '../../redux/slices/renderCardSlice'
 import './Assortement.scss'
+import { useMediaQuery } from '../../hooks/useMediaQuery'
+import { AssortementMobile } from './AssortementMobile/AssortementMobile'
 
 const AssortementNav = [
 	{ id: 1, name: 'Все' },
@@ -19,6 +21,7 @@ const More = [
 ]
 
 export const Assortement = () => {
+	const isMobile = useMediaQuery('(max-width: 719px)')
 	const dispatch = useDispatch()
 	const { cardsData } = useContext(CardContext)
 	const { selectedCategory } = useSelector((state: RootState) => state.assort)
@@ -57,89 +60,95 @@ export const Assortement = () => {
 
 
 	return (
-		<div className='assort-wrapper'>
-			<div className='container'>
-				<h2 className='assort-title'>Ассортимент</h2>
-				<div className='mobile-wrapper'>
-					<nav className='assort-nav'>
-						<ul className='assort-list'>
-							{AssortementNav.map((item, index) => (
-								<li
-									className={`assort-list__item 
+		<>
+			{isMobile ? (
+				<AssortementMobile />
+			) : (
+				<div className='assort-wrapper'>
+					<div className='container'>
+						<h2 className='assort-title'>Ассортимент</h2>
+						<div className='mobile-wrapper'>
+							<nav className='assort-nav'>
+								<ul className='assort-list'>
+									{AssortementNav.map((item, index) => (
+										<li
+											className={`assort-list__item 
 									${select === item.name ? 'select' : ''}`}
-									key={index}
-									onClick={() => {
-										handleSelect(item.name)
-									}}
-								>
-									<button className='assort-button'>{item.name}</button>
-								</li>
-							))}
-							{More.map((item, id) => (
-								<button
-									key={id}
-									onClick={() => {
-										setSelect(item.name)
-										toggleMenu()
-									}}
-									className={`assort-button more-mobile 
+											key={index}
+											onClick={() => {
+												handleSelect(item.name)
+											}}
+										>
+											<button className='assort-button'>{item.name}</button>
+										</li>
+									))}
+									{More.map((item, id) => (
+										<button
+											key={id}
+											onClick={() => {
+												setSelect(item.name)
+												toggleMenu()
+											}}
+											className={`assort-button more-mobile 
 								${select === item.name ? 'selected' : ''}`}
-								>
-									Ещё
-									<svg
-										className={`arrow ${arrowRotated ? 'rotated' : ''}`}
-										width='11'
-										height='18'
-										viewBox='0 0 11 18'
-										fill='none'
-										stroke='currentColor'
-										strokeWidth='2.5'
-										strokeLinecap='round'
-										strokeLinejoin='round'
-									>
-										<path d='M1.99333 15.9819L8.88445 8.95963L1.8325 2.09886' />
-									</svg>
-								</button>
-							))}
-						</ul>
-					</nav>
+										>
+											Ещё
+											<svg
+												className={`arrow ${arrowRotated ? 'rotated' : ''}`}
+												width='11'
+												height='18'
+												viewBox='0 0 11 18'
+												fill='none'
+												stroke='currentColor'
+												strokeWidth='2.5'
+												strokeLinecap='round'
+												strokeLinejoin='round'
+											>
+												<path d='M1.99333 15.9819L8.88445 8.95963L1.8325 2.09886' />
+											</svg>
+										</button>
+									))}
+								</ul>
+							</nav>
 
-					<div className='drop-wrapper'>
-						<div
-							ref={dropDownRef}
-							className={`drop-down ${isActive ? 'active' : ''}`}
-						>
-							<ul className='drop-list'>
-								<li className='drop-list__item'>
-									<button
-										onClick={() => {
-											handleSelect('Видеоглазок')
-											toggleMenu()
-										}}
-										className={`drop-list__btn 
+							<div className='drop-wrapper'>
+								<div
+									ref={dropDownRef}
+									className={`drop-down ${isActive ? 'active' : ''}`}
+								>
+									<ul className='drop-list'>
+										<li className='drop-list__item'>
+											<button
+												onClick={() => {
+													handleSelect('Видеоглазок')
+													toggleMenu()
+												}}
+												className={`drop-list__btn 
 										${select === 'Видеоглазок' && 'select-drop'}`}
-									>
-										Видеоглазок
-									</button>
-								</li>
-								<li className='drop-list__item'>
-									<button
-										onClick={() => {
-											handleSelect('Камера')
-											toggleMenu()
-										}}
-										className={`drop-list__btn 
+											>
+												Видеоглазок
+											</button>
+										</li>
+										<li className='drop-list__item'>
+											<button
+												onClick={() => {
+													handleSelect('Камера')
+													toggleMenu()
+												}}
+												className={`drop-list__btn 
 											${select === 'Камера' && 'select-drop'}`}
-									>
-										Камера
-									</button>
-								</li>
-							</ul>
+											>
+												Камера
+											</button>
+										</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
+			)}
+		</>
 	)
 }
 
