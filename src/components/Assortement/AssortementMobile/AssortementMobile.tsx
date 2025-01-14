@@ -34,7 +34,7 @@ export const AssortementMobile = () => {
     return (
 			<div className='assort-wrapper'>
 				<div className='container'>
-					<h2 className='assort-title'>Ассортимент</h2>
+					<h2 className='assort-title assort__title-mobile'>Ассортимент</h2>
 					<div className='mobile-wrapper'>
 						<nav className='assort-nav'>
 							<ul className='assort-list assort__list-mobile'>

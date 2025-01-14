@@ -136,16 +136,16 @@
     gap: 30px;
 }
 
+.assort__title-mobile {
+    font-size: 39px;
+}
+
 .assort-list__item.mobile__select {
     width: 120px;
 }
 
-// .list__item-mobile.select {
-//     width: 135px;
-// }
-
 .list__item-mobile.select {
-    width: 210px;
+    min-width: 192px;
 }
 
 .assort__button-mobile {
@@ -154,71 +154,3 @@
 
 
 // box-shadow: inset -37px 2px 48px rgb(0 0 0);
-
-// @media screen and (max-width: 615px) {
-//     .assort-nav {
-//         padding-top: 18px;
-//         display: flex;
-//         flex-direction: column;
-//         /* justify-content: center; */
-//         align-items: center;
-// }
-//             .assort-list {
-//                 max-width: 433px;
-//                 background: none !important;
-//         }
-//                 .assort-button {
-//                     font-size: 24px;
-//                 }
-//                     .drop-down {
-//                         opacity: 1;
-//                         visibility: visible;
-//                         box-shadow: none;
-//                         transform: translateY(-20px);
-//                         left: 549px;
-//                         top: -38px;
-//                     }
-//                         .drop-down.active{
-//                             transform: translateY(-20px);
-//                         }
-//                             .drop-list {
-//                                 display: flex;
-//                                 align-items: center;
-//                                 gap: 20px;
-//                                 background: none;
-//                                 box-shadow: none;
-//                             }
-//                                 .drop-list__btn {
-//                                     color: $color-white;
-//                                     font-size: 24px;
-//                                 }
-//                                     .arrow {
-//                                         display: none;
-//                                     }
-//                                         .mobile-wrapper {
-//                                             overflow: auto;
-//                                             height: 95px;
-//                                         }
-//                                             .more-mobile {
-//                                                 display: none;
-//                                             }
-//                                                 .assort-list__item.select {
-//                                                     width: 135px;
-//                                                 }
-//                                             .assort-title {
-//                                                 font-size: 35px;
-//                                                 padding-top: 40px;
-//                                                 display: flex;
-//                                                 justify-content: center;
-//                                             }
-//                                         .filter-svg-text__inner {
-//                                             font-size: 35px;
-//                                         }
-//                                     .home-left {
-//                                         display: flex;
-//                                         justify-content: center;
-//                                         padding-top: 40px;
-//                                     }
-
-//     }
-
