@@ -202,8 +202,26 @@ input[type="number"]::-webkit-inner-spin-button,
     width: 40px;
 }
 
+.container__filter-mobile {
+    position: relative;
+}
 
-@media screen and (max-width: 615px) {
+.mobile__filter-wrapper {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #85858555;
+}
+
+
+@media screen and (max-width: 719px) {
     .filter-main__wrapper {
         display: none;
     }

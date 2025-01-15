@@ -8,6 +8,8 @@ import { CardContext } from "../../pages/Home"
 import { useDispatch } from "react-redux"
 import { setRenderData } from "../../redux/slices/renderCardSlice"
 import './Filtering.scss'
+import { useMediaQuery } from "../../hooks/useMediaQuery"
+import { FilteringMobile } from "./FilteringMobile/FilteringMobile"
 
 type FilterItemProps = {
 	text: string
@@ -16,9 +18,14 @@ type FilterItemProps = {
 	id: string
 } 
 
+const FilterItems = [
+	{ id: 1, name: 'Кухни' },
+	{ id: 2, name: 'Уборной' },
+	{ id: 3, name: 'Гостинной' },
+	{ id: 4, name: 'Коридора' },
+]
 
-
-const FilterInputItem: FC<FilterItemProps> = ({ text, id, onChange }) => {
+export const FilterInputItem: FC<FilterItemProps> = ({ text, id, onChange }) => {
 	return (
 		<label htmlFor={id}>
 			<div className='price-input__from'>
@@ -37,19 +44,11 @@ const FilterInputItem: FC<FilterItemProps> = ({ text, id, onChange }) => {
 	)
 }
 
-	const FilterItems = [
-		{ id: 1, name: 'Кухни' },
-		{ id: 2, name: 'Уборной' },
-		{ id: 3, name: 'Гостинной' },
-		{ id: 4, name: 'Коридора' },
-	]
-
 export const Filtering = () => {
+	const isMobile = useMediaQuery('(max-width: 719px)')
 	const dispatch = useDispatch()
 	const { cardsData } = useContext(CardContext)
-
 	const [select, setSelect] = useState<string | null>(null)
-	
 	const handleSelect = (name: string) => {
 	 	setSelect(name)
 	}
@@ -99,138 +98,144 @@ export const Filtering = () => {
 	}
 	return (
 		<>
-			<div className='filter-svg'>
-				<div className='filter-svg__text'>
-					<h2 className='filter-svg-text__inner'>Фильтрация</h2>
-				</div>
-				<div onClick={() => handleShowFilter()} className='filter-svg__img'>
-					<img className='filter-svg-img__inner' src={filterIcon} alt='' />
-				</div>
-			</div>
-			<div
-				className={`filter-main__wrapper ${showFilter ? 'active-filter' : ''}`}
-			>
-				<div className='container'>
-					<div onClick={() => setShowFilter(false)} className='cross'>
-						<img className='cross-icon' src={crossIcon} alt='' />
-					</div>
-					<h2 className='filter-title'>Фильтрация</h2>
-					<div className='price-wrapper'>
-						<h2 className='price-wrapper__text'>Цена от и до</h2>
-						<div className='price-input__wrapper'>
-							<FilterInputItem
-								onChange={setMinPrice}
-								text='От'
-								onClick={() => {}}
-								id='minPrice'
-							/>
-							<FilterInputItem
-								onChange={setMaxPrice}
-								onClick={() => {}}
-								text='До'
-								id='maxPrice'
-							/>
+			{isMobile ? (
+				<>
+					<div className='filter-svg'>
+						<div className='filter-svg__text'>
+							<h2 className='filter-svg-text__inner'>Фильтрация</h2>
+						</div>
+						<div onClick={() => onClickMenu()} className='filter-svg__img'>
+							<img className='filter-svg-img__inner' src={filterIcon} alt='' />
 						</div>
 					</div>
-					<div className='before-filter'>
-						<h2 className='before-filter__title'>Для</h2>
-						<div className='before-filter__wrapper'>
-							{FilterItems.map((item, index) => (
-								<div
-									id={item.name}
-									key={index}
-									onClick={() => {
-										changeCategorys(item.name), handleSelect(item.name)
-									}}
-									className='after-filter'
-								>
-									<div
-										className={`after-filter__text ${
-											select === item.name && 'selectedId'
-										}`}
-									>
-										<p className='filter-discount__inner'>{item.name}</p>
-									</div>
-									<div
-										onClick={e => {
-											e.stopPropagation(), clickCross()
-										}}
-										className='after-filter-cross__img'
-									>
-										{select === item.name ? (
-											<img className='cross-img__inner' src={crossIcon} />
-										) : null}
-									</div>
-								</div>
-							))}
-						</div>
-					</div>
-					<ul className={`filter-drop ${isActive ? 'active' : ''}`}>
-						<li className='filter-drop__item'>
-							<button
-								onClick={() => {
-									changeCategorys('Детской'), handleSelect('Детской')
-								}}
-								className={`drop-item__inner ${
-									select === 'Детской' ? 'selectedId' : ''
-								}`}
-							>
-								Детской
-							</button>
-							<div
-								onClick={() => clickCross()}
-								className='after-filter-cross__img'
-							>
-								{select === 'Детской' ? (
-									<img src={crossIcon} className='cross-img__inner' />
-								) : null}
+					{isActive && <FilteringMobile />}
+				</>
+			) : (
+				<>
+					<div className='filter-main__wrapper'>
+						<div className='container'>
+							<div onClick={() => setShowFilter(false)} className='cross'>
+								<img className='cross-icon' src={crossIcon} alt='' />
 							</div>
-						</li>
-						<li className='filter-drop__item'>
-							<button
-								onClick={() => {
-									changeCategorys('Спальной'), handleSelect('Спальной')
-								}}
-								className={`drop-item__inner ${
-									select === 'Спальной' ? 'selectedId' : ''
-								}`}
-							>
-								Спальной
-							</button>
-							<div onClick={clickCross} 
-							className='after-filter-cross__img'
-							>
-								{select === 'Спальной' ? (
-									<img src={crossIcon} className='cross-img__inner' />
-								) : null}
-							</div>
-						</li>
-					</ul>
-					<div style={{ position: 'relative' }} className=''>
-						<label htmlFor='plus'>
-							<div
-								onClick={() => {
-									onClickMenu(), onClickOpenFull()
-								}}
-								className={`open-full_wrapper ${activity ? 'activity' : ''}`}
-							>
-								<div className='open-full__img'>
-									<img
-										className='open-full-img__inner'
-										src={!activity ? plus : minus}
-										alt=''
+							<h2 className='filter-title'>Фильтрация</h2>
+							<div className='price-wrapper'>
+								<h2 className='price-wrapper__text'>Цена от и до</h2>
+								<div className='price-input__wrapper'>
+									<FilterInputItem
+										onChange={setMinPrice}
+										text='От'
+										onClick={() => {}}
+										id='minPrice'
+									/>
+									<FilterInputItem
+										onChange={setMaxPrice}
+										onClick={() => {}}
+										text='До'
+										id='maxPrice'
 									/>
 								</div>
-								<div className='open-full__text' id='plus'>
-									<p className='open-full__inner'>
-										{activity ? 'Скрыть' : 'Показать все'}
-									</p>
+							</div>
+							<div className='before-filter'>
+								<h2 className='before-filter__title'>Для</h2>
+								<div className='before-filter__wrapper'>
+									{FilterItems.map((item, index) => (
+										<div
+											id={item.name}
+											key={index}
+											onClick={() => {
+												changeCategorys(item.name), handleSelect(item.name)
+											}}
+											className='after-filter'
+										>
+											<div
+												className={`after-filter__text ${
+													select === item.name && 'selectedId'
+												}`}
+											>
+												<p className='filter-discount__inner'>{item.name}</p>
+											</div>
+											<div
+												onClick={e => {
+													e.stopPropagation(), clickCross()
+												}}
+												className='after-filter-cross__img'
+											>
+												{select === item.name ? (
+													<img className='cross-img__inner' src={crossIcon} />
+												) : null}
+											</div>
+										</div>
+									))}
 								</div>
 							</div>
-						</label>
+							<ul className={`filter-drop ${isActive ? 'active' : ''}`}>
+								<li className='filter-drop__item'>
+									<button
+										onClick={() => {
+											changeCategorys('Детской'), handleSelect('Детской')
+										}}
+										className={`drop-item__inner ${
+											select === 'Детской' ? 'selectedId' : ''
+										}`}
+									>
+										Детской
+									</button>
+									<div
+										onClick={() => clickCross()}
+										className='after-filter-cross__img'
+									>
+										{select === 'Детской' ? (
+											<img src={crossIcon} className='cross-img__inner' />
+										) : null}
+									</div>
+								</li>
+								<li className='filter-drop__item'>
+									<button
+										onClick={() => {
+											changeCategorys('Спальной'), handleSelect('Спальной')
+										}}
+										className={`drop-item__inner ${
+											select === 'Спальной' ? 'selectedId' : ''
+										}`}
+									>
+										Спальной
+									</button>
+									<div onClick={clickCross} className='after-filter-cross__img'>
+										{select === 'Спальной' ? (
+											<img src={crossIcon} className='cross-img__inner' />
+										) : null}
+									</div>
+								</li>
+							</ul>
+							<div style={{ position: 'relative' }} className=''>
+								<label htmlFor='plus'>
+									<div
+										onClick={() => {
+											onClickMenu(), onClickOpenFull()
+										}}
+										className={`open-full_wrapper ${
+											activity ? 'activity' : ''
+										}`}
+									>
+										<div className='open-full__img'>
+											<img
+												className='open-full-img__inner'
+												src={!activity ? plus : minus}
+												alt=''
+											/>
+										</div>
+										<div className='open-full__text' id='plus'>
+											<p className='open-full__inner'>
+												{activity ? 'Скрыть' : 'Показать все'}
+											</p>
+										</div>
+									</div>
+								</label>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
+				</>
+			)}
 		</>
 	)
 }
