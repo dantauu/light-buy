@@ -11,7 +11,8 @@ import './Filtering.scss'
 import { useMediaQuery } from "../../hooks/useMediaQuery"
 import { FilteringMobile } from "./FilteringMobile/FilteringMobile"
 
-type FilterItemProps = {
+
+export type FilterItemProps = {
 	text: string
 	onClick: (text: string) => void
 	onChange: (value: string) => void
@@ -25,7 +26,7 @@ const FilterItems = [
 	{ id: 4, name: 'Коридора' },
 ]
 
-export const FilterInputItem: FC<FilterItemProps> = ({ text, id, onChange }) => {
+const FilterInputItem: FC<FilterItemProps> = ({ text, id, onChange }) => {
 	return (
 		<label htmlFor={id}>
 			<div className='price-input__from'>
@@ -57,12 +58,6 @@ export const Filtering = () => {
 		setSelect(null)
 		dispatch(setRenderData(cardsData))
 	}
-
-	const [showFilter, setShowFilter] = useState<boolean>(false)
-		const handleShowFilter = () => {
-			setShowFilter(!showFilter)
-		}
-
 	const changeCategorys = (name: string) => {
 		const filtered = cardsData.filter(card => card.filter === name)
 		dispatch(setRenderData(filtered))
@@ -108,15 +103,14 @@ export const Filtering = () => {
 							<img className='filter-svg-img__inner' src={filterIcon} alt='' />
 						</div>
 					</div>
-					{isActive && <FilteringMobile />}
+					{isActive && 
+						<FilteringMobile setIsActive={setIsActive}  />
+					}
 				</>
 			) : (
 				<>
 					<div className='filter-main__wrapper'>
 						<div className='container'>
-							<div onClick={() => setShowFilter(false)} className='cross'>
-								<img className='cross-icon' src={crossIcon} alt='' />
-							</div>
 							<h2 className='filter-title'>Фильтрация</h2>
 							<div className='price-wrapper'>
 								<h2 className='price-wrapper__text'>Цена от и до</h2>
