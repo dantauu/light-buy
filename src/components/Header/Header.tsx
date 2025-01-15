@@ -38,7 +38,7 @@ export const Header = () => {
 				<div className='container'>
 					<div className='burger-wrapper'>
 						<div className=''>
-							<h1 className='light__text-mobile'>LightBuy</h1>
+							<Link to={'/'} className='light__text-mobile'>LightBuy</Link>
 						</div>
 						<div onClick={() => activeBurger()} className={`burger-img ${isActive && 'open'}`}>
 							<div className='burger'></div>
@@ -46,7 +46,8 @@ export const Header = () => {
 							<div className='burger'></div>
 						</div>
 					</div>
-					{isActive && <HeaderMobile />}
+					{isActive && <HeaderMobile isActive={isActive} 
+					setIsActive={setIsActive} />}
 				</div>
 			) : (
 				<>

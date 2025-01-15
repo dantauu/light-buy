@@ -184,8 +184,10 @@ input[type="number"]::-webkit-inner-spin-button,
 }
 
 .filter-svg-text__inner {
+    padding-top: 35px;
     font-family: 'Montserrat-B';
-    color: $color-white;
+    font-size: 34px;
+    color: $color-dark;
 }
 
 .filter-main__wrapper.active-filter {
@@ -222,6 +224,11 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .discount__mobile {
     font-size: 21px;
+}
+
+.discount__mobile:hover {
+    background: none;
+    color: inherit;
 }
 
 .after__mobile {

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { ModalContext } from "../../../app/App"
 import { logout, selectIsAuth } from "../../../redux/slices/authSlice"
@@ -9,10 +9,9 @@ import basketIcon from '../../../../public/assets/img/basket.svg'
 import '../Header.scss'
 
 
-export const HeaderMobile = () => {
+export const HeaderMobile = ({ isActive, setIsActive }: any) => {
     const { items } = useSelector((state: any) => state.card)
 		const { setShowModal } = useContext(ModalContext)
-		const [isActive, setIsActive] = useState<boolean>(false)
 		const dispatch = useDispatch()
 		const isAuth = useSelector(selectIsAuth)
 		const onClickLogout = () => {
@@ -40,7 +39,7 @@ export const HeaderMobile = () => {
 								</div>
 							) : (
 								<div
-									onClick={() => setShowModal(true)}
+									onClick={() => {setShowModal(true), setIsActive(false)}}
 									className='header-right__welcome right__mobile'
 								>
 									<div className='header-welcome__img'>

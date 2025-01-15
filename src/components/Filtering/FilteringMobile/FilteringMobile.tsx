@@ -95,7 +95,6 @@ export const FilteringMobile = ({ setIsActive }: any) => {
 								<div className='before-filter__wrapper before__filter-mobile'>
 									{FilterItems.map((item, index) => (
 										<div
-											id={item.name}
 											key={index}
 											onClick={() => {
 												changeCategorys(item.name)
@@ -103,6 +102,7 @@ export const FilteringMobile = ({ setIsActive }: any) => {
 											className=''
 										>
 											<div
+                                                onClick={() => setIsActive(false)}
 												className='after-filter__text after__mobile' 
 											>
                                             <div className="">

@@ -191,6 +191,15 @@ body.dark {
                             .header__container-mobile {
                                 background: $back-body_dark;
                             }
+                                .filter-svg-text__inner {
+                                    color: $color-white;
+                                }
+                                    .mobile__filter-wrapper {
+                                        background: $back-body_dark;
+                                    }
+                                        .after__mobile {
+                                            background: rgb(255 186 88 / 77%);
+                                        }
 }
 
 
