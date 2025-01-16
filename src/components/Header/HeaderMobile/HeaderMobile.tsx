@@ -11,13 +11,13 @@ import '../Header.scss'
 
 export const HeaderMobile = ({ isActive, setIsActive }: any) => {
     const { items } = useSelector((state: any) => state.card)
-		const { setShowModal } = useContext(ModalContext)
-		const dispatch = useDispatch()
-		const isAuth = useSelector(selectIsAuth)
-		const onClickLogout = () => {
-			dispatch(logout())
-			window.localStorage.removeItem('token')
-		}
+	const { setShowModal } = useContext(ModalContext)
+	const dispatch = useDispatch()
+	const isAuth = useSelector(selectIsAuth)
+	const onClickLogout = () => {
+		dispatch(logout())
+		window.localStorage.removeItem('token')
+	}
     return (
 			<div className='container header__container-mobile'>
 				<div className='header__wrapper-mobile'>
