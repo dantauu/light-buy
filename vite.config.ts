@@ -8,7 +8,7 @@ const manifest: Partial<ManifestOptions> | false = {
 	icons: [
 		{
 			purpose: 'maskable',
-			sizes: '512x512',
+			sizes: '517x517',
 			src: 'icon512_maskable.png',
 			type: 'image/png',
 		},
