@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import {ManifestOptions, VitePWA} from 'vite-plugin-pwa'
 
 const manifest: Partial<ManifestOptions> | false = {
-	theme_color: '#fdc93a',
+	theme_color: '#ffffff',
 	background_color: '#ffffff',
 	icons: [
 		{
