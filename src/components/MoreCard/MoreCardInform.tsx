@@ -5,7 +5,8 @@ import { Pagination } from 'swiper/modules'
 import { useSelector, useDispatch } from "react-redux"
 import './MoreCard.scss'
 import { addItem } from "../../redux/slices/cardSlice"
-import { FC } from "react"
+import { FC, useState } from "react"
+import { Slide, toast } from "react-toastify"
 
 type InformationProps = {
 	name: string,
@@ -43,6 +44,7 @@ export const MoreInformationCard = ({ name, text }:InformationProps) => {
 
 export const MoreCardInformation:FC<MoreCardProps> = ({ title, img, price, id }) => {
 	const dispatch = useDispatch()
+	const [isNotify, setIsNotify] = useState<boolean>(false)
 
 	console.log(title, img, price)
 
@@ -55,7 +57,16 @@ export const MoreCardInformation:FC<MoreCardProps> = ({ title, img, price, id })
 			count: 1,
 		}
 		dispatch(addItem(item))
+		if (!isNotify) {
+			notify()
+			setIsNotify(true)
+		}
 	}
+	const notify = () => {toast('Товар добавлен', {
+		transition: Slide,
+		theme: 'light',
+		autoClose: 2700
+	})}
 
 	const cardItem = useSelector((state: any) =>
 		state.card.items.find((obj: { id: number }) => obj.id === Number(id))
