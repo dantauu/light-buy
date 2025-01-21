@@ -116,10 +116,8 @@
 
 //Adaptive
 
-@media screen and (max-width: 615px) {
-    .card-title {
-        font-size: 20px;
-    }
+@media screen and (max-width: 719px) {
+    
 }
 
 @media screen and (max-width: 719px) {
@@ -127,6 +125,21 @@
         justify-content: space-between;
     }
         .card-description {
-            font-size: 17px;
+            font-size: 19px;
         }
+            .card-title {
+            font-size: 25px;
+            }
+                .card-button__img {
+                    display: none;
+                }
+                    .card-button__inner {
+                        font-size: 23px;
+                    }
+                        .price-button {
+                            gap: 62px;
+                        }
+                            .card-price {
+                                font-size: 19px;
+                            }
 }
