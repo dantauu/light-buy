@@ -8,7 +8,7 @@ const manifest: Partial<ManifestOptions> | false = {
 	icons: [
 		{
 			purpose: 'maskable',
-			sizes: '517x517',
+			sizes: '512x512',
 			src: 'icon512_maskable.png',
 			type: 'image/png',
 		},
@@ -23,6 +23,7 @@ const manifest: Partial<ManifestOptions> | false = {
 	display: 'standalone',
 	lang: 'ru',
 	name: 'LightBuy',
+	short_name: 'LightBuy',
 }
 
 // https://vite.dev/config/
