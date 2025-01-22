@@ -119,7 +119,7 @@
     .card-wrapper {
         justify-content: space-around;
         grid-template-columns: repeat(auto-fill, 288px);
-        column-gap: 0px;
+        column-gap: 25px;
     }
         .card {
             justify-content: space-between;
