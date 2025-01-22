@@ -13,8 +13,8 @@ const manifest: Partial<ManifestOptions> | false = {
 			type: 'image/png',
 		},
 		{
-			purpose: 'any',
-			sizes: '512x512',
+			purpose: 'any maskable',
+			sizes: 'any',
 			src: 'icon512_rounded.png',
 			type: 'image/png',
 		},
