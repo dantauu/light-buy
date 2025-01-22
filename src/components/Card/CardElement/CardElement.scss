@@ -117,32 +117,31 @@
 //Adaptive
 
 @media screen and (max-width: 719px) {
-    
-}
-
-@media screen and (max-width: 719px) {
-    .card {
-        justify-content: space-between;
+    .card-wrapper {
+        column-gap: 49px;
     }
-        .card-description {
-            font-size: 19px;
+        .card {
+            justify-content: space-between;
         }
-            .card-title {
-            font-size: 25px;
+            .card-description {
+                font-size: 19px;
             }
-                .card-button__img {
-                    display: none;
+                .card-title {
+                font-size: 25px;
                 }
-                    .card-button__inner {
-                        font-size: 23px;
+                    .card-button__img {
+                        display: none;
                     }
-                        .price-button {
-                            gap: 50px;
+                        .card-button__inner {
+                            font-size: 23px;
                         }
-                            .card-price {
-                                font-size: 19px;
+                            .price-button {
+                                gap: 50px;
                             }
-                                .card-button {
-                                    width: 148px;
+                                .card-price {
+                                    font-size: 19px;
                                 }
+                                    .card-button {
+                                        width: 148px;
+                                    }
 }
