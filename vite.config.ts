@@ -15,7 +15,7 @@ const manifest: Partial<ManifestOptions> | false = {
 		{
 			purpose: 'any maskable',
 			sizes: 'any',
-			src: 'icon512_rounded.png',
+			src: 'icon512_maskable.png',
 			type: 'image/png',
 		},
 	],
