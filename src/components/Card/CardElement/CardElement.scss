@@ -118,7 +118,8 @@
 
 @media screen and (max-width: 719px) {
     .card-wrapper {
-        column-gap: 49px;
+        justify-content: space-around;
+        grid-template-columns: repeat(auto-fill, 288px);
     }
         .card {
             justify-content: space-between;

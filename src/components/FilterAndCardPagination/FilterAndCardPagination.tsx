@@ -17,7 +17,7 @@ export const FilterAndCardPagination = () => {
 
 	return (
 		<>
-			<div className='container'>
+			<div className='container container__filter__and__card'>
 				<div className='home-wrapper'>
 					<div className='home-left'>
 						<Filtering />

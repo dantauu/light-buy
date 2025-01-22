@@ -6,6 +6,15 @@
 
 @media screen and (max-width: 967px) {
     .home-wrapper {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 719px) {
+    .container__filter__and__card {
+        padding: 10px !important;
     }
 }
