@@ -14,7 +14,7 @@ const manifest: Partial<ManifestOptions> | false = {
 		},
 		{
 			purpose: 'any',
-			sizes: '530x530',
+			sizes: '53x53',
 			src: 'icon512_rounded.png',
 			type: 'image/png',
 		},
