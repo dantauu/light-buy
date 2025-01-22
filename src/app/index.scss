@@ -47,6 +47,7 @@ $back-body_dark: rgb(15,23,42);
 }
 
 html, body {
+    width: 100%;
     transition: all 0.4s ease-in-out;
 }
 
@@ -203,11 +204,11 @@ body.dark {
 }
 
 
-@media screen and (max-width: 719px) {
+// @media screen and (max-width: 719px) {
     
-    html {
-        width: 621px;
-    }
-}
+//     html {
+//         width: 621px;
+//     }
+// }
 
 
