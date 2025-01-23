@@ -45,7 +45,6 @@
     box-shadow: 0 0 10px #00000047;
     border-radius: 10px;
     padding: 40px;
-    width: 450px;
 }
 
 .more-card__description {
@@ -150,7 +149,40 @@
     color: $color-dark;
 }
 
+.wrapper__mobile {
+    display: flex;
+    gap: 30px;
+}
+
 //Adaptive
+
+@media screen and (max-width: 719px) {
+    .more-card__midle {
+        align-items: center;
+    }
+        .more-card__country {
+            width: 490px;
+        }
+            .more-card__country {
+                :nth-child(2) {
+                    margin-top: 18px;
+                }
+            }
+                .more__card__country__text-mobile {
+                    font-size: 21px;
+                }
+                    .more__card__country__inner-mobile {
+                        font-size: 22px;
+                    }
+                        .wrapper__mobile {
+                            display: flex;
+                            flex-direction: column-reverse;
+                            gap: 30px;
+                        }
+                            .more-card-btn__inner {
+                                font-size: 21px;
+                            }
+}
 
 @media screen and (max-width: 1210px){
     .more-card__info {

@@ -32,11 +32,11 @@ export const MoreInformationCard = ({ name, text }:InformationProps) => {
 	return (
 		<div className='more-card__country'>
 			<div className='more-card-country__text'>
-				<p>{name}</p>
+				<p className="more__card__country__text-mobile">{name}</p>
 			</div>
 			<div style={{ borderBottom: '1px dotted rgb(203, 203, 203)', width: '230px' }}></div>
 			<div className='more-card-country__inner'>
-				<h3>{text}</h3>
+				<h3 className="more__card__country__inner-mobile">{text}</h3>
 			</div>
 		</div>
 	)
@@ -107,6 +107,7 @@ export const MoreCardInformation:FC<MoreCardProps> = ({ title, img, price, id })
 								</SwiperSlide>
 							</Swiper>
 						</div>
+						<div className="wrapper__mobile">
 						<div className='more-card__midle'>
 							<MoreInformationCard
 								name={'Страна производства'}
@@ -141,6 +142,7 @@ export const MoreCardInformation:FC<MoreCardProps> = ({ title, img, price, id })
 									</button>
 								</div>
 							</div>
+						</div>
 						</div>
 					</div>
 					<div className='description-title'>

@@ -1,5 +1,5 @@
 import basketIcon from '../../../public/assets/img/basket.svg'
-import clearIcon from '../../../public/assets/img/basket-clear.png'
+import clearIcon from '../../../public/assets/img/basket-clear-full.svg'
 import basketClear from '../../../public/assets/img/basket-clear.svg'
 import { BackBtn } from '../shared/BackBtn/BackBtn'
 import { useDispatch, useSelector } from 'react-redux'

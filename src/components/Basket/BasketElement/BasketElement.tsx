@@ -37,7 +37,7 @@ export const BasketElement: FC<BasketElementProps> =
 			<div className='basket-card'>
 				<div className='basket-img__title'>
 					<div className='basket-card__img'>
-						<img src={img} />
+						<img className={`basket__card__img-inner ${id === 7 && 'basket__help'}`} src={img} />
 					</div>
 					<div className='basket-card__title'>
 						<p>{title}</p>

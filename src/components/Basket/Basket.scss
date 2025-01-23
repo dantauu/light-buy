@@ -78,7 +78,7 @@
     color: $color-dark;
     font-family: 'Montserrat-M';
     font-size: 23px;
-    max-width: 170px;
+    width: 177px;
 }
 
 .basket-card-count__inner {
@@ -149,19 +149,37 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    gap: 30px;
 }
 
 .clear-basket-text__inner {
     font-family: 'Montserrat-B';
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .clear-basket__item {
-    width: 150px;
+    width: 200px;
+}
+
+.basket__help {
+    margin-left: -50px;
+    width: 272px;
 }
 
 //Adaptive
+
+@media screen and (max-width: 719px) {
+    .clear-basket {
+        gap: 100px;
+    }
+        .clear-basket__item {
+            width: 400px;
+        }
+            .clear-basket-text__inner  {
+                font-size: 50px;
+            }
+}
 
 @media screen and (max-width: 861px) {
     .basket-card {
