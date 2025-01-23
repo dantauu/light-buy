@@ -5,16 +5,7 @@ import { CardContext } from "../../../pages/Home"
 import { useDispatch } from "react-redux"
 import { setRenderData } from "../../../redux/slices/renderCardSlice"
 import rubleIcon from '../../../../public/assets/img/ruble.png'
-
-
-const FilterItems = [
-	{ id: 1, name: 'Кухни', img: crossIcon },
-	{ id: 2, name: 'Уборной', img: crossIcon },
-	{ id: 3, name: 'Гостинной', img: crossIcon },
-	{ id: 4, name: 'Коридора', img: crossIcon },
-	{ id: 5, name: 'Детской', img: crossIcon },
-	{ id: 6, name: 'Спальной', img: crossIcon },
-]
+import { FilterItemsMobile } from "../../../data/data"
 
 const FilterInputItem: FC<FilterItemProps> = ({ text, id, onChange }) => {
 	return (
@@ -22,7 +13,7 @@ const FilterInputItem: FC<FilterItemProps> = ({ text, id, onChange }) => {
 			<div className='price__input__form-mobile'>
 				<div className='price-wrapper__from'>
 					<input
-						className='input-from__inner'
+						className='input-from__inner input__form__inner-mobile'
 						placeholder={text}
 						type='number'
 						id={id}
@@ -30,7 +21,7 @@ const FilterInputItem: FC<FilterItemProps> = ({ text, id, onChange }) => {
 					/>
 				</div>
 				<div className='price-ruble'>
-					<img src={rubleIcon} alt='' />
+					<img className="price__ruble-mobile" src={rubleIcon} alt='' />
 				</div>
 			</div>
 		</label>
@@ -93,7 +84,7 @@ export const FilteringMobile = ({ setIsActive }: any) => {
 							<div className='before-filter'>
 								<h2 className='before-filter__title filter__title-mobile'>Для</h2>
 								<div className='before-filter__wrapper before__filter-mobile'>
-									{FilterItems.map((item, index) => (
+									{FilterItemsMobile.map((item, index) => (
 										<div
 											key={index}
 											onClick={() => {

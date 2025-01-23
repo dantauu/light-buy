@@ -1,4 +1,4 @@
-import mainLogo from '../../../public/assets/img/main-logo.svg'
+import mainLogo from '../../../public/main-logo-2.svg'
 import profileIcon from '../../../public/assets/img/profile.svg'
 import basketIcon from '../../../public/assets/img/basket.svg'
 import { Link } from 'react-router-dom'

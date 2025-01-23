@@ -9,13 +9,13 @@ const manifest: Partial<ManifestOptions> | false = {
 		{
 			purpose: 'maskable',
 			sizes: '512x512',
-			src: 'icon512_maskable.png',
+			src: 'app-maska.png',
 			type: 'image/png',
 		},
 		{
 			purpose: 'any maskable',
 			sizes: 'any',
-			src: 'icon512_maskable.png',
+			src: 'app-maska.png',
 			type: 'image/png',
 		},
 	],

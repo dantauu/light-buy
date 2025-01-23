@@ -223,7 +223,7 @@ input[type="number"]::-webkit-inner-spin-button,
 }
 
 .discount__mobile {
-    font-size: 21px;
+    font-size: 31px;
 }
 
 .discount__mobile:hover {
@@ -238,10 +238,11 @@ input[type="number"]::-webkit-inner-spin-button,
     align-items: center;
     padding: 0 10px;
     border-radius: 10px;
+    height: 100px;
 }
 
 .mobile__img {
-    width: 40px;
+    width: 80px;
 }
 
 .cross__icon-mobile {
@@ -258,12 +259,25 @@ input[type="number"]::-webkit-inner-spin-button,
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 247px;
+    width: 275px;
+    height: 65px;
     padding-left: 13px;
     padding-right: 14px;
     border: 1px solid #e2e2e2;
     background: $color-white;
     border-radius: 10px;
+}
+
+.input__form__inner-mobile {
+    font-size: 30px;
+}
+
+.input__form__inner-mobile::placeholder {
+    font-size: 20px;
+}
+
+.price__ruble-mobile {
+    width: 19px;
 }
 
 .filter__title-mobile {
@@ -273,11 +287,11 @@ input[type="number"]::-webkit-inner-spin-button,
 .price__text-mobile {
     width: 100%;
     text-align: center;
-    font-size: 30px;
+    font-size: 37px;
 }
 
 .title-mobile {
-    font-size: 30px;
+    font-size: 35px;
 }
 
 // @media screen and (max-width: 719px) {

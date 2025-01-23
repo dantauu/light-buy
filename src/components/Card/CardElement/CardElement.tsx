@@ -67,7 +67,7 @@ export const CardElement: FC<ItemCardProps> = ({
   // const closeModalErr = () => {
   //   setShowMessage(false)
   // }
-  const notify = () => {toast('Товар добавлен', {
+    const notify = () => {toast('Товар добавлен', {
     transition: Slide,
     theme: 'light',
     autoClose: 2700
@@ -78,8 +78,8 @@ export const CardElement: FC<ItemCardProps> = ({
 			<div onClick={() => navigate(`/more-card/${id}`)} className='card-img'>
 				<img
 					className={`card-img__inner ${id === 7 && 'modify'} ${
-						id === 5 && 'modify-pad'
-					}`}
+						id === 5 && 'modify-pad'} ${id === 10 && 'pad-toilet'}
+            ${id === 11 && 'pad-sos'}`}
 					src={img}
 				/>
 			</div>

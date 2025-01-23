@@ -98,13 +98,13 @@
     width: 380px;
 }
 
-.modify-fix {
-    padding-left: 70px;
-    width: 350px;
-}
-
 .modify-pad {
     margin-top: 23px;
+}
+
+.pad-toilet {
+    margin-left: 60px;
+    width: 250px;
 }
 
 .modify-next-fix {
@@ -112,14 +112,19 @@
     padding-right: 70px;
 }
 
+.pad-sos {
+    margin-right: 35px;
+}
+
 
 //Adaptive
 
 @media screen and (max-width: 719px) {
     .card-wrapper {
-        justify-content: space-around;
+        justify-content: center;
         grid-template-columns: repeat(auto-fill, 288px);
         row-gap: 25px;
+        column-gap: 35px;
     }
         .card {
             justify-content: space-between;

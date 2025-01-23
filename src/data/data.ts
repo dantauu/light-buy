@@ -13,6 +13,12 @@ import scaleIcon from '../../public/assets/img/Smart-Scale.png'
 import unitazIcon from '../../public/assets/img/unitaz.png'
 import vacuumIcon from '../../public/assets/img/vacuum-cleaner.png'
 import deviceMoove from '../../public/assets/img/device-moov.png'
+import kitchenIcon from '../../public/assets/img/kitchen.svg'
+import toiletIcon from '../../public/assets/img/toilet.svg'
+import livingRoomIcon from '../../public/assets/img/living-room.svg'
+import hallwayIcom from '../../public/assets/img/hallway.svg'
+import childrensIcon from '../../public/assets/img/childrens.svg'
+import bedRoomIcon from '../../public/assets/img/bed-room.svg'
 
 
 
@@ -248,4 +254,14 @@ export const MORECARD = [
 		height: 9,
 		img: deviceMoove,
 	},
+]
+
+
+export const FilterItemsMobile = [
+	{ id: 1, name: 'Кухни', img: kitchenIcon },
+	{ id: 2, name: 'Уборной', img: toiletIcon },
+	{ id: 3, name: 'Гостинной', img: livingRoomIcon },
+	{ id: 4, name: 'Коридора', img: hallwayIcom },
+	{ id: 5, name: 'Детской', img: childrensIcon },
+	{ id: 6, name: 'Спальной', img: bedRoomIcon },
 ]
