@@ -139,13 +139,11 @@ export const Filtering = () => {
 											onClick={() => {
 												changeCategorys(item.name), handleSelect(item.name)
 											}}
-											className='after-filter'
-										>
+											className='after-filter'>
 											<div
 												className={`after-filter__text ${
 													select === item.name && 'selectedId'
-												}`}
-											>
+												}`}>
 												<p className='filter-discount__inner'>{item.name}</p>
 											</div>
 											<div

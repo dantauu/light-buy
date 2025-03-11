@@ -3,10 +3,10 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { BackBtn } from "../shared/BackBtn/BackBtn"
 import { Pagination } from 'swiper/modules'
 import { useSelector, useDispatch } from "react-redux"
-import './MoreCard.scss'
 import { addItem } from "../../redux/slices/cardSlice"
 import { FC, useState } from "react"
 import { Slide, toast } from "react-toastify"
+import './MoreCard.scss'
 
 type InformationProps = {
 	name: string,

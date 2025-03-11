@@ -87,9 +87,7 @@ export const Header = () => {
 											</div>
 										</div>
 									) : (
-										<div
-											onClick={() => setShowModal(true)}
-											className='header-right__welcome'
+										<div onClick={() => setShowModal(true)}className='header-right__welcome'
 										>
 											<div className='header-welcome__img'>
 												<img
