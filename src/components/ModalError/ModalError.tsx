@@ -6,12 +6,17 @@ interface ModalProps {
 }
 
 const ModalError = ({ message, onClose }: ModalProps) => {
+	const handleClose = (e: React.MouseEvent) => {
+		e.stopPropagation()
+		onClose()
+	}
+
 	return (
-		<div className='modal-overlay'>
-			<div className='modal-error'>
+		<div className='modal-overlay' onClick={handleClose}>
+			<div className='modal-error' onClick={e => e.stopPropagation()}>
 				<div className='modal-content-wrapper'>
 					<p className='modal-content__inner'>{message}</p>
-					<button onClick={onClose} className='modal-close-button'>
+					<button onClick={handleClose} className='modal-close-button'>
 						Закрыть
 					</button>
 				</div>

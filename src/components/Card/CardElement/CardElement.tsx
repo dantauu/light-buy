@@ -7,78 +7,82 @@ import { useNavigate } from 'react-router-dom'
 // import { selectIsAuth } from '../../../redux/slices/authSlice'
 import './CardElement.scss'
 import { Slide, toast } from 'react-toastify'
-// import ModalError from '../../ModalError/ModalError'
+import { selectIsAuth } from '../../../redux/slices/authSlice'
+import ModalError from '../../ModalError/ModalError'
 
 interface ItemCardProps {
-  id: number
-  title: string
-  description: string
-  img: string
-  price: number
+	id: number
+	title: string
+	description: string
+	img: string
+	price: number
 }
 
 export interface CardItem {
-  id: number
-  title: string
-  price: number
-  img: string
-  count: number
+	id: number
+	title: string
+	price: number
+	img: string
+	count: number
 }
 
 export const CardElement: FC<ItemCardProps> = ({
-  id,
-  title,
-  img,
-  description,
-  price,
+	id,
+	title,
+	img,
+	description,
+	price,
 }) => {
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
-  const [isNotify, setIsNotify] = useState(false)
-  // const isAuth = useSelector(selectIsAuth)
-  // const [ showMessage, setShowMessage ] = useState(false)
+	const navigate = useNavigate()
+	const dispatch = useDispatch()
+	const [isNotify, setIsNotify] = useState(false)
+	const isAuth = useSelector(selectIsAuth)
+	const [showMessage, setShowMessage] = useState(false)
 
-  const cardItem = useSelector((state: { card: { items: CardItem[] } }) =>
-    Array.isArray(state.card.items)
-      ? state.card.items.find((obj) => obj.id === id)
-      : undefined
-  )
+	const cardItem = useSelector((state: { card: { items: CardItem[] } }) =>
+		Array.isArray(state.card.items)
+			? state.card.items.find(obj => obj.id === id)
+			: undefined
+	)
 
-  const onClickAddBasket = () => {
-    // if (!isAuth) {
-    //   setShowMessage(true)
-    //   setTimeout(() => setShowMessage(false), 2400) 
-    //   return
-    // }
-    const item: CardItem = {
-      id,
-      title,
-      img,
-      price,
-      count: 1,
-    }
-    dispatch(addItem(item))
-    if (!isNotify) {
-      notify()
-      setIsNotify(true)
-    }
-  }
+	const onClickAddBasket = () => {
+		if (!isAuth) {
+			setShowMessage(true)
+			setTimeout(() => setShowMessage(false), 2400)
+			return
+		}
+		const item: CardItem = {
+			id,
+			title,
+			img,
+			price,
+			count: 1,
+		}
+		dispatch(addItem(item))
+		if (!isNotify) {
+			notify()
+			setIsNotify(true)
+		}
+	}
 
-  // const closeModalErr = () => {
-  //   setShowMessage(false)
-  // }
-    const notify = () => {toast('Товар добавлен', {
-    transition: Slide,
-    theme: 'light',
-    autoClose: 2700
-  })}
+	const closeModalErr = () => {
+		setShowMessage(false)
+	}
+	const notify = () => {
+		toast('Товар добавлен', {
+			transition: Slide,
+			theme: 'light',
+			autoClose: 2300,
+		})
+	}
 
-  return (
+	return (
 		<div className='card'>
 			<div onClick={() => navigate(`/more-card/${id}`)} className='card-img'>
 				<img
 					className={`card-img__inner ${id === 7 && 'modify'} ${
-						id === 5 && 'modify-pad'} ${id === 10 && 'pad-toilet'}
+						id === 5 && 'modify-pad'
+					} ${id === 10 && 'pad-toilet'}
             ${id === 11 && 'pad-sos'}`}
 					src={img}
 				/>
@@ -105,6 +109,12 @@ export const CardElement: FC<ItemCardProps> = ({
 						<button className='card-button__inner'>
 							{cardItem ? 'Добавлено' : 'Добавить'}
 						</button>
+						{showMessage && (
+							<ModalError
+								onClose={closeModalErr}
+								message='Необходимо авторизоваться'
+							/>
+						)}
 					</div>
 				</div>
 			</div>

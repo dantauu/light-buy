@@ -71,13 +71,9 @@ export const Header = () => {
 										<Theme />
 									</div>
 									{isAuth ? (
-										<div
-											onClick={onClickLogout}
-											className='header-right__welcome'
-										>
+										<div onClick={onClickLogout} className='header-right__welcome'>
 											<div className='header-welcome__img'>
-												<img
-													className='header-welcome__img__inner'
+												<img className='header-welcome__img__inner'
 													src={profileIcon}
 													alt=''
 												/>
@@ -87,8 +83,7 @@ export const Header = () => {
 											</div>
 										</div>
 									) : (
-										<div onClick={() => setShowModal(true)}className='header-right__welcome'
-										>
+										<div onClick={() => setShowModal(true)}className='header-right__welcome'>
 											<div className='header-welcome__img'>
 												<img
 													className='header-welcome__img__inner'
