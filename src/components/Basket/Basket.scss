@@ -1,188 +1,188 @@
-@import '../../app/index.scss';
+@import "../../app/index.scss";
 
 .container-basket {
-    max-width: 1100px;
-    margin: 0 auto;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .basket-wrapper {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding-top: 90px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 90px;
 }
 
 .basket-card__wrapper {
-    margin-top: 90px;
+  margin-top: 90px;
 }
 
 .basket-top__img {
-    width: 40px;
+  width: 40px;
 }
 
 .basket-clear__img {
-    width: 27px;
+  width: 27px;
 }
 
 .basket-clear__text {
-    font-family: 'Montserrat-M';
-    font-size: 15px;
-    opacity: 0.6;
-    color: $color-dark;
+  font-family: "Montserrat-M";
+  font-size: 15px;
+  opacity: 0.6;
+  color: $color-dark;
 }
 
 .basket-left__text {
-    font-family: 'Montserrat-B';
-    font-size: 27px;
-    color: $color-dark;
+  font-family: "Montserrat-B";
+  font-size: 27px;
+  color: $color-dark;
 }
 
 .basket-top {
-    display: flex;
-    justify-content: space-between;
-    gap: 180px;
+  display: flex;
+  justify-content: space-between;
+  gap: 180px;
 }
 
 .basket-top__left {
-    @include flex-center;
-    gap: 18px;
+  @include flex-center;
+  gap: 18px;
 }
 
 .basket-clear {
-    @include flex-center;
-    gap: 3px;
-    cursor: pointer;
+  @include flex-center;
+  gap: 3px;
+  cursor: pointer;
 }
 
 .basket-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 195px;
-    border-top: 1px solid #d3d3d3dd;
-    border-bottom: 1px solid #d3d3d3dd;
-    gap: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 195px;
+  border-top: 1px solid #d3d3d3dd;
+  border-bottom: 1px solid #d3d3d3dd;
+  gap: 95px;
 }
 
 .basket-img__title {
-    @include flex-center;
-    gap: 5px;
+  @include flex-center;
+  gap: 5px;
 }
 
 .bascet-card__count {
-    @include flex-center;
-    gap: 9px;
+  @include flex-center;
+  gap: 9px;
 }
 
 .basket-card__title {
-    color: $color-dark;
-    font-family: 'Montserrat-M';
-    font-size: 23px;
-    width: 177px;
+  color: $color-dark;
+  font-family: "Montserrat-M";
+  font-size: 23px;
+  width: 177px;
 }
 
 .basket-card-count__inner {
-    font-family: 'Montserrat-M';
-    color: $color-dark;
-    padding-bottom: 4px;
-    font-size: 19px;
+  font-family: "Montserrat-M";
+  color: $color-dark;
+  padding-bottom: 4px;
+  font-size: 19px;
 }
 
 .basket-card__img {
-    width: 140px;
+  width: 140px;
 }
 
 .basket-card-count-img__minus {
-    @include flex-center;
-    border: 1px solid #FE5F00;
-    border-radius: 50%;
-    width: 27px;
-    cursor: pointer;
+  @include flex-center;
+  border: 1px solid #fe5f00;
+  border-radius: 50%;
+  width: 27px;
+  cursor: pointer;
 }
 
 .basket-card-count-img__plus {
-   border: 1px solid #FE5F00;
-    border-radius: 50%;
-    width: 27px;
-    cursor: pointer;
-    display: flex;
+  border: 1px solid #fe5f00;
+  border-radius: 50%;
+  width: 27px;
+  cursor: pointer;
+  display: flex;
 }
 
 .basket-card__price {
-    font-family: 'Montserrat-B';
-    font-size: 19px;
+  font-family: "Montserrat-B";
+  font-size: 19px;
 }
 
 .basket-card__krest {
-    border: 1px solid $main-color;
-    border-radius: 50%;
-    padding: 4px 5px 1px 5px;
-    cursor: pointer;
+  border: 1px solid $main-color;
+  border-radius: 50%;
+  padding: 4px 5px 1px 5px;
+  cursor: pointer;
 }
 
 .basket-krest__img {
-    width: 20px;
+  width: 20px;
 }
 
 .full-data {
-    padding: 40px 0 150px 0;
-    display: flex;
-    justify-content: space-between;
+  padding: 40px 0 150px 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .total-count {
-    font-size: 20px;
-    font-family: 'Montserrat-B';
+  font-size: 20px;
+  font-family: "Montserrat-B";
 }
 
 .total-price {
-    font-size: 20px;
-    font-family: 'Montserrat-B';
+  font-size: 20px;
+  font-family: "Montserrat-B";
 }
 
 .span-full-data {
-    color: $main-color;
+  color: $main-color;
 }
 
 .clear-basket {
-    padding: 80px 0 80px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column-reverse;
-    gap: 30px;
+  padding: 80px 0 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+  gap: 30px;
 }
 
 .clear-basket-text__inner {
-    font-family: 'Montserrat-B';
-    font-size: 30px;
+  font-family: "Montserrat-B";
+  font-size: 30px;
 }
 
 .clear-basket__item {
-    width: 200px;
+  width: 200px;
 }
 
 .basket__help {
-    margin-left: -50px;
-    width: 272px;
+  margin-left: -50px;
+  width: 272px;
 }
 
 //Adaptive
 
 @media screen and (max-width: 719px) {
-    .clear-basket {
-        gap: 100px;
-    }
-        .clear-basket__item {
-            width: 400px;
-        }
-            .clear-basket-text__inner  {
-                font-size: 50px;
-            }
+  .clear-basket {
+    gap: 100px;
+  }
+  .clear-basket__item {
+    width: 400px;
+  }
+  .clear-basket-text__inner {
+    font-size: 50px;
+  }
 }
 
 @media screen and (max-width: 861px) {
-    .basket-card {
-        gap: 5px;
-    }
+  .basket-card {
+    gap: 5px;
+  }
 }

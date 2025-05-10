@@ -1,4 +1,4 @@
-@import '../../app/index.scss';
+@import "../../app/index.scss";
 
 .modal {
   position: fixed;
@@ -33,9 +33,8 @@
 }
 
 .modal-anim-enter-done {
-    opacity: 1;
+  opacity: 1;
 }
-
 
 .modal-wrapper {
   @include flex-center;
@@ -45,7 +44,9 @@
   height: 500px;
   background: #fff;
   border-radius: 20px;
-  transition: opacity 0.3s, transform 0.3s;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
 }
 
 .form-input__items {
@@ -73,7 +74,7 @@
 }
 
 .form-title__inner {
-  font-family: 'Montserrat-B';
+  font-family: "Montserrat-B";
   font-size: 35px;
 }
 
@@ -93,7 +94,7 @@
 
 .login-error {
   position: absolute;
-  font-family: 'Montserrat-M';
+  font-family: "Montserrat-M";
   font-size: 14px;
   color: red;
 }
@@ -125,13 +126,12 @@
 
 .register-button {
   @include button-reset;
-  font-family: 'Montserrat-B';
+  font-family: "Montserrat-B";
   font-size: 15px;
   cursor: pointer;
 }
 
 .register-auth__quest {
-  font-family: 'Montserrat-M';
+  font-family: "Montserrat-M";
   font-size: 15px;
 }
-

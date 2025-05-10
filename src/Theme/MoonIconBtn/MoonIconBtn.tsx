@@ -1,11 +1,11 @@
-import moonIcon from '../../../public/assets/img/moon.svg'
-import '../Theme.scss'
+import moonIcon from "../../../public/assets/img/moon.svg"
+import "../Theme.scss"
 
 const MoonIconBtn = () => {
-    return (
-			<button className='moon-btn'>
-				<img className='moon-btn__img' src={moonIcon} />
-			</button>
-		)
+  return (
+    <button className="moon-btn">
+      <img className="moon-btn__img" src={moonIcon} />
+    </button>
+  )
 }
 export default MoonIconBtn

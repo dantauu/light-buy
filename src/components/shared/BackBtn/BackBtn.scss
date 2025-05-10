@@ -1,22 +1,25 @@
-@import '../../../app/index.scss';
+@import "../../../app/index.scss";
 
-.more-card__logout {//
-    @include flex-center;
-    width: 150px;
-    border-radius: 20px;
-    gap: 15px;
-    background: $color-card;
-    margin: 50px 0 50px 0;
-    cursor: pointer;
+.more-card__logout {
+  //
+  @include flex-center;
+  width: 150px;
+  border-radius: 20px;
+  gap: 15px;
+  background: $color-card;
+  margin: 50px 0 50px 0;
+  cursor: pointer;
 }
 
-.logout-text {//
-    font-family: 'Montserrat-M';
-    font-size: 15px;
-    color: $main-color;
+.logout-text {
+  //
+  font-family: "Montserrat-M";
+  font-size: 15px;
+  color: $main-color;
 }
 
-.logout-card__img {//
-    padding-top: 5px;
-    width: 40px;
+.logout-card__img {
+  //
+  padding-top: 5px;
+  width: 40px;
 }

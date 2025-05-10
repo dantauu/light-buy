@@ -1,102 +1,101 @@
-@import '../../app/index.scss';
-@import 'swiper/css';
-@import 'swiper/css/pagination';
+@import "../../app/index.scss";
+@import "swiper/css";
+@import "swiper/css/pagination";
 
 .more-card-img__inner {
-    width: 350px;
+  width: 350px;
 }
 
 .more-card__img {
-    background: $color-card;
-    @include flex-center; 
-    min-width: 440px;
-    height: 440px;
-    border-radius: 30px;
+  background: $color-card;
+  @include flex-center;
+  min-width: 440px;
+  height: 440px;
+  border-radius: 30px;
 }
 
 .more-card__info {
-    display: flex;
-    gap: 25px;
+  display: flex;
+  gap: 25px;
 }
 
 .gap-wrapper {
-    display: flex;
-    // align-items: center;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  // align-items: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .more-card__price {
-    font-family: 'Montserrat-B';
-    font-size: 20px;
+  font-family: "Montserrat-B";
+  font-size: 20px;
 }
 
 .more-card__title {
-    font-family: 'Montserrat-B';
-    font-size: 14px;
+  font-family: "Montserrat-B";
+  font-size: 14px;
 }
 
 .more-card__right {
-    display: flex;
-    height: 220px;
-    flex-direction: column;
-    gap: 15px;
-    background: #fff;
-    box-shadow: 0 0 10px #00000047;
-    border-radius: 10px;
-    padding: 40px;
+  display: flex;
+  height: 220px;
+  flex-direction: column;
+  gap: 15px;
+  background: #fff;
+  box-shadow: 0 0 10px #00000047;
+  border-radius: 10px;
+  padding: 40px;
 }
 
 .more-card__description {
-    padding: 40px 0 50px 0;
-    font-family: 'Montserrat-M';
-    line-height: 2;
-    max-width: 600px;
-    font-size: 15px;
+  padding: 40px 0 50px 0;
+  font-family: "Montserrat-M";
+  line-height: 2;
+  max-width: 600px;
+  font-size: 15px;
 }
 
 .more-card-btn__inner {
-    @include button-reset;
-    width: 230px;
-    height: 55px;
-    border-radius: 20px;
-    font-size: 15px;
-    cursor: pointer;
-    color: $color-white;
-    background: $main-color;
+  @include button-reset;
+  width: 230px;
+  height: 55px;
+  border-radius: 20px;
+  font-size: 15px;
+  cursor: pointer;
+  color: $color-white;
+  background: $main-color;
 }
 
 .more-card__midle {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .more-card__country {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-    :nth-child(2) {
-        flex: 1 0;
-        height: 0.3px;
-        margin-top: 13px;
-    }
+  :nth-child(2) {
+    flex: 1 0;
+    height: 0.3px;
+    margin-top: 13px;
+  }
 }
 
 .more-card-country__text {
-    font-family: 'Montserrat-M';
-    color: rgb(203, 203, 203);
+  font-family: "Montserrat-M";
+  color: rgb(203, 203, 203);
 }
 
 .more-card-country__inner {
-    font-family: 'Montserrat-M';
-    font-size: 13px;
+  font-family: "Montserrat-M";
+  font-size: 13px;
 }
 
 .modify-card {
-    width: 550px !important;
+  width: 550px !important;
 }
-
 
 // .modify-padding {
 //     padding-top: 51px;
@@ -104,7 +103,7 @@
 
 //Swiper
 .swiper-wrapper {
-    height: 370px !important;
+  height: 370px !important;
 }
 
 .swiper {
@@ -134,7 +133,7 @@
   color: #fff !important;
   opacity: 1;
   background: rgba(0, 0, 0, 0.2);
-  font-family: 'Montserrat-M';
+  font-family: "Montserrat-M";
 }
 
 .swiper-pagination-bullet-active {
@@ -143,66 +142,66 @@
 }
 
 .description-title__inner {
-    padding-top: 30px;
-    font-family: 'Montserrat-B';
-    font-size: 35px;
-    color: $color-dark;
+  padding-top: 30px;
+  font-family: "Montserrat-B";
+  font-size: 35px;
+  color: $color-dark;
 }
 
 .wrapper__mobile {
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 30px;
 }
 
 //Adaptive
 
 @media screen and (max-width: 719px) {
-    .more-card__midle {
-        align-items: center;
+  .more-card__midle {
+    align-items: center;
+  }
+  .more-card__country {
+    width: 490px;
+  }
+  .more-card__country {
+    :nth-child(2) {
+      margin-top: 18px;
     }
-        .more-card__country {
-            width: 490px;
-        }
-            .more-card__country {
-                :nth-child(2) {
-                    margin-top: 18px;
-                }
-            }
-                .more__card__country__text-mobile {
-                    font-size: 21px;
-                }
-                    .more__card__country__inner-mobile {
-                        font-size: 22px;
-                    }
-                        .wrapper__mobile {
-                            display: flex;
-                            flex-direction: column-reverse;
-                            gap: 30px;
-                        }
-                            .more-card-btn__inner {
-                                font-size: 21px;
-                            }
-                                .description-title__inner {
-                                    font-size: 38px;
-                                }
-                                    .more-card__description {
-                                        font-size: 23px;
-                                    }
+  }
+  .more__card__country__text-mobile {
+    font-size: 21px;
+  }
+  .more__card__country__inner-mobile {
+    font-size: 22px;
+  }
+  .wrapper__mobile {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+  .more-card-btn__inner {
+    font-size: 21px;
+  }
+  .description-title__inner {
+    font-size: 38px;
+  }
+  .more-card__description {
+    font-size: 23px;
+  }
 }
 
-@media screen and (max-width: 1210px){
-    .more-card__info {
-        flex-direction: column;
-    }
-        .more-card__right {
-            flex-direction: initial;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-        }
-            .gap-wrapper {
-                flex-direction: initial;
-                align-items: center;
-            }
+@media screen and (max-width: 1210px) {
+  .more-card__info {
+    flex-direction: column;
+  }
+  .more-card__right {
+    flex-direction: initial;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .gap-wrapper {
+    flex-direction: initial;
+    align-items: center;
+  }
 }

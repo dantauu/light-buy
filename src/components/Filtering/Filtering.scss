@@ -1,301 +1,304 @@
-@import '../../app/index.scss';
+@import "../../app/index.scss";
 
 .filter-main__wrapper {
-    padding-top: 36px;
-    width: 355px;
+  padding-top: 36px;
+  width: 355px;
 }
 
 .filter-discount__inner {
-    font-family: 'Montserrat-M';
-    font-size: 15px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+  font-family: "Montserrat-M";
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 
-        &:hover {
-            background: $main-color;
-            color: $color-white;
-            text-align: center;
-            border-radius: 20px;
-        }
+  &:hover {
+    background: $main-color;
+    color: $color-white;
+    text-align: center;
+    border-radius: 20px;
+  }
 }
 
 .filter-title {
-    font-family: 'Montserrat-B';
+  font-family: "Montserrat-B";
 }
 
 .price-input__from {
-    display: flex;
-    align-items: center;
-    border: 1px solid #e2e2e2;
-    background: $color-white;
-    border-radius: 10px;
-    width: 125px;
-    padding-left: 7px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #e2e2e2;
+  background: $color-white;
+  border-radius: 10px;
+  width: 125px;
+  padding-left: 7px;
 }
 
 .input-from__inner {
-    border: none;
-    outline: none;
-    width: 90px;
-    height: 40px;
-    font-size: 18px;
+  border: none;
+  outline: none;
+  width: 90px;
+  height: 40px;
+  font-size: 18px;
 }
 
 .price-wrapper {
-    padding-top: 30px;
+  padding-top: 30px;
 }
 
 .price-wrapper__text {
-    border-top: 1px solid #e0dfdf;
-    padding: 31px 0 30px 0;
-    font-family: 'Montserrat-B';
+  border-top: 1px solid #e0dfdf;
+  padding: 31px 0 30px 0;
+  font-family: "Montserrat-B";
 }
 
 .input-from__inner::placeholder {
-    font-size: 15px;
+  font-size: 15px;
 }
 
-input[type="number"]::-webkit-inner-spin-button, 
-    input[type="number"]::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
 .price-ruble {
-    width: 12px;
+  width: 12px;
 }
 
 .price-input__wrapper {
-    display: flex;
-    gap: 15px;
-    padding-bottom: 30px;
+  display: flex;
+  gap: 15px;
+  padding-bottom: 30px;
 }
 
 .before-filter__title {
-    font-family: 'Montserrat-B';
-    font-size: 28px;
-    padding-bottom: 30px;
+  font-family: "Montserrat-B";
+  font-size: 28px;
+  padding-bottom: 30px;
 }
 
 .before-filter {
-    border-top: 1px solid #e0dfdf;
-    padding-top: 31px;
+  border-top: 1px solid #e0dfdf;
+  padding-top: 31px;
 }
 
 .open-full_wrapper {
-    display: flex;
-    align-items: center;
-    bottom: 47px;
-    position: absolute;
-    cursor: pointer;
-    width: 130px;
+  display: flex;
+  align-items: center;
+  bottom: 47px;
+  position: absolute;
+  cursor: pointer;
+  width: 130px;
 }
 
 .open-full_wrapper.activity {
-    top: 20px;
+  top: 20px;
 }
 
 .open-full__inner {
-    font-family: 'Montserrat-M';
-    font-size: 15px;
-    color: $main-color;
+  font-family: "Montserrat-M";
+  font-size: 15px;
+  color: $main-color;
 }
 
 .open-full-img__inner {
-    width: 25px;
+  width: 25px;
 }
 
 .selectedId {
-    @include flex-center;
-    background: $main-color !important;
-    border-radius: 20px;
-    color: $color-white !important;
-    width: 150px;
-    height: 40px;
+  @include flex-center;
+  background: $main-color !important;
+  border-radius: 20px;
+  color: $color-white !important;
+  width: 150px;
+  height: 40px;
 }
 
 .after-filter {
-    display: flex;
-    align-items: center;
-    justify-content: space-between !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between !important;
 }
 
 .after-filter-cross__img {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .cross-img__inner {
-    width: 40px;
-    padding-top: 5px;
+  width: 40px;
+  padding-top: 5px;
 }
 
 .before-filter__wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    width: 170px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 170px;
 }
 
 .filter-drop {
-    padding-top: 20px;
-    opacity: 0;
-    line-height: 0;
-    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+  padding-top: 20px;
+  opacity: 0;
+  line-height: 0;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    visibility 0.4s;
 }
 
 .filter-drop.active {
-    opacity: 1;
+  opacity: 1;
 }
 
 .drop-item__inner {
-    @include button-reset;
-    font-family: "Montserrat-M";
-    font-size: 15px;
-    cursor: pointer;
-    color: $color-dark;
-    transition: all 0.3s ease-in-out;
+  @include button-reset;
+  font-family: "Montserrat-M";
+  font-size: 15px;
+  cursor: pointer;
+  color: $color-dark;
+  transition: all 0.3s ease-in-out;
 
-        &:hover {
-            background: $main-color;
-            color: $color-white;
-            text-align: center;
-            border-radius: 20px;
-        transition: all 0.3s ease-in-out;
-    }
+  &:hover {
+    background: $main-color;
+    color: $color-white;
+    text-align: center;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 .filter-drop__item {
-    display: flex;
-    align-items: center;
-    padding-bottom: 14px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 14px;
 }
 
 //Adaptive
 
 .filter-svg {
-    width: 540px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
+  width: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
 }
 
 .filter-svg-img__inner {
-    width: 40px;
+  width: 40px;
 }
 
 .filter-svg-text__inner {
-    padding-top: 35px;
-    font-family: 'Montserrat-B';
-    font-size: 34px;
-    color: $color-dark;
+  padding-top: 35px;
+  font-family: "Montserrat-B";
+  font-size: 34px;
+  color: $color-dark;
 }
 
 .filter-main__wrapper.active-filter {
-    display: flex;
-    background: #504e4e;
-    position: absolute;
-    left: 0;
-    height: 245%;
-    top: 0;
+  display: flex;
+  background: #504e4e;
+  position: absolute;
+  left: 0;
+  height: 245%;
+  top: 0;
 }
 
 .container__filter-mobile {
-    position: relative;
+  position: relative;
 }
 
 .mobile__filter-wrapper {
-    position: fixed;
-    display: flex;
-    padding-top: 17%;
-    flex-direction: column;
-    align-items: center;
-    overflow-y: auto;
-    z-index: 3000;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: #ffffff;
+  position: fixed;
+  display: flex;
+  padding-top: 17%;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  z-index: 3000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #ffffff;
 }
 
 .before__filter-mobile {
-    width: 600px;
+  width: 600px;
 }
 
 .discount__mobile {
-    font-size: 31px;
+  font-size: 31px;
 }
 
 .discount__mobile:hover {
-    background: none;
-    color: inherit;
+  background: none;
+  color: inherit;
 }
 
 .after__mobile {
-    display: flex;
-    justify-content: space-between;
-    background: #ffdba863;
-    align-items: center;
-    padding: 0 10px;
-    border-radius: 10px;
-    height: 100px;
+  display: flex;
+  justify-content: space-between;
+  background: #ffdba863;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 10px;
+  height: 100px;
 }
 
 .mobile__img {
-    width: 80px;
+  width: 80px;
 }
 
 .cross__icon-mobile {
-   width: 61px;
+  width: 61px;
 }
 
 .cross__mobile {
-    position: absolute;
-    right: 46px;
-    top: 44px;
+  position: absolute;
+  right: 46px;
+  top: 44px;
 }
 
 .price__input__form-mobile {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 275px;
-    height: 65px;
-    padding-left: 13px;
-    padding-right: 14px;
-    border: 1px solid #e2e2e2;
-    background: $color-white;
-    border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 275px;
+  height: 65px;
+  padding-left: 13px;
+  padding-right: 14px;
+  border: 1px solid #e2e2e2;
+  background: $color-white;
+  border-radius: 10px;
 }
 
 .input__form__inner-mobile {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .input__form__inner-mobile::placeholder {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .price__ruble-mobile {
-    width: 19px;
+  width: 19px;
 }
 
 .filter__title-mobile {
-    font-size: 35px;
+  font-size: 35px;
 }
 
 .price__text-mobile {
-    width: 100%;
-    text-align: center;
-    font-size: 37px;
+  width: 100%;
+  text-align: center;
+  font-size: 37px;
 }
 
 .title-mobile {
-    font-size: 35px;
+  font-size: 35px;
 }
 
 // @media screen and (max-width: 719px) {
-//         .filter-svg {   
+//         .filter-svg {
 //             width: 540px;
 //             display: flex;
 //             flex-direction: column;
@@ -308,4 +311,3 @@ input[type="number"]::-webkit-inner-spin-button,
 //                 right: 10px;
 //             }
 // }
-

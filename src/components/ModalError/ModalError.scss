@@ -1,4 +1,4 @@
-@import '../../app/index.scss';
+@import "../../app/index.scss";
 
 .modal-overlay {
   position: fixed;
@@ -26,7 +26,7 @@
 
 /* Сообщение внутри модального окна */
 .modal-content__inner {
-  font-family: 'Montserrat-M';
+  font-family: "Montserrat-M";
   font-size: 18px;
   color: #333;
   margin-bottom: 20px;
@@ -35,7 +35,7 @@
 /* Кнопка закрытия */
 .modal-close-button {
   background-color: $main-color;
-  font-family: 'Montserrat-M';
+  font-family: "Montserrat-M";
   font-size: 15px;
   color: #fff;
   border: none;

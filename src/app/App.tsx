@@ -14,58 +14,55 @@ import { ModalRegister } from "../components/ModalRegistr/ModalRegistr.tsx"
 import { ToastContainer } from "react-toastify"
 
 interface ModalContextProps {
-	showModal: boolean
-	setShowModal: React.Dispatch<React.SetStateAction<boolean>>
+  showModal: boolean
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const ModalValue: ModalContextProps = {
-	showModal: false,
-	setShowModal: () => {},
+  showModal: false,
+  setShowModal: () => {},
 }
 
 export const ModalContext = createContext(ModalValue)
-export const SearchContext = createContext(({})) //!
-
+export const SearchContext = createContext({}) //!
 
 function App() {
-	//Проверка есть ли пользователь
-	const dispatch = useDispatch<AppDispatch>()
-	useEffect(() => {
-		dispatch(fetchAuthMe())
-	}, [])
-	const [searchValue, setSearchValue] = useState<string>('')
-	const [showModal, setShowModal] = useState<boolean>(false)
-	const modalRef = useRef(null)
+  //Проверка есть ли пользователь
+  const dispatch = useDispatch<AppDispatch>()
+  useEffect(() => {
+    dispatch(fetchAuthMe())
+  }, [])
+  const [searchValue, setSearchValue] = useState<string>("")
+  const [showModal, setShowModal] = useState<boolean>(false)
+  const modalRef = useRef(null)
   return (
-		<>
-		<ToastContainer className='notify' />
-			<ThemeProvider>
-				<SearchContext.Provider value={{ searchValue, setSearchValue }}>
-					<ModalContext.Provider value={{ showModal, setShowModal }}>
-						<CSSTransition
-							in={showModal}
-							timeout={300}
-							classNames="modal-anim"
-							unmountOnExit={true}
-							mountOnEnter
-							nodeRef={modalRef}
-						>
-							<ModalAuth modalRef={modalRef} />
-						</CSSTransition>
-						<Header />
-						<Routes>
-							<Route path='/' element={<Home />} index />
-							<Route path='/more-card/:id' element={<MoreCard />} />
-							<Route path='/basket' element={<BasketPage />} />
-							<Route path='/register' element={<ModalRegister />} />
-						</Routes>
-					</ModalContext.Provider>
-				</SearchContext.Provider>
-			</ThemeProvider>
-		</>
-	)
+    <>
+      <ToastContainer className="notify" />
+      <ThemeProvider>
+        <SearchContext.Provider value={{ searchValue, setSearchValue }}>
+          <ModalContext.Provider value={{ showModal, setShowModal }}>
+            <CSSTransition
+              in={showModal}
+              timeout={300}
+              classNames="modal-anim"
+              unmountOnExit={true}
+              mountOnEnter
+              nodeRef={modalRef}
+            >
+              <ModalAuth modalRef={modalRef} />
+            </CSSTransition>
+            <Header />
+            <Routes>
+              <Route path="/" element={<Home />} index />
+              <Route path="/more-card/:id" element={<MoreCard />} />
+              <Route path="/basket" element={<BasketPage />} />
+              <Route path="/register" element={<ModalRegister />} />
+            </Routes>
+          </ModalContext.Provider>
+        </SearchContext.Provider>
+      </ThemeProvider>
+    </>
+  )
 }
 
 export default App
-
-
