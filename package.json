@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prettier:fix": "prettier ./src --write"
+    "prettier:fix": "prettier ./src --write",
+    "prettier": "prettier ./src"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.3.0",
